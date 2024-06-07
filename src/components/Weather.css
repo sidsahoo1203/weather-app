@@ -27,3 +27,26 @@
     font-size: 18px;
     
 }
+
+.search-bar img{
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    background: #ebfffc;
+    cursor: pointer;
+
+}
+
+.weather-icon{
+    width: 150px;
+    margin: 3px 0;
+}
+.temperature{
+    color: #fff;
+    font-size: 80px;
+    line-height: 1;
+}
+.location{
+    color: #fff;
+    font-size: 40px;
+}  
