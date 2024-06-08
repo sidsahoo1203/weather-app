@@ -8,6 +8,7 @@ import humidity_icon from '../assets/humidity.png'
 import rain_icon from '../assets/rain.png'
 import snow_icon from '../assets/snow.png'
 import wind_icon from '../assets/wind.png'
+import App from './../App';
 
 
 const Weather = () => {
@@ -23,8 +24,8 @@ const Weather = () => {
         <div className="weather-data">
           <div className="col">
               <img src={humidity_icon} alt="" />
-              
             </div>
+                <p>91%</p>
           </div> 
     </div>
   )
