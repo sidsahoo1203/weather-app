@@ -12,6 +12,15 @@ import App from './../App';
 
 
 const Weather = () => {
+
+    const search = async ()=>{
+      try {
+          const url = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=${import.meta.env.VITE_APP_ID}`
+      } catch (error) {
+
+      }
+    }
+
   return (
     <div className='weather'>
         <div className="search-bar">
