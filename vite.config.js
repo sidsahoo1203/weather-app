@@ -6,6 +6,7 @@
 //   plugins: [react()],
 // })
 
+
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -13,3 +14,4 @@ export default defineConfig({
     port: 5174 // or any port you prefer
   }
 });
+

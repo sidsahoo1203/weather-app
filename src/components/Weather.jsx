@@ -11,6 +11,7 @@ import wind_icon from '../assets/wind.png'
 import App from './../App';
 
 
+
 const Weather = () => {
 
     const search = async (city)=>{
@@ -29,6 +30,7 @@ const Weather = () => {
     useEffect(()=>{
       search("London")
     },[])
+
 
   return (
     <div className='weather'>
