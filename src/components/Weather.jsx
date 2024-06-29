@@ -31,7 +31,7 @@ const Weather = () => {
       search("London")
     },[])
 
-
+    
   return (
     <div className='weather'>
         <div className="search-bar">
