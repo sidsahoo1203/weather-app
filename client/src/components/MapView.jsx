@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import { useQuery } from '@tanstack/react-query';
-import { Plus, Minus, Crosshair, CloudRain, Play, Pause } from 'lucide-react';
+import { Plus, Minus, Crosshair, CloudRain, Play, Pause, Layers } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import { formatTemp } from '../lib/units.js';
 import { tempColor } from '../lib/scales.js';
@@ -10,12 +10,71 @@ import { cityToLocation, isNear } from '../lib/places.js';
 import { useSettings } from '../context/settings.js';
 import './MapView.css';
 
-const BASEMAPS = {
-  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-  light: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+// Keyless tile services. CARTO's basemaps now need an API key, so they are not used.
+const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services';
+const OSM_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const OSM = {
+  url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  attribution: OSM_ATTRIBUTION,
+  maxNativeZoom: 19,
 };
-const ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+const BASEMAPS = {
+  dark: {
+    base: {
+      url: `${ESRI}/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}`,
+      attribution: `Tiles &copy; <a href="https://www.esri.com/">Esri</a>, HERE, Garmin, ${OSM_ATTRIBUTION}`,
+      maxNativeZoom: 16,
+    },
+    labels: { url: `${ESRI}/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, maxNativeZoom: 16 },
+  },
+  light: { base: OSM },
+  satellite: {
+    base: {
+      url: `${ESRI}/World_Imagery/MapServer/tile/{z}/{y}/{x}`,
+      attribution: 'Imagery &copy; <a href="https://www.esri.com/">Esri</a>, Maxar, Earthstar Geographics',
+      maxNativeZoom: 18,
+    },
+    labels: { url: `${ESRI}/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}`, maxNativeZoom: 18 },
+  },
+};
+// If a basemap fails this many tiles before showing any, switch to OpenStreetMap.
+const TILE_FAILURE_LIMIT = 6;
+
+function Basemap({ style, onFailed }) {
+  const { base, labels } = BASEMAPS[style] || { base: OSM };
+  const stats = useRef({ loaded: 0, failed: 0 });
+  useEffect(() => {
+    stats.current = { loaded: 0, failed: 0 };
+  }, [style]);
+  const handlers = useMemo(
+    () => ({
+      tileload: () => {
+        stats.current.loaded += 1;
+      },
+      tileerror: () => {
+        stats.current.failed += 1;
+        if (!stats.current.loaded && stats.current.failed >= TILE_FAILURE_LIMIT) onFailed();
+      },
+    }),
+    [onFailed],
+  );
+  return (
+    <>
+      <TileLayer
+        key={`${style}-base`}
+        url={base.url}
+        attribution={base.attribution}
+        maxNativeZoom={base.maxNativeZoom}
+        maxZoom={19}
+        zIndex={1}
+        eventHandlers={handlers}
+      />
+      {labels && (
+        <TileLayer key={`${style}-labels`} url={labels.url} maxNativeZoom={labels.maxNativeZoom} maxZoom={19} zIndex={2} />
+      )}
+    </>
+  );
+}
 
 const DESKTOP = '(min-width: 901px)';
 // On desktop the forecast panel covers the left of the map and the state list the right,
@@ -153,6 +212,11 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
   const { theme, units } = useSettings();
   const [map, setMap] = useState(null);
   const [zoom, setZoom] = useState(7);
+  const [satellite, setSatellite] = useState(false);
+  // Set when the chosen tile service fails; OpenStreetMap is used from then on.
+  const [tilesFailed, setTilesFailed] = useState(false);
+  const onTilesFailed = useCallback(() => setTilesFailed(true), []);
+  const basemap = tilesFailed ? 'light' : satellite ? 'satellite' : theme;
   const [radarOn, setRadarOn] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [frameIndex, setFrameIndex] = useState(-1);
@@ -184,7 +248,7 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
         className="map"
         ref={setMap}
       >
-        <TileLayer key={theme} url={BASEMAPS[theme]} attribution={ATTRIBUTION} subdomains="abcd" maxZoom={19} />
+        <Basemap style={basemap} onFailed={onTilesFailed} />
         {radarOn && radar.data && <RadarLayers host={radar.data.host} frames={frames} index={activeFrame} />}
 
         <FlyToLocation location={location} />
@@ -216,6 +280,16 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
         </button>
         <button type="button" className="icon-btn" onClick={onLocate} aria-label="Go to my location">
           <Crosshair size={18} />
+        </button>
+        <button
+          type="button"
+          className="icon-btn"
+          aria-pressed={satellite}
+          onClick={() => setSatellite((on) => !on)}
+          aria-label="Toggle satellite view"
+          title={satellite ? 'Map view' : 'Satellite view'}
+        >
+          <Layers size={18} />
         </button>
         <button
           type="button"
