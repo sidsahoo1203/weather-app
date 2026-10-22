@@ -6,6 +6,7 @@ export function cityToLocation(city, region) {
     name: city.name,
     region: region?.scope === 'state' ? region.name : null,
     country: region?.country ?? null,
+    regionCode: region?.code ?? null,
     source: 'city',
   };
 }

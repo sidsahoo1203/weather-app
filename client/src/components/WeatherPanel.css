@@ -586,3 +586,115 @@
 .credits a {
   color: var(--text-muted);
 }
+
+/* ---------- Hourly tabs (Temperature / Precipitation / Wind) ---------- */
+
+.hourly__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.hourly__head .section-title {
+  margin: 0;
+}
+
+.hourly__tabs {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+}
+
+.hourly__tabs button {
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.hourly__tabs button[aria-selected='true'] {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.hourly__precip {
+  align-items: flex-end;
+  margin-top: 4px;
+}
+
+.hourly__pcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  height: 100%;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-faint);
+}
+
+.hourly__pcol .is-wet {
+  color: #60a5fa;
+}
+
+.hourly__pbar {
+  width: 22px;
+  height: 60px;
+  border-radius: 6px;
+  background: var(--surface);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hourly__pbar span {
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #60a5fa, #3b82f6);
+}
+
+.hourly__row--wind {
+  margin-top: 6px;
+  min-height: 24px;
+}
+
+.hourly__wind {
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 14px 0 0;
+}
+
+.hero__stats div {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+}
+
+.hero__stats dt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hero__stats dd {
+  margin: 2px 0 0;
+  font-weight: 800;
+  font-size: 15px;
+}

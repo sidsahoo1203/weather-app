@@ -7,10 +7,10 @@ A map-first, full-stack weather explorer. The whole screen is a live map; the fo
 
 ## Features
 
-- **Your location first.** On load, Atmos asks for your location and shows the weather where you are.
-  It falls back to your last viewed place, or New Delhi.
-- **Every city in your state.** Atmos works out which state you are in and puts the temperature of every
-  major city and town in it on the map. You can also browse them as a list, sorted warmest, coolest or A–Z,
+- **Opens on Tamil Nadu.** Chennai's forecast and live temperatures for all 38 district headquarters and
+  major towns load instantly (the list is bundled). Tap the location button to jump to where you are.
+- **Every city in any state.** Click anywhere else and Atmos works out which state it is in and puts the
+  temperature of every major city and town on the map. You can also browse them as a list, sorted warmest, coolest or A–Z,
   with the hottest and coolest places highlighted.
 - **Real interactive map** (Leaflet + OpenStreetMap/CARTO). Click a city pin or any spot on the map and
   its forecast loads. Search a city in another state and the list switches to that state.
@@ -42,7 +42,7 @@ weather-app/
 └── render.yaml      Render Blueprint for server/
 ```
 
-The browser only talks to the Atmos API. The API calls these free, keyless data sources:
+The app gets its data from these free, keyless sources:
 
 | Data | Source |
 | --- | --- |
@@ -50,6 +50,11 @@ The browser only talks to the Atmos API. The API calls these free, keyless data 
 | Place search | Open-Meteo Geocoding |
 | Reverse geocoding (name, state, ISO code) | [Nominatim](https://nominatim.org/) (OpenStreetMap), throttled to 1 req/s |
 | Cities and towns in a state | [Overpass API](https://overpass-api.de/) (OpenStreetMap) |
+
+**Two ways to fetch.** When `VITE_API_URL` points at the Atmos API, the browser asks the API first (with an
+8-second timeout). If the API is not configured, asleep, unreachable or answers with anything but valid
+data, the browser fetches the same sources directly (all of them allow browser requests) and skips the API
+for two minutes. The site therefore keeps working even when the free Render service is sleeping.
 
 The server caches responses in memory: weather for 10 min, place lookups for days, city lists for a week.
 It collapses identical requests that arrive at the same time into one upstream call, fetches current
@@ -101,6 +106,9 @@ To set the service up by hand instead: **New → Web Service**, Root Directory `
 > can take 30–60 s. The app tells users when this happens.
 
 ### 2. Client on Vercel
+
+The client works on its own. `VITE_API_URL` is optional and only adds the API's caching.
+
 
 1. Import the repository in Vercel and set **Root Directory** to `client` (Framework Preset: Vite;
    leave the build settings at their defaults). `client/vercel.json` adds the SPA rewrite and asset caching.

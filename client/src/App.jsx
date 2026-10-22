@@ -10,17 +10,10 @@ import { useSavedPlaces } from './hooks/useSavedPlaces.js';
 import { describeWeather } from './lib/weatherCodes.js';
 import { formatTemp } from './lib/units.js';
 import { load, save } from './lib/storage.js';
+import { api } from './lib/api.js';
+import { DEFAULT_LOCATION } from './data/tamilNadu.js';
 import { useSettings } from './context/settings.js';
 import './App.css';
-
-const DEFAULT_LOCATION = {
-  lat: 28.6139,
-  lon: 77.209,
-  name: 'New Delhi',
-  region: 'Delhi',
-  country: 'India',
-  source: 'default',
-};
 
 function readUrlLocation() {
   const params = new URLSearchParams(window.location.search);
@@ -42,21 +35,16 @@ export default function App() {
   const { locate, position: userPosition, status: geoStatus } = useGeolocation();
   const { favorites, recents, isFavorite, toggleFavorite, addRecent } = useSavedPlaces();
 
-  const [location, setLocation] = useState(readUrlLocation);
-  const [booting, setBooting] = useState(() => !readUrlLocation());
+  // Open on a shared link if there is one, otherwise on Tamil Nadu.
+  const [location, setLocation] = useState(() => readUrlLocation() || DEFAULT_LOCATION);
   const [notice, setNotice] = useState(null);
   const [tab, setTab] = useState('forecast');
   const [regionCollapsed, setRegionCollapsed] = useState(() => load('atmos:regionCollapsed', false));
-  const initialCenter = useRef(null);
-  if (!initialCenter.current) {
-    const start = location || load('atmos:last', DEFAULT_LOCATION);
-    initialCenter.current = [start.lat, start.lon];
-  }
+  const initialCenter = useRef([location.lat, location.lon]);
 
   const select = useCallback((loc) => {
     setLocation(loc);
     writeUrlLocation(loc);
-    save('atmos:last', { ...loc, source: 'saved' });
   }, []);
 
   const useMyLocation = useCallback(() => {
@@ -65,20 +53,8 @@ export default function App() {
       .catch((err) => setNotice(err.message));
   }, [locate, select]);
 
-  // First visit without a shared link: try the device location, else the last place, else a default.
-  const bootStarted = useRef(false);
-  useEffect(() => {
-    if (!booting || bootStarted.current) return;
-    bootStarted.current = true;
-    locate()
-      .then((pos) => select({ lat: pos.lat, lon: pos.lon, source: 'geo' }))
-      .catch((err) => {
-        const fallback = load('atmos:last', DEFAULT_LOCATION);
-        select(fallback);
-        setNotice(`${err.message} Showing ${fallback.name || 'your last place'} instead.`);
-      })
-      .finally(() => setBooting(false));
-  }, [booting, locate, select]);
+  // Start waking the API server (free hosting sleeps) while the first data loads.
+  useEffect(() => api.warmUp(), []);
 
   useEffect(() => save('atmos:regionCollapsed', regionCollapsed), [regionCollapsed]);
 
@@ -155,7 +131,6 @@ export default function App() {
           location={location}
           weatherQuery={weatherQuery}
           place={place}
-          booting={booting}
           isFavorite={favoritePlace ? isFavorite(favoritePlace) : false}
           onToggleFavorite={() => favoritePlace && toggleFavorite(favoritePlace)}
         />

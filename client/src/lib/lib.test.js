@@ -120,7 +120,7 @@ describe('places', () => {
     expect(isNear({ lat: 1, lon: 1 }, { lat: 1.2, lon: 1 })).toBe(false);
     expect(isNear(null, { lat: 1, lon: 1 })).toBe(false);
     expect(
-      cityToLocation({ lat: 1, lon: 2, name: 'Puri' }, { scope: 'state', name: 'Odisha', country: 'India' }),
-    ).toEqual({ lat: 1, lon: 2, name: 'Puri', region: 'Odisha', country: 'India', source: 'city' });
+      cityToLocation({ lat: 1, lon: 2, name: 'Puri' }, { scope: 'state', name: 'Odisha', code: 'IN-OR', country: 'India' }),
+    ).toEqual({ lat: 1, lon: 2, name: 'Puri', region: 'Odisha', country: 'India', regionCode: 'IN-OR', source: 'city' });
   });
 });
