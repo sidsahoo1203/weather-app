@@ -1,0 +1,137 @@
+.search {
+  position: relative;
+  flex: 1;
+  max-width: 520px;
+}
+
+.search__field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 12px 0 14px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+  cursor: text;
+}
+
+.search__field:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  background: var(--surface-hover);
+}
+
+.search__icon {
+  color: var(--text-muted);
+  flex: none;
+}
+
+.search__field input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+}
+
+.search__field input::placeholder {
+  color: var(--text-faint);
+}
+
+.search__kbd {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-faint);
+  padding: 1px 7px;
+  border: 1px solid var(--divider);
+  border-radius: 6px;
+}
+
+.search__clear {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  color: var(--text-muted);
+}
+
+.search__clear:hover {
+  background: var(--surface-hover);
+}
+
+.search__spinner {
+  color: var(--text-muted);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.search__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  max-height: min(420px, 60vh);
+  overflow-y: auto;
+  background: var(--menu);
+  backdrop-filter: none;
+  border-radius: var(--radius-md);
+  animation: fade-up 0.18s var(--ease);
+  z-index: 10;
+}
+
+.search__group {
+  padding: 8px 10px 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.search__option {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.search__option[aria-selected='true'] {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.search__name {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.search__sub {
+  font-size: 13px;
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search__empty {
+  padding: 14px 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+}

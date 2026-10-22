@@ -1,0 +1,164 @@
+.wi {
+  display: block;
+  overflow: visible;
+  flex: none;
+}
+
+.wi-sun-core {
+  fill: #fbbf24;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.55));
+}
+
+.wi-rays line {
+  stroke: #fbbf24;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.wi-moon-core {
+  fill: #e2e8f0;
+  filter: drop-shadow(0 0 6px rgba(226, 232, 240, 0.35));
+}
+
+.wi-cloud {
+  fill: #f1f5f9;
+  stroke: rgba(15, 23, 42, 0.08);
+  stroke-width: 1;
+}
+
+.wi-cloud--dark {
+  fill: #94a3b8;
+}
+
+[data-theme='light'] .wi-cloud {
+  fill: #e2e8f0;
+  stroke: rgba(15, 23, 42, 0.28);
+}
+
+[data-theme='light'] .wi-cloud--dark {
+  fill: #64748b;
+}
+
+.wi-drop {
+  stroke: #60a5fa;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.wi-flake {
+  fill: #e0f2fe;
+  stroke: #7dd3fc;
+  stroke-width: 1;
+}
+
+.wi-bolt {
+  fill: #facc15;
+  filter: drop-shadow(0 0 4px rgba(250, 204, 21, 0.7));
+}
+
+.wi-fog line {
+  stroke: #cbd5e1;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+/* Motion, only for icons that opt in and users who allow it. */
+@media (prefers-reduced-motion: no-preference) {
+  .wi--animated .wi-rays {
+    animation: wi-spin 24s linear infinite;
+  }
+  .wi--animated .wi-cloud {
+    animation: wi-drift 6s ease-in-out infinite;
+  }
+  .wi--animated .wi-drop {
+    animation: wi-fall 1.1s linear infinite;
+  }
+  .wi--animated .wi-flake {
+    animation: wi-snow 2.4s ease-in-out infinite;
+  }
+  .wi--animated .wi-bolt {
+    animation: wi-flash 3s ease-in-out infinite;
+  }
+  .wi--animated .wi-fog line {
+    animation: wi-slide 4s ease-in-out infinite alternate;
+  }
+  .wi--animated .wi-moon {
+    animation: wi-glow 5s ease-in-out infinite;
+  }
+}
+
+@keyframes wi-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wi-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 1.5px 0;
+  }
+}
+
+@keyframes wi-fall {
+  0% {
+    translate: 0 -4px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    translate: -2px 7px;
+    opacity: 0;
+  }
+}
+
+@keyframes wi-snow {
+  0% {
+    translate: 0 -4px;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    translate: 2px 8px;
+    opacity: 0;
+  }
+}
+
+@keyframes wi-flash {
+  0%,
+  42%,
+  58%,
+  100% {
+    opacity: 1;
+  }
+  48%,
+  52% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes wi-slide {
+  from {
+    translate: -3px 0;
+  }
+  to {
+    translate: 3px 0;
+  }
+}
+
+@keyframes wi-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.82;
+  }
+}
