@@ -1,0 +1,21 @@
+# Render Blueprint for the Atmos API (https://render.com/docs/blueprint-spec).
+# In Render: New → Blueprint → pick this repository.
+services:
+  - type: web
+    name: atmos-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      # Browser origins allowed to call the API. "*" matches one sub-domain label,
+      # so Vercel preview deployments of this project are allowed too.
+      - key: CLIENT_ORIGIN
+        value: https://weather-app-rwex.vercel.app,https://weather-app-*.vercel.app
