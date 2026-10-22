@@ -28,6 +28,7 @@ A map-first, full-stack weather explorer. The whole screen is a live map; the fo
 ```
 weather-app/
 ├── client/          React 18 + Vite SPA → deployed on Vercel
+│   ├── vercel.json   Vercel settings (Root Directory = client)
 │   └── src/
 │       ├── components/   Map, panels, charts, animated icons
 │       ├── hooks/        TanStack Query data hooks, geolocation, saved places
@@ -38,7 +39,6 @@ weather-app/
 │       ├── services/     weather, geocoding, region (state cities)
 │       ├── lib/          TTL cache, fetch helper, validation, errors
 │       └── routes/       /api endpoints
-├── vercel.json      Builds client/ from the repo root
 └── render.yaml      Render Blueprint for server/
 ```
 
@@ -102,10 +102,11 @@ To set the service up by hand instead: **New → Web Service**, Root Directory `
 
 ### 2. Client on Vercel
 
-1. In the Vercel project, open **Settings → Environment Variables** and add
-   `VITE_API_URL` = `https://<your-service>.onrender.com` (no trailing slash) for Production and Preview.
-2. Redeploy. The root `vercel.json` tells Vercel to install and build `client/` and serve `client/dist`.
-   Leave **Root Directory** empty (the repo root) so that file is used.
+1. Import the repository in Vercel and set **Root Directory** to `client` (Framework Preset: Vite;
+   leave the build settings at their defaults). `client/vercel.json` adds the SPA rewrite and asset caching.
+2. Under **Environment Variables**, add `VITE_API_URL` = `https://<your-service>.onrender.com`
+   (no trailing slash), then deploy.
+3. Add the Vercel URL to `CLIENT_ORIGIN` on Render.
 
 ## Credits
 
