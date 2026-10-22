@@ -3,7 +3,7 @@
 A map-first, full-stack weather explorer. The whole screen is a live map; the forecast and a
 "cities across your state" list float over it. Click any city or point on the map to see its weather.
 
-**Live:** https://weather-app-rwex.vercel.app
+**Live:** https://weather-app-six-lake-76.vercel.app
 
 ## Features
 
@@ -12,7 +12,7 @@ A map-first, full-stack weather explorer. The whole screen is a live map; the fo
 - **Every city in any state.** Click anywhere else and Atmos works out which state it is in and puts the
   temperature of every major city and town on the map. You can also browse them as a list, sorted warmest, coolest or A–Z,
   with the hottest and coolest places highlighted.
-- **Real interactive map** (Leaflet + OpenStreetMap/CARTO). Click a city pin or any spot on the map and
+- **Real interactive map** (Leaflet + OpenStreetMap/Esri, with a satellite view). Click a city pin or any spot on the map and
   its forecast loads. Search a city in another state and the list switches to that state.
 - **Rain radar** (RainViewer) with a play/pause timeline of the past two hours.
 - **Rich forecast:** current conditions with animated icons, a plain-English summary ("Rain likely around
@@ -59,7 +59,8 @@ for two minutes. The site therefore keeps working even when the free Render serv
 The server caches responses in memory: weather for 10 min, place lookups for days, city lists for a week.
 It collapses identical requests that arrive at the same time into one upstream call, fetches current
 weather for all of a state's cities in a single batched call, and rate-limits clients. You don't need any
-API keys. Map tiles (CARTO) and radar (RainViewer) load directly in the browser.
+API keys. Map tiles (OpenStreetMap and Esri, no key needed) and radar (RainViewer) load directly in the browser.
+If a tile service fails, the map switches to OpenStreetMap on its own.
 
 ### API
 
@@ -95,7 +96,7 @@ Deploy the API first, because the client needs its URL.
 1. In [Render](https://dashboard.render.com), choose **New → Blueprint** and select this repository.
    Render reads `render.yaml` and creates the `atmos-api` web service (root `server/`, `npm start`,
    health check `/api/health`).
-2. Check the `CLIENT_ORIGIN` variable. It already allows `https://weather-app-rwex.vercel.app` and its
+2. Check the `CLIENT_ORIGIN` variable. It already allows `https://weather-app-six-lake-76.vercel.app` and its
    preview URLs. Add any custom domain, comma-separated.
 3. After the deploy, open `https://<your-service>.onrender.com/api/health`. It should return `{"ok":true,...}`.
 
@@ -118,4 +119,4 @@ The client works on its own. `VITE_API_URL` is optional and only adds the API's 
 
 ## Credits
 
-Weather data by Open-Meteo (CC BY 4.0) · Map data © OpenStreetMap contributors · Tiles © CARTO · Radar by RainViewer.
+Weather data by Open-Meteo (CC BY 4.0) · Map data © OpenStreetMap contributors · Tiles © OpenStreetMap, Esri · Radar by RainViewer.

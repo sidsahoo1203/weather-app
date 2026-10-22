@@ -10,7 +10,7 @@ export const config = {
   port: Number(process.env.PORT) || 8080,
   env: process.env.NODE_ENV || 'development',
   // Comma-separated list of allowed browser origins. Supports "*" wildcards,
-  // e.g. "https://weather-app-rwex.vercel.app,https://weather-app-*.vercel.app".
+  // e.g. "https://weather-app-six-lake-76.vercel.app,https://weather-app-*.vercel.app".
   // When empty every origin is allowed (handy for local development).
   clientOrigins: list(process.env.CLIENT_ORIGIN),
   // Nominatim and Overpass ask every client to identify itself.
