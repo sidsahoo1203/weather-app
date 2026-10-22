@@ -19,7 +19,8 @@ export function usePlace(location) {
   return useQuery({
     queryKey: ['place', cell(location?.lat), cell(location?.lon)],
     queryFn: ({ signal }) => api.reverse(location.lat, location.lon, signal),
-    enabled: Boolean(location),
+    // Places picked from a bundled state list already know their name and state.
+    enabled: Boolean(location) && !location.regionCode,
     staleTime: Infinity,
   });
 }
@@ -29,11 +30,14 @@ export function usePlace(location) {
  * moving around inside one state does not refetch the list.
  */
 export function useRegion(location, place) {
-  const key = place ? place.stateCode || `near:${cell(location.lat, 1)},${cell(location.lon, 1)}` : null;
+  const code = location?.regionCode || place?.stateCode || null;
+  const key = !location
+    ? null
+    : code || (place ? `near:${cell(location.lat, 1)},${cell(location.lon, 1)}` : null);
   return useQuery({
     queryKey: ['region', key],
-    queryFn: ({ signal }) => api.region(location.lat, location.lon, signal),
-    enabled: Boolean(location && key),
+    queryFn: ({ signal }) => api.region(location.lat, location.lon, code, signal),
+    enabled: Boolean(key),
     staleTime: 10 * 60 * 1000,
     refetchInterval: 15 * 60 * 1000,
     placeholderData: keepPreviousData,

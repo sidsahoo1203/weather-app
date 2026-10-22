@@ -69,6 +69,7 @@ export const forecastFixture = {
     weather_code: Array(72).fill(1),
     is_day: Array.from({ length: 72 }, (_, i) => (i % 24 < 12 ? 1 : 0)),
     wind_speed_10m: Array(72).fill(10),
+    wind_direction_10m: Array(72).fill(90),
     relative_humidity_2m: Array(72).fill(65),
     uv_index: Array(72).fill(null),
   },

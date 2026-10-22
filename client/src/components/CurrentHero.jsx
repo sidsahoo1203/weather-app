@@ -1,7 +1,7 @@
-import { Star, Navigation } from 'lucide-react';
+import { Star, Navigation, Droplet, Droplets, Wind } from 'lucide-react';
 import { WeatherIcon } from './WeatherIcon.jsx';
 import { describeWeather } from '../lib/weatherCodes.js';
-import { formatTemp, formatCoords } from '../lib/units.js';
+import { formatTemp, formatCoords, formatWind } from '../lib/units.js';
 import { timeFormatters, timeAgo } from '../lib/time.js';
 import { forecastSummary } from '../lib/summary.js';
 import { useSettings } from '../context/settings.js';
@@ -63,6 +63,27 @@ export function CurrentHero({ weather, place, location, isFavorite, onToggleFavo
           </span>
         )}
       </div>
+
+      <dl className="hero__stats">
+        <div>
+          <dt>
+            <Droplet size={13} aria-hidden /> Precipitation
+          </dt>
+          <dd>{weather.hourly[0]?.pop != null ? `${weather.hourly[0].pop}%` : '--'}</dd>
+        </div>
+        <div>
+          <dt>
+            <Droplets size={13} aria-hidden /> Humidity
+          </dt>
+          <dd>{current.humidity != null ? `${Math.round(current.humidity)}%` : '--'}</dd>
+        </div>
+        <div>
+          <dt>
+            <Wind size={13} aria-hidden /> Wind
+          </dt>
+          <dd>{formatWind(current.wind.speed, units)}</dd>
+        </div>
+      </dl>
 
       <p className="hero__summary">{forecastSummary(weather, units, fmt)}</p>
       <p className="hero__updated">Updated {timeAgo(weather.updatedAt, now)}</p>

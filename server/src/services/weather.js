@@ -30,6 +30,7 @@ const HOURLY_VARS = [
   'weather_code',
   'is_day',
   'wind_speed_10m',
+  'wind_direction_10m',
   'relative_humidity_2m',
   'uv_index',
 ];
@@ -90,6 +91,7 @@ export function normalizeForecast(data) {
     code: 'weather_code',
     isDay: 'is_day',
     wind: 'wind_speed_10m',
+    windDir: 'wind_direction_10m',
     humidity: 'relative_humidity_2m',
     uv: 'uv_index',
   })

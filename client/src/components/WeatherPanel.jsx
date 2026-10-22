@@ -36,16 +36,12 @@ function ErrorState({ error, onRetry }) {
   );
 }
 
-export function WeatherPanel({ location, weatherQuery, place, booting, isFavorite, onToggleFavorite }) {
+export function WeatherPanel({ location, weatherQuery, place, isFavorite, onToggleFavorite }) {
   const { data, error, isPending, isError, isPlaceholderData, isFetching, refetch } = weatherQuery;
-  // The API is on a free host that sleeps; explain long first loads instead of spinning silently.
-  const slow = useLingering(booting || isPending, 5000);
+  const slow = useLingering(isPending, 6000);
 
-  if (booting) {
-    return <PanelSkeleton message={slow ? 'Waiting for your location… allow access or search for a place.' : 'Finding your location…'} />;
-  }
   if (!location || isPending) {
-    return <PanelSkeleton message={slow ? 'Waking up the forecast server. The first load can take up to a minute on free hosting.' : null} />;
+    return <PanelSkeleton message={slow ? 'Still loading the forecast… this can take a few seconds on a slow connection.' : null} />;
   }
   if (isError && !data) return <ErrorState error={error} onRetry={refetch} />;
 
