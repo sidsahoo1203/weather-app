@@ -1,14 +1,21 @@
 import { useId } from 'react';
+import { cn } from '../lib/cn.js';
 import { describeWeather } from '../lib/weatherCodes.js';
-import './WeatherIcon.css';
+
+// Animations (motion-safe:group-data-animated/wi:…) run only on icons rendered with
+// `animated` and when the user allows motion. Class names are written out in full so
+// Tailwind can find them.
 
 // A cloud drawn in a 64×64 box (roughly x 11–57, y 16–46).
 const CLOUD = 'M20 46h26a10 10 0 0 0 .9-19.96A14 14 0 0 0 20.3 24.4 11 11 0 0 0 20 46z';
 
 function Sun({ cx = 32, cy = 32, r = 11 }) {
   return (
-    <g className="wi-sun">
-      <g className="wi-rays" style={{ transformOrigin: `${cx}px ${cy}px` }}>
+    <g>
+      <g
+        className="stroke-amber-400 [stroke-linecap:round] [stroke-width:3] motion-safe:group-data-animated/wi:animate-wi-spin"
+        style={{ transformOrigin: `${cx}px ${cy}px` }}
+      >
         {Array.from({ length: 8 }, (_, i) => {
           const a = (i * Math.PI) / 4;
           return (
@@ -22,7 +29,7 @@ function Sun({ cx = 32, cy = 32, r = 11 }) {
           );
         })}
       </g>
-      <circle cx={cx} cy={cy} r={r} className="wi-sun-core" />
+      <circle cx={cx} cy={cy} r={r} className="fill-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.55)]" />
     </g>
   );
 }
@@ -30,18 +37,34 @@ function Sun({ cx = 32, cy = 32, r = 11 }) {
 function Moon({ cx = 32, cy = 32, r = 12 }) {
   const id = useId();
   return (
-    <g className="wi-moon">
+    <g className="motion-safe:group-data-animated/wi:animate-wi-glow">
       <mask id={id}>
         <rect width="64" height="64" fill="#fff" />
         <circle cx={cx + r * 0.55} cy={cy - r * 0.45} r={r * 0.85} fill="#000" />
       </mask>
-      <circle cx={cx} cy={cy} r={r} mask={`url(#${id})`} className="wi-moon-core" />
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        mask={`url(#${id})`}
+        className="fill-slate-200 drop-shadow-[0_0_6px_rgba(226,232,240,0.35)]"
+      />
     </g>
   );
 }
 
 function Cloud({ dark, transform }) {
-  return <path d={CLOUD} transform={transform} className={dark ? 'wi-cloud wi-cloud--dark' : 'wi-cloud'} />;
+  return (
+    <path
+      d={CLOUD}
+      transform={transform}
+      className={cn(
+        'stroke-slate-900/10 [stroke-width:1] light:stroke-slate-900/30',
+        dark ? 'fill-slate-400 light:fill-slate-500' : 'fill-slate-100 light:fill-slate-200',
+        'motion-safe:group-data-animated/wi:animate-wi-drift',
+      )}
+    />
+  );
 }
 
 function Drops({ snow = false, mixed = false }) {
@@ -51,20 +74,40 @@ function Drops({ snow = false, mixed = false }) {
       {xs.map((x, i) => {
         const flake = snow || (mixed && i === 1);
         return flake ? (
-          <circle key={x} cx={x - 2} cy={51} r={2.2} className="wi-flake" style={{ animationDelay: `${i * 0.35}s` }} />
+          <circle
+            key={x}
+            cx={x - 2}
+            cy={51}
+            r={2.2}
+            className="fill-sky-100 stroke-sky-300 [stroke-width:1] motion-safe:group-data-animated/wi:animate-wi-snow"
+            style={{ animationDelay: `${i * 0.35}s` }}
+          />
         ) : (
-          <line key={x} x1={x} y1={47} x2={x - 3} y2={55} className="wi-drop" style={{ animationDelay: `${i * 0.25}s` }} />
+          <line
+            key={x}
+            x1={x}
+            y1={47}
+            x2={x - 3}
+            y2={55}
+            className="stroke-blue-400 [stroke-linecap:round] [stroke-width:3] motion-safe:group-data-animated/wi:animate-wi-fall"
+            style={{ animationDelay: `${i * 0.25}s` }}
+          />
         );
       })}
     </g>
   );
 }
 
-const Bolt = () => <path d="M34 43l-7 11h5.5l-3 9 10-13h-5.5l3.5-7z" className="wi-bolt" />;
+const Bolt = () => (
+  <path
+    d="M34 43l-7 11h5.5l-3 9 10-13h-5.5l3.5-7z"
+    className="fill-yellow-400 drop-shadow-[0_0_4px_rgba(250,204,21,0.7)] motion-safe:group-data-animated/wi:animate-wi-flash"
+  />
+);
 
 function Fog() {
   return (
-    <g className="wi-fog">
+    <g className="stroke-slate-300 [stroke-linecap:round] [stroke-width:3.5] *:motion-safe:group-data-animated/wi:animate-wi-slide">
       <line x1="14" y1="50" x2="46" y2="50" />
       <line x1="20" y1="56" x2="52" y2="56" style={{ animationDelay: '0.6s' }} />
     </g>
@@ -135,7 +178,8 @@ export function WeatherIcon({ code, isDay = true, size = 40, animated = false, t
       viewBox="0 0 64 64"
       width={size}
       height={size}
-      className={`wi ${animated ? 'wi--animated' : ''}`}
+      className="group/wi block shrink-0 overflow-visible"
+      data-animated={animated || undefined}
       role="img"
       aria-label={title || label}
     >

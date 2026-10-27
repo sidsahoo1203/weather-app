@@ -4,32 +4,36 @@ import { HourlyChart } from './HourlyChart.jsx';
 import { DailyForecast } from './DailyForecast.jsx';
 import { DetailsGrid } from './DetailsGrid.jsx';
 import { useLingering } from '../hooks/useTimers.js';
-import './WeatherPanel.css';
+import { Skeleton } from './ui.jsx';
 
 function PanelSkeleton({ message }) {
   return (
-    <div className="panel-skeleton" aria-busy="true">
-      <div className="skeleton" style={{ width: '55%', height: 28 }} />
-      <div className="skeleton" style={{ width: '35%', height: 16, marginTop: 10 }} />
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 28 }}>
-        <div className="skeleton" style={{ width: 150, height: 92 }} />
-        <div className="skeleton" style={{ width: 96, height: 96, borderRadius: '50%' }} />
+    <div aria-busy="true">
+      <Skeleton className="h-7 w-[55%]" />
+      <Skeleton className="mt-2.5 h-4 w-[35%]" />
+      <div className="mt-7 flex justify-between">
+        <Skeleton className="h-[92px] w-[150px]" />
+        <Skeleton className="size-24 rounded-full" />
       </div>
-      <div className="skeleton" style={{ width: '80%', height: 16, marginTop: 24 }} />
-      <div className="skeleton" style={{ height: 150, marginTop: 28 }} />
-      <div className="skeleton" style={{ height: 260, marginTop: 20 }} />
-      {message && <p className="panel-skeleton__msg">{message}</p>}
+      <Skeleton className="mt-6 h-4 w-4/5" />
+      <Skeleton className="mt-7 h-[150px]" />
+      <Skeleton className="mt-5 h-[260px]" />
+      {message && <p className="mt-[18px] text-center text-[13px] text-muted">{message}</p>}
     </div>
   );
 }
 
 function ErrorState({ error, onRetry }) {
   return (
-    <div className="panel-error" role="alert">
+    <div className="grid justify-items-center gap-2 px-3 py-12 text-center text-muted" role="alert">
       <AlertTriangle size={28} />
-      <h2>Couldn’t load the weather</h2>
-      <p>{error?.message || 'Something went wrong.'}</p>
-      <button type="button" className="btn" onClick={onRetry}>
+      <h2 className="mt-1 text-lg font-semibold text-fg">Couldn’t load the weather</h2>
+      <p className="mb-2">{error?.message || 'Something went wrong.'}</p>
+      <button
+        type="button"
+        className="inline-flex h-10 items-center gap-2 rounded-xl bg-accent px-4 font-bold text-[#0b1020]"
+        onClick={onRetry}
+      >
         <RotateCw size={16} /> Try again
       </button>
     </div>
@@ -46,7 +50,7 @@ export function WeatherPanel({ location, weatherQuery, place, isFavorite, onTogg
   if (isError && !data) return <ErrorState error={error} onRetry={refetch} />;
 
   return (
-    <div className="weather fade-up" key={`${data.location.lat},${data.location.lon}`}>
+    <div className="flex animate-fade-up flex-col gap-[26px]" key={`${data.location.lat},${data.location.lon}`}>
       <CurrentHero
         weather={data}
         place={place}
@@ -58,7 +62,7 @@ export function WeatherPanel({ location, weatherQuery, place, isFavorite, onTogg
       <HourlyChart weather={data} />
       <DailyForecast weather={data} />
       <DetailsGrid weather={data} />
-      <footer className="credits">
+      <footer className="pb-1 text-center text-[11px] text-faint [&_a]:text-muted">
         Forecast data by{' '}
         <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">
           Open-Meteo

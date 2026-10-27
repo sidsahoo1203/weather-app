@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// Global styles first so component styles can override them.
-import './styles/global.css';
+import './index.css';
 import App from './App.jsx';
 import { SettingsProvider } from './context/SettingsProvider.jsx';
 

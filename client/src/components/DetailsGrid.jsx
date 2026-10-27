@@ -25,11 +25,17 @@ import { timeFormatters, formatDuration } from '../lib/time.js';
 import { aqiBand, uvBand } from '../lib/scales.js';
 import { describeWeather } from '../lib/weatherCodes.js';
 import { useSettings } from '../context/settings.js';
+import { cn } from '../lib/cn.js';
+import { CARD, SectionTitle } from './ui.jsx';
+
+const VALUE = 'font-display text-2xl tracking-[-0.02em]';
+const LABEL = 'font-sans text-sm font-bold tracking-normal';
+const NOTE = 'mt-1.5 text-[12.5px] leading-[1.4] text-muted';
 
 function Tile({ icon: Icon, title, children, wide = false }) {
   return (
-    <div className={`tile card ${wide ? 'tile--wide' : ''}`}>
-      <h3 className="tile__title">
+    <div className={cn(CARD, 'min-w-0 rounded-2xl p-3.5', wide && 'col-span-full')}>
+      <h3 className="mb-2 flex items-center gap-1.5 text-[11px] font-bold tracking-[0.07em] text-muted uppercase">
         <Icon size={14} aria-hidden /> {title}
       </h3>
       {children}
@@ -40,17 +46,27 @@ function Tile({ icon: Icon, title, children, wide = false }) {
 function Meter({ value, max, gradient, label }) {
   const pct = Math.min(Math.max(value / max, 0), 1) * 100;
   return (
-    <div className="meter" role="meter" aria-valuemin={0} aria-valuemax={max} aria-valuenow={value} aria-label={label}>
-      <span className="meter__track" style={{ background: gradient }} />
-      <span className="meter__dot" style={{ left: `${pct}%` }} />
+    <div
+      className="relative mt-3 mb-1 h-1.5"
+      role="meter"
+      aria-valuemin={0}
+      aria-valuemax={max}
+      aria-valuenow={value}
+      aria-label={label}
+    >
+      <span className="absolute inset-0 rounded-[3px]" style={{ background: gradient }} />
+      <span
+        className="absolute top-1/2 -mt-1.5 -ml-1.5 size-3 rounded-full bg-white shadow-[0_0_0_3px_rgba(0,0,0,0.35)]"
+        style={{ left: `${pct}%` }}
+      />
     </div>
   );
 }
 
 function Compass({ dir }) {
   return (
-    <svg viewBox="0 0 80 80" className="compass" aria-hidden>
-      <circle cx="40" cy="40" r="34" className="compass__ring" />
+    <svg viewBox="0 0 80 80" className="size-[84px] shrink-0" aria-hidden>
+      <circle cx="40" cy="40" r="34" className="fill-none stroke-divider [stroke-width:1]" />
       {Array.from({ length: 36 }, (_, i) => {
         const a = (i * 10 * Math.PI) / 180;
         const major = i % 9 === 0;
@@ -61,7 +77,7 @@ function Compass({ dir }) {
             y1={40 - Math.cos(a) * 34}
             x2={40 + Math.sin(a) * (major ? 28 : 31)}
             y2={40 - Math.cos(a) * (major ? 28 : 31)}
-            className={major ? 'compass__tick compass__tick--major' : 'compass__tick'}
+            className={major ? 'stroke-muted [stroke-width:1.6]' : 'stroke-faint opacity-60 [stroke-width:1]'}
           />
         );
       })}
@@ -71,13 +87,13 @@ function Compass({ dir }) {
         ['S', 40, 65],
         ['W', 19, 43],
       ].map(([t, x, y]) => (
-        <text key={t} x={x} y={y} textAnchor="middle" className="compass__label">
+        <text key={t} x={x} y={y} textAnchor="middle" className="fill-muted font-sans text-[8px] font-bold">
           {t}
         </text>
       ))}
       {dir != null && (
         // Arrow points where the wind is blowing to (opposite of where it comes from).
-        <g transform={`rotate(${dir + 180} 40 40)`} className="compass__arrow">
+        <g transform={`rotate(${dir + 180} 40 40)`} className="fill-accent stroke-accent [&_line]:[stroke-linecap:round] [&_line]:[stroke-width:2.5]">
           <line x1="40" y1="56" x2="40" y2="26" />
           <path d="M40 20l-6 9h12z" />
           <circle cx="40" cy="58" r="3" />
@@ -89,7 +105,7 @@ function Compass({ dir }) {
 
 function SunArc({ now, sunrise, sunset, fmt, daylight }) {
   if (sunrise == null || sunset == null) {
-    return <p className="tile__note">No sunrise or sunset today (polar day or night).</p>;
+    return <p className={NOTE}>No sunrise or sunset today (polar day or night).</p>;
   }
   const t = Math.min(Math.max((now - sunrise) / (sunset - sunrise), 0), 1);
   const up = now >= sunrise && now <= sunset;
@@ -97,8 +113,8 @@ function SunArc({ now, sunrise, sunset, fmt, daylight }) {
   const y = 80 - 66 * Math.sin(Math.PI * t);
 
   return (
-    <div className="sun">
-      <svg viewBox="0 0 200 92" className="sun__svg" aria-hidden>
+    <div>
+      <svg viewBox="0 0 200 92" className="block max-h-[110px] w-full overflow-visible" aria-hidden>
         <defs>
           <linearGradient id="sun-arc" x1="0" x2="1">
             <stop offset="0" stopColor="#f97316" />
@@ -106,27 +122,35 @@ function SunArc({ now, sunrise, sunset, fmt, daylight }) {
             <stop offset="1" stopColor="#f97316" />
           </linearGradient>
         </defs>
-        <line x1="5" y1="80" x2="195" y2="80" className="sun__horizon" />
-        <path d="M15 80 A85 66 0 0 1 185 80" className="sun__track" />
+        <line x1="5" y1="80" x2="195" y2="80" className="stroke-divider [stroke-width:1]" />
         <path
           d="M15 80 A85 66 0 0 1 185 80"
-          className="sun__progress"
+          className="fill-none stroke-faint opacity-60 [stroke-dasharray:3_4] [stroke-width:1.5]"
+        />
+        <path
+          d="M15 80 A85 66 0 0 1 185 80"
+          className="fill-none [stroke-linecap:round] [stroke-width:3]"
           pathLength="1"
           strokeDasharray={`${t} 1`}
           stroke="url(#sun-arc)"
         />
-        <circle cx={x} cy={y} r={up ? 7 : 5} className={up ? 'sun__dot' : 'sun__dot is-down'} />
+        <circle
+          cx={x}
+          cy={y}
+          r={up ? 7 : 5}
+          className={up ? 'fill-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]' : 'fill-faint'}
+        />
       </svg>
-      <div className="sun__times">
+      <div className="mt-1.5 flex justify-between font-bold [&_small]:text-[11px] [&_small]:font-semibold [&_small]:text-faint [&>span]:flex [&>span]:flex-col">
         <span>
           <small>Sunrise</small>
           {fmt.clock(sunrise)}
         </span>
-        <span className="sun__daylight">
+        <span className="text-center">
           <small>Daylight</small>
           {formatDuration(daylight)}
         </span>
-        <span>
+        <span className="text-right">
           <small>Sunset</small>
           {fmt.clock(sunset)}
         </span>
@@ -164,11 +188,9 @@ export function DetailsGrid({ weather }) {
   const visNote = vis == null ? '' : vis >= 10000 ? 'Perfectly clear view.' : vis >= 4000 ? 'Slight haze.' : 'Poor visibility, take care.';
 
   return (
-    <section className="block">
-      <h2 className="section-title">
-        <LayoutGrid size={14} /> Conditions
-      </h2>
-      <div className="tiles">
+    <section className="min-w-0">
+      <SectionTitle icon={LayoutGrid}>Conditions</SectionTitle>
+      <div className="grid grid-cols-2 gap-2.5">
         <Tile icon={Sunrise} title="Sun" wide>
           <SunArc
             now={current.time ?? Date.now() / 1000}
@@ -180,45 +202,45 @@ export function DetailsGrid({ weather }) {
         </Tile>
 
         <Tile icon={Wind} title="Wind" wide>
-          <div className="tile__split">
+          <div className="flex flex-wrap items-center justify-between gap-1">
             <div>
-              <p className="tile__value">{formatWind(current.wind.speed, units)}</p>
-              <p className="tile__note">
+              <p className={VALUE}>{formatWind(current.wind.speed, units)}</p>
+              <p className={NOTE}>
                 {windWord(current.wind.speed)} from {compassPoint(current.wind.dir)}
               </p>
-              <p className="tile__note">Gusts {formatWind(current.wind.gust, units)}</p>
+              <p className={NOTE}>Gusts {formatWind(current.wind.gust, units)}</p>
             </div>
             <Compass dir={current.wind.dir} />
           </div>
         </Tile>
 
         <Tile icon={Thermometer} title="Feels like">
-          <p className="tile__value">{formatTemp(current.feelsLike, units)}</p>
-          <p className="tile__note">{feelsNote}</p>
+          <p className={VALUE}>{formatTemp(current.feelsLike, units)}</p>
+          <p className={NOTE}>{feelsNote}</p>
         </Tile>
 
         <Tile icon={SunMedium} title="UV index">
           {uvInfo ? (
             <>
-              <p className="tile__value">
-                {Math.round(uv)} <span style={{ color: uvInfo.color }}>{uvInfo.label}</span>
+              <p className={VALUE}>
+                {Math.round(uv)} <span className={LABEL} style={{ color: uvInfo.color }}>{uvInfo.label}</span>
               </p>
               <Meter value={uv} max={11} gradient={UV_GRADIENT} label="UV index" />
-              <p className="tile__note">{uvInfo.advice}</p>
+              <p className={NOTE}>{uvInfo.advice}</p>
             </>
           ) : (
-            <p className="tile__note">Not available</p>
+            <p className={NOTE}>Not available</p>
           )}
         </Tile>
 
         <Tile icon={Droplets} title="Humidity">
-          <p className="tile__value">{current.humidity != null ? `${Math.round(current.humidity)}%` : '--'}</p>
-          <p className="tile__note">The dew point is {formatTemp(current.dewPoint, units)} right now.</p>
+          <p className={VALUE}>{current.humidity != null ? `${Math.round(current.humidity)}%` : '--'}</p>
+          <p className={NOTE}>The dew point is {formatTemp(current.dewPoint, units)} right now.</p>
         </Tile>
 
         <Tile icon={CloudRain} title="Precipitation">
-          <p className="tile__value">{formatPrecip(today.precipSum, units)}</p>
-          <p className="tile__note">
+          <p className={VALUE}>{formatPrecip(today.precipSum, units)}</p>
+          <p className={NOTE}>
             Today · {formatPrecip(next24, units)} expected in the next 24 h.
           </p>
         </Tile>
@@ -226,12 +248,12 @@ export function DetailsGrid({ weather }) {
         <Tile icon={Leaf} title="Air quality" wide>
           {aqiInfo ? (
             <>
-              <p className="tile__value">
-                {Math.round(aqi)} <span style={{ color: aqiInfo.color }}>{aqiInfo.label}</span>
+              <p className={VALUE}>
+                {Math.round(aqi)} <span className={LABEL} style={{ color: aqiInfo.color }}>{aqiInfo.label}</span>
               </p>
               <Meter value={aqi} max={300} gradient={AQI_GRADIENT} label="US air quality index" />
-              <p className="tile__note">{aqiInfo.advice}</p>
-              <dl className="pollutants">
+              <p className={NOTE}>{aqiInfo.advice}</p>
+              <dl className="mt-3 grid grid-cols-4 gap-2 text-center [&_dd]:mt-0.5 [&_dd]:font-bold [&_dt]:text-[11px] [&_dt]:text-faint [&>div]:rounded-[10px] [&>div]:bg-surface [&>div]:p-2">
                 {[
                   ['PM2.5', air.pm25],
                   ['PM10', air.pm10],
@@ -244,42 +266,42 @@ export function DetailsGrid({ weather }) {
                   </div>
                 ))}
               </dl>
-              <p className="tile__note tile__note--faint">US AQI · pollutants in µg/m³</p>
+              <p className="mt-1.5 text-[11px] leading-[1.4] text-faint">US AQI · pollutants in µg/m³</p>
             </>
           ) : (
-            <p className="tile__note">Air quality data is not available here.</p>
+            <p className={NOTE}>Air quality data is not available here.</p>
           )}
         </Tile>
 
         <Tile icon={Gauge} title="Pressure">
-          <p className="tile__value">{formatPressure(current.pressure, units)}</p>
-          <p className="tile__note">At sea level.</p>
+          <p className={VALUE}>{formatPressure(current.pressure, units)}</p>
+          <p className={NOTE}>At sea level.</p>
         </Tile>
 
         <Tile icon={Eye} title="Visibility">
-          <p className="tile__value">{formatVisibility(vis, units)}</p>
-          <p className="tile__note">{visNote}</p>
+          <p className={VALUE}>{formatVisibility(vis, units)}</p>
+          <p className={NOTE}>{visNote}</p>
         </Tile>
 
         <Tile icon={CalendarClock} title="Tomorrow">
           {tomorrow ? (
             <>
-              <p className="tile__value">
-                {formatTemp(tomorrow.max, units)} <span className="tile__low">/ {formatTemp(tomorrow.min, units)}</span>
+              <p className={VALUE}>
+                {formatTemp(tomorrow.max, units)} <span className="text-lg font-light text-muted">/ {formatTemp(tomorrow.min, units)}</span>
               </p>
-              <p className="tile__note">
+              <p className={NOTE}>
                 {describeWeather(tomorrow.code).label}
                 {(tomorrow.pop ?? 0) >= 20 ? ` · ${tomorrow.pop}% chance of rain` : ''}
               </p>
             </>
           ) : (
-            <p className="tile__note">Not available</p>
+            <p className={NOTE}>Not available</p>
           )}
         </Tile>
 
         <Tile icon={Cloudy} title="Cloud cover">
-          <p className="tile__value">{current.cloudCover != null ? `${Math.round(current.cloudCover)}%` : '--'}</p>
-          <p className="tile__note">
+          <p className={VALUE}>{current.cloudCover != null ? `${Math.round(current.cloudCover)}%` : '--'}</p>
+          <p className={NOTE}>
             {current.cloudCover == null
               ? ''
               : current.cloudCover < 20

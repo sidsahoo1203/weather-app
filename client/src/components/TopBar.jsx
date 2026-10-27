@@ -1,7 +1,12 @@
 import { LocateFixed, Loader2, Moon, Sun } from 'lucide-react';
 import { useSettings } from '../context/settings.js';
 import { SearchBox } from './SearchBox.jsx';
-import './TopBar.css';
+import { IconButton, Segmented } from './ui.jsx';
+
+const UNIT_OPTIONS = [
+  { value: 'metric', label: '°C' },
+  { value: 'imperial', label: '°F' },
+];
 
 function Logo() {
   return (
@@ -23,44 +28,42 @@ export function TopBar({ onSelect, onLocate, locating, favorites, recents }) {
   const { units, setUnits, theme, setTheme } = useSettings();
 
   return (
-    <header className="topbar glass">
-      <a className="brand" href="/" aria-label="Atmos home">
+    <header className="glass relative z-[1100] flex flex-wrap items-center gap-2.5 border-b border-edge px-3 py-2.5 desk:absolute desk:inset-x-4 desk:top-4 desk:h-16 desk:flex-nowrap desk:gap-4 desk:rounded-[20px] desk:border desk:py-0 desk:pr-2.5 desk:pl-4">
+      <a
+        className="mr-2 flex items-center gap-2.5 font-display text-[19px] font-semibold tracking-[-0.01em] text-fg no-underline"
+        href="/"
+        aria-label="Atmos home"
+      >
         <Logo />
-        <span>Atmos</span>
+        <span className="hidden desk:inline">Atmos</span>
       </a>
 
-      <SearchBox onSelect={onSelect} favorites={favorites} recents={recents} />
+      <SearchBox
+        onSelect={onSelect}
+        favorites={favorites}
+        recents={recents}
+        className="order-3 basis-full desk:order-none desk:max-w-[520px] desk:basis-auto"
+      />
 
-      <div className="topbar__actions">
-        <button
-          type="button"
-          className="icon-btn"
-          onClick={onLocate}
-          aria-label="Use my location"
-          title="Use my location"
-          disabled={locating}
-        >
-          {locating ? <Loader2 size={20} className="search__spinner" /> : <LocateFixed size={20} />}
-        </button>
+      <div className="ml-auto flex items-center gap-1.5">
+        <IconButton onClick={onLocate} aria-label="Use my location" title="Use my location" disabled={locating}>
+          {locating ? <Loader2 size={20} className="animate-spin" /> : <LocateFixed size={20} />}
+        </IconButton>
 
-        <div className="segmented" role="group" aria-label="Temperature units">
-          <button type="button" aria-pressed={units === 'metric'} onClick={() => setUnits('metric')}>
-            °C
-          </button>
-          <button type="button" aria-pressed={units === 'imperial'} onClick={() => setUnits('imperial')}>
-            °F
-          </button>
-        </div>
+        <Segmented
+          label="Temperature units"
+          options={UNIT_OPTIONS}
+          value={units}
+          onChange={setUnits}
+        />
 
-        <button
-          type="button"
-          className="icon-btn"
+        <IconButton
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
           title="Toggle theme"
         >
           {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
+        </IconButton>
       </div>
     </header>
   );
