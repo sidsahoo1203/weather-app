@@ -27,10 +27,11 @@ A map-first, full-stack weather explorer. The whole screen is a live map; the fo
 
 ```
 weather-app/
-├── client/          React 18 + Vite SPA → deployed on Vercel
+├── client/          React 18 + Vite + Tailwind CSS v4 SPA → deployed on Vercel
 │   ├── vercel.json   Vercel settings (Root Directory = client)
 │   └── src/
-│       ├── components/   Map, panels, charts, animated icons
+│       ├── index.css     Tailwind entry: theme tokens, keyframes, Leaflet overrides
+│       ├── components/   Map, panels, charts, animated icons (ui.jsx: shared primitives)
 │       ├── hooks/        TanStack Query data hooks, geolocation, saved places
 │       ├── lib/          API client, units, time zones, colour scales, summaries
 │       └── context/      Units + theme settings
@@ -71,6 +72,29 @@ If a tile service fails, the map switches to OpenStreetMap on its own.
 | `GET /api/geocode/search?q=` | Up to 8 matching places |
 | `GET /api/geocode/reverse?lat=&lon=` | `{ name, district, state, stateCode, country, countryCode }` |
 | `GET /api/region?lat=&lon=` | The state containing the point and its top 40 cities with current weather |
+
+### Styling
+
+Styling uses **Tailwind CSS v4** utility classes in the components. `client/src/index.css`
+holds everything else:
+- **Design tokens.** Colours are CSS variables, switched by `data-theme` (dark/light) and by
+  `data-mood` (the current weather's accent), and exposed to Tailwind as `bg-surface`,
+  `text-muted`, `bg-accent/16` and so on.
+- **Custom variants and breakpoints.** `dark:` and `light:` follow the in-app theme toggle. `desk:`
+  (≥ 901 px) switches from the stacked phone layout to the floating panels over the map.
+- **Keyframes** for the animated weather icons.
+- **A few rules for Leaflet's own markup.**
+
+Repeated patterns (icon buttons, segmented toggles, section titles, skeletons) are small components in
+`client/src/components/ui.jsx`.
+
+### Performance
+
+- The map (Leaflet) is lazy-loaded as its own chunk, so the forecast renders before it.
+- Map markers are memoized and keep stable event handlers. The map component only re-renders
+  when its own props change.
+- `index.html` preconnects to Open-Meteo and the tile servers. Built assets are served with
+  long-lived immutable caching.
 
 ## Local development
 

@@ -5,6 +5,7 @@ import { timeFormatters } from '../lib/time.js';
 import { tempGradient, tempColor } from '../lib/scales.js';
 import { describeWeather } from '../lib/weatherCodes.js';
 import { useSettings } from '../context/settings.js';
+import { SectionTitle } from './ui.jsx';
 
 export function DailyForecast({ weather }) {
   const { units } = useSettings();
@@ -19,29 +20,31 @@ export function DailyForecast({ weather }) {
   const now = weather.current.temp;
 
   return (
-    <section className="block">
-      <h2 className="section-title">
-        <CalendarDays size={14} /> {days.length}-day forecast
-      </h2>
-      <ol className="daily">
+    <section className="min-w-0">
+      <SectionTitle icon={CalendarDays}>{days.length}-day forecast</SectionTitle>
+      <ol className="m-0 list-none p-0">
         {days.map((d, i) => {
           const label = i === 0 ? 'Today' : fmt.weekday(d.time);
           return (
-            <li key={d.time} className="daily__row" title={`${fmt.longDay(d.time)}: ${describeWeather(d.code).label}`}>
-              <span className="daily__day">{label}</span>
-              <span className="daily__icon">
+            <li
+              key={d.time}
+              className="grid grid-cols-[52px_44px_38px_1fr_38px] items-center gap-2.5 border-b border-divider py-[7px] last:border-b-0"
+              title={`${fmt.longDay(d.time)}: ${describeWeather(d.code).label}`}
+            >
+              <span className="font-semibold">{label}</span>
+              <span className="relative grid justify-items-center">
                 <WeatherIcon code={d.code} size={28} />
                 {(d.pop ?? 0) >= 20 && (
-                  <span className="daily__pop">
+                  <span className="-mt-0.5 flex items-center gap-px text-[10px] font-bold text-blue-400">
                     <Droplet size={10} aria-hidden />
                     {d.pop}%
                   </span>
                 )}
               </span>
-              <span className="daily__min">{formatTemp(d.min, units)}</span>
-              <span className="daily__track" aria-hidden>
+              <span className="text-right text-muted">{formatTemp(d.min, units)}</span>
+              <span className="relative h-1.5 rounded-[3px] bg-surface-hover" aria-hidden>
                 <span
-                  className="daily__range"
+                  className="absolute inset-y-0 rounded-[3px]"
                   style={{
                     left: `${pct(d.min)}%`,
                     width: `${Math.max(pct(d.max) - pct(d.min), 3)}%`,
@@ -50,12 +53,12 @@ export function DailyForecast({ weather }) {
                 />
                 {i === 0 && now != null && (
                   <span
-                    className="daily__now"
+                    className="absolute top-1/2 -mt-[5px] -ml-[5px] size-2.5 rounded-full border-[3px] bg-bg"
                     style={{ left: `${Math.min(Math.max(pct(now), 0), 100)}%`, borderColor: tempColor(now) }}
                   />
                 )}
               </span>
-              <span className="daily__max">{formatTemp(d.max, units)}</span>
+              <span className="font-bold">{formatTemp(d.max, units)}</span>
             </li>
           );
         })}

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import { useQuery } from '@tanstack/react-query';
@@ -8,7 +8,8 @@ import { formatTemp } from '../lib/units.js';
 import { tempColor } from '../lib/scales.js';
 import { cityToLocation, isNear } from '../lib/places.js';
 import { useSettings } from '../context/settings.js';
-import './MapView.css';
+import { IconButton } from './ui.jsx';
+import { cn } from '../lib/cn.js';
 
 // Keyless tile services. CARTO's basemaps now need an API key, so they are not used.
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services';
@@ -140,19 +141,34 @@ function MapEvents({ onSelect, onZoom }) {
   return null;
 }
 
-function CityMarker({ city, region, units, selected, onSelect }) {
+// Leaflet markers are plain HTML strings, so their Tailwind classes live here. Labels
+// show on hover, for the selected city, and for every city once the map wrapper sets
+// data-labels (zoomed in). data-far (zoomed out) shrinks the temperature pills.
+const PIN =
+  'group/pin absolute flex -translate-x-1/2 -translate-y-1/2 cursor-pointer flex-col items-center gap-[3px] whitespace-nowrap';
+const PIN_TEMP =
+  'min-w-[38px] rounded-full bg-(--t) px-[7px] py-[3px] text-center text-xs font-extrabold text-[#0b1020] shadow-[0_4px_14px_-4px_rgba(0,0,0,0.6),0_0_0_2px_rgba(255,255,255,0.25)] transition-transform duration-200 group-hover/pin:scale-112 group-data-selected/pin:scale-112 group-data-selected/pin:shadow-[0_0_0_3px_var(--accent),0_6px_20px_-4px_rgba(0,0,0,0.7)] group-data-far/map:min-w-[30px] group-data-far/map:px-[5px] group-data-far/map:py-0.5 group-data-far/map:text-[10px]';
+const PIN_NAME =
+  'pointer-events-none -translate-y-0.5 rounded-md bg-glass px-1.5 py-px text-[11px] font-bold text-fg opacity-0 backdrop-blur-sm transition duration-200 group-hover/pin:translate-y-0 group-hover/pin:opacity-100 group-data-selected/pin:translate-y-0 group-data-selected/pin:opacity-100 group-data-labels/map:translate-y-0 group-data-labels/map:opacity-100';
+
+const CityMarker = memo(function CityMarker({ city, region, units, selected, onSelect }) {
   const temp = city.current?.temp;
   const icon = useMemo(
     () =>
       L.divIcon({
-        className: 'pin-anchor',
+        className: '',
         iconSize: [0, 0],
-        html: `<div class="pin${selected ? ' is-selected' : ''}" style="--t:${tempColor(temp)}">
-          <span class="pin__temp">${formatTemp(temp, units)}</span>
-          <span class="pin__name">${escapeHtml(city.name)}</span>
+        html: `<div class="${PIN}"${selected ? ' data-selected' : ''} style="--t:${tempColor(temp)}">
+          <span class="${PIN_TEMP}">${formatTemp(temp, units)}</span>
+          <span class="${PIN_NAME}">${escapeHtml(city.name)}</span>
         </div>`,
       }),
     [temp, units, selected, city.name],
+  );
+  // A stable handler object stops react-leaflet re-binding the click listener on every render.
+  const handlers = useMemo(
+    () => ({ click: () => onSelect(cityToLocation(city, region)) }),
+    [onSelect, city, region],
   );
   return (
     <Marker
@@ -161,21 +177,21 @@ function CityMarker({ city, region, units, selected, onSelect }) {
       zIndexOffset={selected ? 1000 : Math.round(city.population / 1e5)}
       title={city.name}
       keyboard
-      eventHandlers={{ click: () => onSelect(cityToLocation(city, region)) }}
+      eventHandlers={handlers}
     />
   );
-}
+});
 
 const selectedIcon = L.divIcon({
-  className: 'pin-anchor',
+  className: '',
   iconSize: [0, 0],
-  html: '<div class="target"><span></span></div>',
+  html: '<div class="pointer-events-none absolute size-[18px] -translate-x-1/2 -translate-y-1/2 animate-pulse-ring rounded-full border-[3px] border-white bg-accent"></div>',
 });
 
 const userIcon = L.divIcon({
-  className: 'pin-anchor',
+  className: '',
   iconSize: [0, 0],
-  html: '<div class="me" title="You are here"></div>',
+  html: '<div class="absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-blue-500 shadow-[0_0_0_6px_rgba(59,130,246,0.25)]" title="You are here"></div>',
 });
 
 // RainViewer: free precipitation radar mosaics, updated every 10 minutes.
@@ -208,7 +224,7 @@ function RadarLayers({ host, frames, index }) {
   ));
 }
 
-export function MapView({ location, userPosition, cities, region, regionKey, onSelect, onLocate, initialCenter }) {
+export const MapView = memo(function MapView({ className, location, userPosition, cities, region, regionKey, onSelect, onLocate, initialCenter }) {
   const { theme, units } = useSettings();
   const [map, setMap] = useState(null);
   const [zoom, setZoom] = useState(7);
@@ -238,14 +254,18 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
   const center = initialCenter || [location?.lat ?? 20, location?.lon ?? 78];
 
   return (
-    <div className={`map-wrap zoom-${Math.min(Math.max(zoom, 3), 12)}`}>
+    <div
+      className={cn('group/map', className)}
+      data-labels={zoom >= 9 || undefined}
+      data-far={zoom <= 5 || undefined}
+    >
       <MapContainer
         center={center}
         zoom={7}
         minZoom={3}
         zoomControl={false}
         worldCopyJump
-        className="map"
+        className="size-full"
         ref={setMap}
       >
         <Basemap style={basemap} onFailed={onTilesFailed} />
@@ -271,30 +291,30 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
         {userPosition && <Marker position={[userPosition.lat, userPosition.lon]} icon={userIcon} interactive={false} />}
       </MapContainer>
 
-      <div className="map-controls glass" role="toolbar" aria-label="Map controls">
-        <button type="button" className="icon-btn" onClick={() => map?.zoomIn()} aria-label="Zoom in">
+      <div
+        className="glass absolute right-3 bottom-3 z-[1000] flex flex-col rounded-2xl border border-edge p-1 desk:right-[calc(1rem+var(--region-w)+12px)] desk:bottom-7"
+        role="toolbar"
+        aria-label="Map controls"
+      >
+        <IconButton onClick={() => map?.zoomIn()} aria-label="Zoom in">
           <Plus size={18} />
-        </button>
-        <button type="button" className="icon-btn" onClick={() => map?.zoomOut()} aria-label="Zoom out">
+        </IconButton>
+        <IconButton onClick={() => map?.zoomOut()} aria-label="Zoom out">
           <Minus size={18} />
-        </button>
-        <button type="button" className="icon-btn" onClick={onLocate} aria-label="Go to my location">
+        </IconButton>
+        <IconButton onClick={onLocate} aria-label="Go to my location">
           <Crosshair size={18} />
-        </button>
-        <button
-          type="button"
-          className="icon-btn"
-          aria-pressed={satellite}
+        </IconButton>
+        <IconButton
+          pressed={satellite}
           onClick={() => setSatellite((on) => !on)}
           aria-label="Toggle satellite view"
           title={satellite ? 'Map view' : 'Satellite view'}
         >
           <Layers size={18} />
-        </button>
-        <button
-          type="button"
-          className="icon-btn"
-          aria-pressed={radarOn}
+        </IconButton>
+        <IconButton
+          pressed={radarOn}
           onClick={() => {
             setRadarOn((on) => !on);
             setPlaying(false);
@@ -304,25 +324,27 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
           title="Rain radar"
         >
           <CloudRain size={18} />
-        </button>
+        </IconButton>
       </div>
 
       {radarOn && (
-        <div className="radar-bar glass" role="group" aria-label="Radar timeline">
+        <div
+          className="glass absolute right-[76px] bottom-3 left-3 z-[1000] flex items-center gap-2.5 rounded-2xl border border-edge py-1 pr-4 pl-1 desk:right-auto desk:bottom-7 desk:left-1/2 desk:min-w-[300px] desk:translate-x-[calc(-50%+(var(--weather-w)-var(--region-w))/2)]"
+          role="group"
+          aria-label="Radar timeline"
+        >
           {radar.isError ? (
-            <span className="radar-bar__msg">Radar is unavailable right now.</span>
+            <span className="px-3 py-2.5 text-[13px] text-muted">Radar is unavailable right now.</span>
           ) : !frames.length ? (
-            <span className="radar-bar__msg">Loading radar…</span>
+            <span className="px-3 py-2.5 text-[13px] text-muted">Loading radar…</span>
           ) : (
             <>
-              <button
-                type="button"
-                className="icon-btn"
+              <IconButton
                 onClick={() => setPlaying((p) => !p)}
                 aria-label={playing ? 'Pause radar animation' : 'Play radar animation'}
               >
                 {playing ? <Pause size={16} /> : <Play size={16} />}
-              </button>
+              </IconButton>
               <input
                 type="range"
                 min={0}
@@ -333,12 +355,13 @@ export function MapView({ location, userPosition, cities, region, regionKey, onS
                   setFrameIndex(Number(e.target.value));
                 }}
                 aria-label="Radar frame"
+                className="flex-1 accent-accent"
               />
-              <span className="radar-bar__time">{activeFrame === latest ? `Now · ${frameTime}` : frameTime}</span>
+              <span className="min-w-[82px] text-right text-xs font-bold tabular-nums">{activeFrame === latest ? `Now · ${frameTime}` : frameTime}</span>
             </>
           )}
         </div>
       )}
     </div>
   );
-}
+});

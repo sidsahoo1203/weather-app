@@ -10,6 +10,11 @@
       content="Atmos: live weather on an interactive map. Hourly and 10-day forecasts, air quality, rain radar and conditions across every city in your state."
     />
     <title>Atmos · Live Weather Map</title>
+    <!-- Open connections early: the forecast fetch (CORS) and the map tiles start right after the JS runs. -->
+    <link rel="preconnect" href="https://api.open-meteo.com" crossorigin />
+    <link rel="preconnect" href="https://air-quality-api.open-meteo.com" crossorigin />
+    <link rel="preconnect" href="https://server.arcgisonline.com" />
+    <link rel="dns-prefetch" href="https://tile.openstreetmap.org" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

@@ -6,13 +6,24 @@ import { tempColor } from '../lib/scales.js';
 import { describeWeather } from '../lib/weatherCodes.js';
 import { useSettings } from '../context/settings.js';
 import { cityToLocation, isNear } from '../lib/places.js';
-import './RegionPanel.css';
+import { cn } from '../lib/cn.js';
+import { CARD, Segmented, Skeleton } from './ui.jsx';
 
 const SORTS = {
   warm: { label: 'Warmest', fn: (a, b) => (b.current?.temp ?? -99) - (a.current?.temp ?? -99) },
   cool: { label: 'Coolest', fn: (a, b) => (a.current?.temp ?? 99) - (b.current?.temp ?? 99) },
   name: { label: 'A–Z', fn: (a, b) => a.name.localeCompare(b.name) },
 };
+const SORT_OPTIONS = Object.entries(SORTS).map(([value, { label }]) => ({ value, label }));
+
+const EXTREME = cn(
+  CARD,
+  'grid grid-cols-[auto_1fr] items-center gap-x-1.5 rounded-xl p-2.5 text-left transition-colors duration-200 hover:bg-surface-hover',
+);
+
+// Temperature chip tinted by --t (the temperature colour), darker text in the light theme.
+const TEMP_CHIP =
+  'min-w-12 rounded-[9px] bg-[color-mix(in_srgb,var(--t)_14%,transparent)] px-2 py-1 text-center text-sm font-extrabold text-(--t) light:bg-[color-mix(in_srgb,var(--t)_22%,transparent)] light:text-[color-mix(in_srgb,var(--t)_62%,#000)]';
 
 export function RegionPanel({ regionQuery, location, onSelect, collapsed, onToggleCollapsed }) {
   const { units } = useSettings();
@@ -28,65 +39,92 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
   const title = region ? (region.scope === 'state' ? region.name : `Near ${region.name || 'here'}`) : 'Your state';
 
   return (
-    <div className={`region ${collapsed ? 'is-collapsed' : ''}`}>
-      <button type="button" className="region__head" onClick={onToggleCollapsed} aria-expanded={!collapsed}>
-        <span className="region__icon">
+    <div className="flex max-h-full min-h-0 flex-col">
+      {/* On phones the list is its own tab, so it is never collapsed. */}
+      <button
+        type="button"
+        className="flex w-full items-center gap-3 rounded-[22px] px-4 py-3.5 text-left max-desk:pointer-events-none"
+        onClick={onToggleCollapsed}
+        aria-expanded={!collapsed}
+      >
+        <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-accent/16 text-accent">
           <MapIcon size={16} />
         </span>
-        <span className="region__titles">
-          <span className="region__eyebrow">Across</span>
-          <span className="region__title">{title}</span>
+        <span className="flex min-w-0 flex-1 flex-col">
+          <span className="text-[11px] font-bold tracking-[0.08em] text-faint uppercase">Across</span>
+          <span className="truncate font-display text-lg font-semibold">{title}</span>
         </span>
-        <ChevronDown size={18} className="region__chev" aria-hidden />
+        <ChevronDown
+          size={18}
+          className={cn('hidden text-muted transition-transform duration-300 desk:block', collapsed && '-rotate-90')}
+          aria-hidden
+        />
       </button>
 
-      {!collapsed && (
-        <div className="region__body">
+      <div className={cn('flex min-h-0 flex-col px-3 pb-3', collapsed && 'desk:hidden')}>
           {isPending ? (
-            <ul className="region__list" aria-busy="true">
+            <ul className="m-0 list-none p-0" aria-busy="true">
               {Array.from({ length: 7 }, (_, i) => (
-                <li key={i} className="region__skeleton">
-                  <div className="skeleton" style={{ height: 40 }} />
+                <li key={i} className="py-1">
+                  <Skeleton className="h-10" />
                 </li>
               ))}
             </ul>
           ) : isError && !data ? (
-            <p className="region__msg">
+            <p className="mx-1 mb-1.5 flex gap-2 text-[13px] text-muted">
               <AlertTriangle size={16} /> {error?.message || 'Could not load nearby cities.'}
             </p>
           ) : !cities.length ? (
-            <p className="region__msg">No cities found around this point. Try another spot on the map.</p>
+            <p className="mx-1 mb-1.5 flex gap-2 text-[13px] text-muted">No cities found around this point. Try another spot on the map.</p>
           ) : (
             <>
-              <p className="region__meta">
+              <p className="mx-1 -mt-1.5 mb-2.5 text-xs text-muted">
                 {cities.length} {region?.scope === 'state' ? 'cities & towns' : 'places nearby'}
                 {region?.country ? ` · ${region.country}` : ''}
               </p>
 
               {hottest && coolest && hottest !== coolest && (
-                <div className="region__extremes">
-                  <button type="button" onClick={() => onSelect(cityToLocation(hottest, region))}>
+                <div className="mb-2.5 grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    className={EXTREME}
+                    onClick={() => onSelect(cityToLocation(hottest, region))}
+                  >
                     <Flame size={14} style={{ color: tempColor(hottest.current.temp) }} />
-                    <span>{hottest.name}</span>
-                    <strong>{formatTemp(hottest.current.temp, units)}</strong>
+                    <span className="truncate text-xs text-muted">{hottest.name}</span>
+                    <strong className="col-span-full font-display text-xl font-normal">
+                      {formatTemp(hottest.current.temp, units)}
+                    </strong>
                   </button>
-                  <button type="button" onClick={() => onSelect(cityToLocation(coolest, region))}>
+                  <button
+                    type="button"
+                    className={EXTREME}
+                    onClick={() => onSelect(cityToLocation(coolest, region))}
+                  >
                     <Snowflake size={14} style={{ color: tempColor(coolest.current.temp) }} />
-                    <span>{coolest.name}</span>
-                    <strong>{formatTemp(coolest.current.temp, units)}</strong>
+                    <span className="truncate text-xs text-muted">{coolest.name}</span>
+                    <strong className="col-span-full font-display text-xl font-normal">
+                      {formatTemp(coolest.current.temp, units)}
+                    </strong>
                   </button>
                 </div>
               )}
 
-              <div className="segmented region__sort" role="group" aria-label="Sort cities">
-                {Object.entries(SORTS).map(([key, s]) => (
-                  <button key={key} type="button" aria-pressed={sort === key} onClick={() => setSort(key)}>
-                    {s.label}
-                  </button>
-                ))}
-              </div>
+              <Segmented
+                label="Sort cities"
+                options={SORT_OPTIONS}
+                value={sort}
+                onChange={setSort}
+                stretch
+                className="mb-2"
+              />
 
-              <ul className={`region__list scroll-y ${isPlaceholderData && isFetching ? 'is-refreshing' : ''}`}>
+              <ul
+                className={cn(
+                  'scrollbar-thin -mx-1 my-0 min-h-0 list-none overflow-y-auto overscroll-contain px-1 transition-opacity duration-300',
+                  isPlaceholderData && isFetching && 'opacity-50',
+                )}
+              >
                 {cities.map((city) => {
                   const selected = isNear(city, location);
                   const c = city.current;
@@ -94,16 +132,19 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
                     <li key={city.id}>
                       <button
                         type="button"
-                        className={`region__city ${selected ? 'is-selected' : ''}`}
+                        className={cn(
+                          'grid w-full grid-cols-[30px_1fr_auto] items-center gap-2.5 rounded-xl px-2 py-[7px] text-left transition-colors duration-150 hover:bg-surface-hover',
+                          selected && 'bg-accent/16 shadow-[inset_0_0_0_1px_color-mix(in_srgb,var(--accent)_45%,transparent)]',
+                        )}
                         onClick={() => onSelect(cityToLocation(city, region))}
                         aria-current={selected ? 'location' : undefined}
                       >
-                        {c ? <WeatherIcon code={c.code} isDay={c.isDay} size={30} /> : <span className="region__noicon" />}
-                        <span className="region__name">
+                        {c ? <WeatherIcon code={c.code} isDay={c.isDay} size={30} /> : <span className="size-[30px]" />}
+                        <span className="flex min-w-0 flex-col truncate text-sm/[1.45] font-semibold">
                           {city.name}
-                          <small>{c ? describeWeather(c.code, c.isDay).label : 'No data'}</small>
+                          <small className="text-xs/[1.45] font-medium text-faint">{c ? describeWeather(c.code, c.isDay).label : 'No data'}</small>
                         </span>
-                        <span className="region__temp" style={{ '--t': tempColor(c?.temp) }}>
+                        <span className={TEMP_CHIP} style={{ '--t': tempColor(c?.temp) }}>
                           {formatTemp(c?.temp, units)}
                         </span>
                       </button>
@@ -113,8 +154,7 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
               </ul>
             </>
           )}
-        </div>
-      )}
+      </div>
     </div>
   );
 }

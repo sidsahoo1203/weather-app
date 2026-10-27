@@ -5,6 +5,8 @@ import { toUnitTemp, compassPoint } from '../lib/units.js';
 import { timeFormatters } from '../lib/time.js';
 import { tempColor } from '../lib/scales.js';
 import { useSettings } from '../context/settings.js';
+import { cn } from '../lib/cn.js';
+import { Segmented, SectionTitle } from './ui.jsx';
 
 const HOURS = 25;
 const COL = 58;
@@ -33,10 +35,12 @@ function smoothPath(points) {
 const toUnitWind = (kmh, units) => (units === 'imperial' ? kmh / 1.609344 : kmh);
 
 const TABS = [
-  { id: 'temp', label: 'Temperature' },
-  { id: 'precip', label: 'Precipitation' },
-  { id: 'wind', label: 'Wind' },
+  { value: 'temp', label: 'Temperature' },
+  { value: 'precip', label: 'Precipitation' },
+  { value: 'wind', label: 'Wind' },
 ];
+
+const POP_LABEL = 'text-[11px] font-bold text-faint data-wet:text-blue-400';
 
 /** Positions values on the curve band and builds the line and area paths. */
 function curve(values) {
@@ -55,7 +59,7 @@ function curve(values) {
 function LineChart({ id, width, values, labels, colors }) {
   const { points, line, area } = useMemo(() => curve(values), [values]);
   return (
-    <svg className="hourly__curve" width={width} height={CURVE_H} aria-hidden>
+    <svg className="mt-1 block overflow-visible" width={width} height={CURVE_H} aria-hidden>
       <defs>
         <linearGradient id={`${id}-stroke`} x1="0" x2="1" y1="0" y2="0">
           {colors.map((color, i) => (
@@ -72,7 +76,7 @@ function LineChart({ id, width, values, labels, colors }) {
       {points.map(([x, y], i) => (
         <g key={i}>
           <circle cx={x} cy={y} r={i === 0 ? 4 : 2.5} fill={colors[i]} />
-          <text x={x} y={y - 9} textAnchor="middle" className="hourly__temp">
+          <text x={x} y={y - 9} textAnchor="middle" className="fill-fg font-sans text-xs font-bold">
             {labels[i]}
           </text>
         </g>
@@ -83,14 +87,21 @@ function LineChart({ id, width, values, labels, colors }) {
 
 function PrecipBars({ hours }) {
   return (
-    <div className="hourly__row hourly__precip" style={{ height: CURVE_H + 24 }}>
+    <div className="mt-1 flex items-end" style={{ height: CURVE_H + 24 }}>
       {hours.map((h) => {
         const pop = h.pop ?? 0;
         return (
-          <div key={h.time} className="hourly__pcol" style={{ width: COL }} title={`${pop}% chance of precipitation`}>
-            <span className={pop >= 20 ? 'is-wet' : ''}>{pop}%</span>
-            <div className="hourly__pbar">
-              <span style={{ height: `${Math.max(pop, 3)}%` }} />
+          <div
+            key={h.time}
+            className="flex h-full flex-col items-center justify-end gap-1"
+            style={{ width: COL }}
+            title={`${pop}% chance of precipitation`}
+          >
+            <span className={POP_LABEL} data-wet={pop >= 20 || undefined}>
+              {pop}%
+            </span>
+            <div className="flex h-[60px] w-[22px] items-end overflow-hidden rounded-md bg-surface">
+              <span className="w-full rounded-md bg-gradient-to-b from-blue-400 to-blue-500" style={{ height: `${Math.max(pop, 3)}%` }} />
             </div>
           </div>
         );
@@ -137,40 +148,44 @@ export function HourlyChart({ weather }) {
   }[tab];
 
   return (
-    <section className="block">
-      <div className="hourly__head">
-        <h2 className="section-title">
-          <Clock size={14} /> Next 24 hours
-        </h2>
-        <div className="hourly__tabs" role="tablist" aria-label="Hourly chart">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              role="tab"
-              aria-selected={tab === t.id}
-              onClick={() => setTab(t.id)}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
+    <section className="min-w-0">
+      <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
+        <SectionTitle icon={Clock} flush>
+          Next 24 hours
+        </SectionTitle>
+        <Segmented
+          role="tablist"
+          label="Hourly chart"
+          options={TABS}
+          value={tab}
+          onChange={setTab}
+          size="sm"
+        />
       </div>
-      <div className="hourly scroll-x" tabIndex={0} aria-label="Hourly forecast">
-        <div className="hourly__inner" style={{ width }}>
-          <div className="hourly__row">
+      <div
+        className="scrollbar-thin -mx-4 overflow-x-auto overscroll-x-contain px-4 pb-1.5 [mask-image:linear-gradient(90deg,transparent,#000_20px,#000_calc(100%-20px),transparent)] desk:-mx-5 desk:px-5"
+        tabIndex={0}
+        aria-label="Hourly forecast"
+      >
+        <div className="relative" style={{ width }}>
+          <div className="flex">
             {hours.map((h, i) => {
               // Mark the sunrise/sunset that falls inside this hour.
               const event = sunEvents.find((e) => e.time >= h.time && e.time < h.time + 3600);
               return (
-                <div key={h.time} className="hourly__col" style={{ width: COL }}>
+                <div key={h.time} className="relative flex flex-col items-center gap-1.5" style={{ width: COL }}>
                   {event ? (
-                    <span className="hourly__time hourly__time--sun" title={`${event.label} at ${fmt.clock(event.time)}`}>
+                    <span
+                      className="flex items-center gap-0.5 text-xs font-semibold whitespace-nowrap text-amber-400"
+                      title={`${event.label} at ${fmt.clock(event.time)}`}
+                    >
                       <event.Icon size={12} aria-label={event.label} />
                       {fmt.clock(event.time).replace(/\s?[AP]M$/, '')}
                     </span>
                   ) : (
-                    <span className="hourly__time">{i === 0 ? 'Now' : fmt.hour(h.time)}</span>
+                    <span className={cn('text-xs font-semibold whitespace-nowrap', i === 0 ? 'text-fg' : 'text-muted')}>
+                      {i === 0 ? 'Now' : fmt.hour(h.time)}
+                    </span>
                   )}
                   <WeatherIcon code={h.code} isDay={h.isDay} size={30} />
                 </div>
@@ -185,13 +200,18 @@ export function HourlyChart({ weather }) {
           )}
 
           {tab === 'temp' && (
-            <div className="hourly__row hourly__row--pop">
+            <div className="mt-1 flex">
               {hours.map((h) => (
-                <div key={h.time} className="hourly__pop" style={{ width: COL }} title={`${h.pop ?? 0}% chance of precipitation`}>
-                  <div className="hourly__bar">
-                    <span style={{ height: `${Math.max(h.pop ?? 0, 2)}%` }} />
+                <div
+                  key={h.time}
+                  className="flex min-h-[42px] flex-col items-center gap-[3px]"
+                  style={{ width: COL }}
+                  title={`${h.pop ?? 0}% chance of precipitation`}
+                >
+                  <div className="flex h-6 w-2 items-end overflow-hidden rounded bg-surface">
+                    <span className="w-full rounded bg-gradient-to-b from-blue-400 to-blue-500" style={{ height: `${Math.max(h.pop ?? 0, 2)}%` }} />
                   </div>
-                  <span className={(h.pop ?? 0) >= 20 ? 'is-wet' : ''}>
+                  <span className={POP_LABEL} data-wet={(h.pop ?? 0) >= 20 || undefined}>
                     {(h.pop ?? 0) >= 20 ? `${h.pop}%` : ''}
                   </span>
                 </div>
@@ -200,11 +220,11 @@ export function HourlyChart({ weather }) {
           )}
 
           {tab === 'wind' && (
-            <div className="hourly__row hourly__row--wind">
+            <div className="mt-1.5 flex min-h-6">
               {hours.map((h) => (
                 <div
                   key={h.time}
-                  className="hourly__wind"
+                  className="grid place-items-center text-muted"
                   style={{ width: COL }}
                   title={h.windDir != null ? `From ${compassPoint(h.windDir)}` : undefined}
                 >
@@ -217,7 +237,7 @@ export function HourlyChart({ weather }) {
           )}
         </div>
       </div>
-      <p className="hourly__legend">
+      <p className="mt-1 flex items-center gap-1.5 text-[11px] text-faint">
         <Droplets size={12} /> {legend}
       </p>
     </section>
