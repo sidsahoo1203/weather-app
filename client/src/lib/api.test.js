@@ -100,22 +100,38 @@ describe('api without a server (direct mode)', () => {
     expect(calls).toHaveLength(1);
   });
 
-  it('finds the state of any other point through OpenStreetMap', async () => {
+  it('finds the region of a place outside India through OpenStreetMap', async () => {
+    const calls = mockFetch((url) => {
+      if (url.includes('nominatim')) {
+        return json({ address: { city: 'Los Angeles', state: 'California', 'ISO3166-2-lvl4': 'US-CA', country: 'United States', country_code: 'us' } });
+      }
+      if (url.includes('overpass')) {
+        return json({ elements: [{ type: 'node', id: 7, lat: 34.05, lon: -118.24, tags: { name: 'Los Angeles', place: 'city', population: '3898747' } }] });
+      }
+      return json({ current: { temperature_2m: 24, weather_code: 2, is_day: 1 } });
+    });
+    const api = await loadApi();
+    const data = await api.region(34.05, -118.24, null);
+
+    expect(data.region).toMatchObject({ name: 'California', code: 'US-CA', scope: 'state' });
+    expect(data.cities[0]).toMatchObject({ name: 'Los Angeles', current: { temp: 24 } });
+    expect(decodeURIComponent(calls.find((c) => c.url.includes('overpass')).init.body)).toContain('US-CA');
+  });
+
+  it('uses bundled data when a clicked point is in an Indian state', async () => {
     const calls = mockFetch((url) => {
       if (url.includes('nominatim')) {
         return json({ address: { city: 'Bengaluru', state: 'Karnataka', 'ISO3166-2-lvl4': 'IN-KA', country: 'India', country_code: 'in' } });
       }
-      if (url.includes('overpass')) {
-        return json({ elements: [{ type: 'node', id: 7, lat: 12.97, lon: 77.59, tags: { name: 'Bengaluru', place: 'city', population: '8443675' } }] });
-      }
-      return json({ current: { temperature_2m: 24, weather_code: 2, is_day: 1 } });
+      const count = new URL(url).searchParams.get('latitude')?.split(',').length ?? 1;
+      return json(Array.from({ length: count }, () => ({ current: { temperature_2m: 26, weather_code: 1, is_day: 1 } })));
     });
     const api = await loadApi();
     const data = await api.region(12.97, 77.59, null);
 
     expect(data.region).toMatchObject({ name: 'Karnataka', code: 'IN-KA' });
-    expect(data.cities[0]).toMatchObject({ name: 'Bengaluru', current: { temp: 24 } });
-    expect(decodeURIComponent(calls.find((c) => c.url.includes('overpass')).init.body)).toContain('IN-KA');
+    expect(data.cities.length).toBeGreaterThan(20);
+    expect(calls.some((c) => c.url.includes('overpass'))).toBe(false);
   });
 
   it('turns source failures into readable errors', async () => {
