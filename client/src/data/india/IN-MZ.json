@@ -1,0 +1,109 @@
+{
+ "code": "IN-MZ",
+ "name": "Mizoram",
+ "headquarters": 11,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-MZ-0",
+   "name": "Aizawl",
+   "district": null,
+   "lat": 23.7278,
+   "lon": 92.718,
+   "population": 291822,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-MZ-1",
+   "name": "Lunglei",
+   "district": null,
+   "lat": 22.8932,
+   "lon": 92.747,
+   "population": 47137,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-2",
+   "name": "Kolasib",
+   "district": null,
+   "lat": 24.2265,
+   "lon": 92.6773,
+   "population": 19008,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-3",
+   "name": "Sachal",
+   "district": null,
+   "lat": 23.693,
+   "lon": 92.9654,
+   "population": 10966,
+   "place": "village"
+  },
+  {
+   "id": "IN-MZ-4",
+   "name": "Siaha",
+   "district": null,
+   "lat": 22.49,
+   "lon": 92.9812,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-5",
+   "name": "Champhai",
+   "district": null,
+   "lat": 23.4787,
+   "lon": 93.3199,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-6",
+   "name": "Hnahthial",
+   "district": null,
+   "lat": 22.9666,
+   "lon": 92.9285,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-7",
+   "name": "Khawzawl",
+   "district": null,
+   "lat": 23.5217,
+   "lon": 93.1862,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-8",
+   "name": "Lawngtlai",
+   "district": null,
+   "lat": 22.528,
+   "lon": 92.8981,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-9",
+   "name": "Mamit",
+   "district": null,
+   "lat": 23.916,
+   "lon": 92.4936,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MZ-10",
+   "name": "Serchhip",
+   "district": null,
+   "lat": 23.3095,
+   "lon": 92.8571,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

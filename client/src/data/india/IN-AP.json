@@ -1,0 +1,271 @@
+{
+ "code": "IN-AP",
+ "name": "Andhra Pradesh",
+ "headquarters": 28,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-AP-0",
+   "name": "Amaravati",
+   "lat": 16.5131,
+   "lon": 80.5165,
+   "district": null,
+   "population": 0,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-AP-1",
+   "name": "Visakhapatnam",
+   "district": null,
+   "lat": 17.6936,
+   "lon": 83.2921,
+   "population": 2526000,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-2",
+   "name": "Vijayawada",
+   "district": null,
+   "lat": 16.5115,
+   "lon": 80.616,
+   "population": 1048240,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-3",
+   "name": "Guntur",
+   "district": null,
+   "lat": 16.2915,
+   "lon": 80.4542,
+   "population": 647508,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-4",
+   "name": "Nellore",
+   "district": null,
+   "lat": 14.4494,
+   "lon": 79.9874,
+   "population": 547621,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-5",
+   "name": "Kurnool",
+   "district": null,
+   "lat": 15.8309,
+   "lon": 78.0425,
+   "population": 457633,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-6",
+   "name": "Kakinada",
+   "district": null,
+   "lat": 16.9437,
+   "lon": 82.2351,
+   "population": 384182,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-7",
+   "name": "Kadapa",
+   "district": null,
+   "lat": 14.4753,
+   "lon": 78.8217,
+   "population": 344893,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-8",
+   "name": "Rajamahendravaram",
+   "district": null,
+   "lat": 17.005,
+   "lon": 81.7805,
+   "population": 341831,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-9",
+   "name": "Vizianagaram",
+   "district": null,
+   "lat": 18.1141,
+   "lon": 83.4114,
+   "population": 332000,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-10",
+   "name": "Tirupati",
+   "district": null,
+   "lat": 13.6316,
+   "lon": 79.4232,
+   "population": 287482,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-11",
+   "name": "Anantapur",
+   "district": null,
+   "lat": 14.6783,
+   "lon": 77.6065,
+   "population": 267161,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-12",
+   "name": "Ongole",
+   "district": null,
+   "lat": 15.5059,
+   "lon": 80.0499,
+   "population": 204746,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-13",
+   "name": "Eluru",
+   "district": null,
+   "lat": 16.7104,
+   "lon": 81.1154,
+   "population": 203780,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-14",
+   "name": "Nandyal",
+   "district": null,
+   "lat": 15.4736,
+   "lon": 78.4807,
+   "population": 200516,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-15",
+   "name": "Machilipatnam",
+   "district": null,
+   "lat": 16.1817,
+   "lon": 81.1348,
+   "population": 169892,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-16",
+   "name": "Chittoor",
+   "district": null,
+   "lat": 13.2161,
+   "lon": 79.0973,
+   "population": 160722,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-17",
+   "name": "Bhimavaram",
+   "district": null,
+   "lat": 16.5428,
+   "lon": 81.5273,
+   "population": 142184,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-18",
+   "name": "Srikakulam",
+   "district": null,
+   "lat": 18.2949,
+   "lon": 83.8939,
+   "population": 137944,
+   "place": "city"
+  },
+  {
+   "id": "IN-AP-19",
+   "name": "Madanapalle",
+   "district": null,
+   "lat": 13.5558,
+   "lon": 78.5015,
+   "population": 136000,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-20",
+   "name": "Narasaraopet",
+   "district": null,
+   "lat": 16.2389,
+   "lon": 80.0473,
+   "population": 116250,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-21",
+   "name": "Anakapalle",
+   "district": null,
+   "lat": 17.689,
+   "lon": 83.0035,
+   "population": 86519,
+   "place": "suburb"
+  },
+  {
+   "id": "IN-AP-22",
+   "name": "Markapur",
+   "district": null,
+   "lat": 15.7407,
+   "lon": 79.2699,
+   "population": 71092,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-23",
+   "name": "Bapatla",
+   "district": null,
+   "lat": 15.9053,
+   "lon": 80.4681,
+   "population": 70777,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-24",
+   "name": "Parvathipuram",
+   "district": null,
+   "lat": 18.7832,
+   "lon": 83.4279,
+   "population": 53844,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-25",
+   "name": "Amalapuram",
+   "district": null,
+   "lat": 16.5777,
+   "lon": 82.0033,
+   "population": 53231,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-26",
+   "name": "Puttaparthi",
+   "district": null,
+   "lat": 14.1637,
+   "lon": 77.8125,
+   "population": 15088,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-27",
+   "name": "Rampachodavaram",
+   "district": null,
+   "lat": 17.4398,
+   "lon": 81.7752,
+   "population": 9952,
+   "place": "town"
+  },
+  {
+   "id": "IN-AP-28",
+   "name": "Paderu",
+   "district": null,
+   "lat": 18.0792,
+   "lon": 82.6632,
+   "population": 1000,
+   "place": "town"
+  }
+ ]
+}

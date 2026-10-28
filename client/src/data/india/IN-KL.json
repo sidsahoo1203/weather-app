@@ -1,0 +1,118 @@
+{
+ "code": "IN-KL",
+ "name": "Kerala",
+ "headquarters": 12,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-KL-0",
+   "name": "Thiruvananthapuram",
+   "district": null,
+   "lat": 8.4882,
+   "lon": 76.9476,
+   "population": 744983,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-KL-1",
+   "name": "Kochi",
+   "district": null,
+   "lat": 9.9679,
+   "lon": 76.2444,
+   "population": 677381,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-2",
+   "name": "Alappuzha",
+   "district": null,
+   "lat": 9.4923,
+   "lon": 76.3291,
+   "population": 177000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-3",
+   "name": "Palakkad",
+   "district": null,
+   "lat": 10.7682,
+   "lon": 76.6521,
+   "population": 131000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-4",
+   "name": "Malappuram",
+   "district": null,
+   "lat": 11.0429,
+   "lon": 76.0808,
+   "population": 101330,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-5",
+   "name": "Kannur",
+   "district": null,
+   "lat": 11.8764,
+   "lon": 75.3738,
+   "population": 56823,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-6",
+   "name": "Kasaragod",
+   "district": null,
+   "lat": 12.5036,
+   "lon": 74.9907,
+   "population": 54172,
+   "place": "town"
+  },
+  {
+   "id": "IN-KL-7",
+   "name": "Kalpetta",
+   "district": null,
+   "lat": 11.6103,
+   "lon": 76.0828,
+   "population": 30000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KL-8",
+   "name": "Kollam",
+   "district": null,
+   "lat": 8.8871,
+   "lon": 76.5907,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-9",
+   "name": "Kottayam",
+   "district": null,
+   "lat": 9.5916,
+   "lon": 76.5222,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-KL-10",
+   "name": "Painavu",
+   "district": "Idukki",
+   "lat": 9.854,
+   "lon": 76.9446,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-KL-11",
+   "name": "Pathanamthitta",
+   "district": null,
+   "lat": 9.2655,
+   "lon": 76.7872,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

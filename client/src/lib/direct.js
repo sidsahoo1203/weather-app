@@ -14,7 +14,7 @@ import {
   buildOverpassQuery,
   rankPlaces,
 } from './normalize.js';
-import { BUNDLED_REGIONS } from '../data/tamilNadu.js';
+import { loadBundledRegion, INDIA_OVERVIEW } from '../data/regions.js';
 
 const FORECAST_URL = 'https://api.open-meteo.com/v1/forecast';
 const AIR_QUALITY_URL = 'https://air-quality-api.open-meteo.com/v1/air-quality';
@@ -194,11 +194,11 @@ async function findCities(place, lat, lon, signal) {
   return rankPlaces(data.elements || []);
 }
 
-/** `regionCode` lets bundled regions (e.g. "IN-TN") skip the reverse-geocoding lookup. */
+/** `regionCode` lets bundled regions (Indian states, e.g. "IN-TN") skip the reverse-geocoding lookup. */
 export async function region(lat, lon, signal, regionCode) {
-  let bundled = BUNDLED_REGIONS[regionCode];
+  let bundled = await loadBundledRegion(regionCode);
   const place = bundled ? null : await reverse(lat, lon, signal);
-  bundled ??= BUNDLED_REGIONS[place.stateCode];
+  bundled ??= await loadBundledRegion(place.stateCode);
   const key = bundled?.region.code || place.stateCode || `near:${lat.toFixed(1)},${lon.toFixed(1)}`;
 
   const cities = bundled
@@ -226,6 +226,16 @@ export async function region(lat, lon, signal, regionCode) {
           scope: place.stateCode ? 'state' : 'nearby',
         },
     cities: cities.map((city, i) => ({ ...city, current: conditions[i] ?? null })),
+    updatedAt: Date.now(),
+  };
+}
+
+/** Current conditions at one point per Indian state, in a single request. */
+export async function india(signal) {
+  const conditions = await cached('india', 10 * MINUTE, () => currentBatch(INDIA_OVERVIEW.cities, signal));
+  return {
+    region: INDIA_OVERVIEW.region,
+    cities: INDIA_OVERVIEW.cities.map((city, i) => ({ ...city, current: conditions[i] ?? null })),
     updatedAt: Date.now(),
   };
 }

@@ -1,0 +1,199 @@
+{
+ "code": "IN-HR",
+ "name": "Haryana",
+ "headquarters": 21,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-HR-0",
+   "name": "Panchkula",
+   "district": null,
+   "lat": 30.6975,
+   "lon": 76.8551,
+   "population": 558890,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-HR-1",
+   "name": "Kurukshetra",
+   "district": null,
+   "lat": 29.9694,
+   "lon": 76.8483,
+   "population": 1340871,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-2",
+   "name": "Rewari",
+   "district": null,
+   "lat": 28.1956,
+   "lon": 76.6165,
+   "population": 900332,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-3",
+   "name": "Gurgaon",
+   "district": null,
+   "lat": 28.4646,
+   "lon": 77.0299,
+   "population": 876969,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-4",
+   "name": "Rohtak",
+   "district": null,
+   "lat": 28.9011,
+   "lon": 76.5802,
+   "population": 373133,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-5",
+   "name": "Hisar",
+   "district": null,
+   "lat": 29.1563,
+   "lon": 75.7292,
+   "population": 301240,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-6",
+   "name": "Karnal",
+   "district": null,
+   "lat": 29.6803,
+   "lon": 76.9896,
+   "population": 286974,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-7",
+   "name": "Yamunanagar",
+   "district": null,
+   "lat": 30.1231,
+   "lon": 77.2863,
+   "population": 216628,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-8",
+   "name": "Bhiwani",
+   "district": null,
+   "lat": 28.7932,
+   "lon": 76.1391,
+   "population": 196100,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-9",
+   "name": "Ambala",
+   "district": null,
+   "lat": 30.3844,
+   "lon": 76.7704,
+   "population": 196000,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-10",
+   "name": "Sirsa",
+   "district": null,
+   "lat": 29.5373,
+   "lon": 75.0378,
+   "population": 182500,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-11",
+   "name": "Jind",
+   "district": null,
+   "lat": 29.3152,
+   "lon": 76.3141,
+   "population": 167600,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-12",
+   "name": "Narnaul",
+   "district": null,
+   "lat": 28.0438,
+   "lon": 76.1062,
+   "population": 162200,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-13",
+   "name": "Kaithal",
+   "district": null,
+   "lat": 29.7997,
+   "lon": 76.399,
+   "population": 144915,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-14",
+   "name": "Palwal",
+   "district": null,
+   "lat": 28.1406,
+   "lon": 77.326,
+   "population": 128700,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-15",
+   "name": "Panipat",
+   "district": null,
+   "lat": 29.3913,
+   "lon": 76.9772,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-16",
+   "name": "Sonipat",
+   "district": null,
+   "lat": 28.9954,
+   "lon": 77.0234,
+   "population": 50000,
+   "place": "city"
+  },
+  {
+   "id": "IN-HR-17",
+   "name": "Jhajjar",
+   "district": null,
+   "lat": 28.6067,
+   "lon": 76.6581,
+   "population": 39004,
+   "place": "town"
+  },
+  {
+   "id": "IN-HR-18",
+   "name": "Charkhi Dadri",
+   "district": null,
+   "lat": 28.592,
+   "lon": 76.272,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HR-19",
+   "name": "Fatehabad",
+   "district": null,
+   "lat": 29.5104,
+   "lon": 75.4535,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HR-20",
+   "name": "Nuh",
+   "district": null,
+   "lat": 28.1033,
+   "lon": 77.0048,
+   "population": 5000,
+   "place": "town"
+  }
+ ]
+}

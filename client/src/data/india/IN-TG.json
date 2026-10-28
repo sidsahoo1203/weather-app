@@ -1,0 +1,298 @@
+{
+ "code": "IN-TG",
+ "name": "Telangana",
+ "headquarters": 32,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-TG-0",
+   "name": "Hyderabad",
+   "district": null,
+   "lat": 17.3606,
+   "lon": 78.4741,
+   "population": 6809970,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-TG-1",
+   "name": "Warangal",
+   "district": null,
+   "lat": 17.9821,
+   "lon": 79.5971,
+   "population": 811844,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-2",
+   "name": "Khammam",
+   "district": null,
+   "lat": 17.2465,
+   "lon": 80.15,
+   "population": 184200,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-3",
+   "name": "Jagtial",
+   "district": null,
+   "lat": 18.7957,
+   "lon": 78.9162,
+   "population": 171825,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-4",
+   "name": "Mahbubnagar",
+   "district": null,
+   "lat": 16.7435,
+   "lon": 77.9923,
+   "population": 157700,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-5",
+   "name": "Nalgonda",
+   "district": null,
+   "lat": 17.0504,
+   "lon": 79.2669,
+   "population": 135163,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-6",
+   "name": "Adilabad",
+   "district": null,
+   "lat": 19.6759,
+   "lon": 78.534,
+   "population": 117200,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-7",
+   "name": "Suryapet",
+   "district": null,
+   "lat": 17.1405,
+   "lon": 79.6225,
+   "population": 105500,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-8",
+   "name": "Nizamabad",
+   "district": null,
+   "lat": 18.6732,
+   "lon": 78.0978,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-9",
+   "name": "Sircilla",
+   "district": null,
+   "lat": 18.3898,
+   "lon": 78.8086,
+   "population": 92910,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-10",
+   "name": "Jangaon",
+   "district": null,
+   "lat": 17.7244,
+   "lon": 79.1571,
+   "population": 90000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-11",
+   "name": "Bhongir",
+   "district": null,
+   "lat": 17.5173,
+   "lon": 78.8863,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-12",
+   "name": "Gadwal",
+   "district": null,
+   "lat": 16.2347,
+   "lon": 77.7946,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-13",
+   "name": "Medak",
+   "district": null,
+   "lat": 18.0459,
+   "lon": 78.2652,
+   "population": 46000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-14",
+   "name": "Siddipet",
+   "district": null,
+   "lat": 18.1018,
+   "lon": 78.852,
+   "population": 10000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-15",
+   "name": "Asifabad",
+   "district": null,
+   "lat": 19.3593,
+   "lon": 79.296,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-16",
+   "name": "Kamareddy",
+   "district": null,
+   "lat": 18.3222,
+   "lon": 78.3387,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-17",
+   "name": "Nirmal",
+   "district": null,
+   "lat": 19.0925,
+   "lon": 78.3486,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-18",
+   "name": "Peddapalli",
+   "district": null,
+   "lat": 18.6177,
+   "lon": 79.3868,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-19",
+   "name": "Sangareddy",
+   "district": null,
+   "lat": 17.6155,
+   "lon": 78.0817,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-20",
+   "name": "Shamshabad",
+   "district": null,
+   "lat": 17.2611,
+   "lon": 78.3932,
+   "population": 5000,
+   "place": "village"
+  },
+  {
+   "id": "IN-TG-21",
+   "name": "Wanaparthy",
+   "district": null,
+   "lat": 16.3618,
+   "lon": 78.0611,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-22",
+   "name": "Nagarkurnool",
+   "district": null,
+   "lat": 16.487,
+   "lon": 78.3169,
+   "population": 1000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-23",
+   "name": "Bhupalpally",
+   "district": null,
+   "lat": 18.4381,
+   "lon": 79.8685,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-24",
+   "name": "Hanamkonda",
+   "district": null,
+   "lat": 18.0069,
+   "lon": 79.5579,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-25",
+   "name": "Karimnagar",
+   "district": null,
+   "lat": 18.4348,
+   "lon": 79.1328,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-TG-26",
+   "name": "Mahabubabad",
+   "district": null,
+   "lat": 17.5957,
+   "lon": 79.9999,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-27",
+   "name": "Malkajgiri",
+   "district": null,
+   "lat": 17.4512,
+   "lon": 78.5369,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-28",
+   "name": "Mancherial",
+   "district": null,
+   "lat": 18.8762,
+   "lon": 79.445,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-29",
+   "name": "Mulugu",
+   "district": null,
+   "lat": 18.1932,
+   "lon": 79.9414,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-30",
+   "name": "Narayanpet",
+   "district": null,
+   "lat": 16.7478,
+   "lon": 77.495,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TG-31",
+   "name": "Vikarabad",
+   "district": null,
+   "lat": 17.3379,
+   "lon": 77.904,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

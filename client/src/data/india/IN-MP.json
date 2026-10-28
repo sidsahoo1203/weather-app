@@ -1,0 +1,496 @@
+{
+ "code": "IN-MP",
+ "name": "Madhya Pradesh",
+ "headquarters": 54,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-MP-0",
+   "name": "Bhopal",
+   "district": null,
+   "lat": 23.2585,
+   "lon": 77.402,
+   "population": 1800000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-MP-1",
+   "name": "Indore",
+   "district": null,
+   "lat": 22.7204,
+   "lon": 75.8682,
+   "population": 3272335,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-2",
+   "name": "Gwalior",
+   "district": null,
+   "lat": 26.2037,
+   "lon": 78.1574,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-3",
+   "name": "Jabalpur",
+   "district": null,
+   "lat": 23.1702,
+   "lon": 79.9325,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-4",
+   "name": "Sagar",
+   "district": null,
+   "lat": 23.8418,
+   "lon": 78.7467,
+   "population": 273357,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-5",
+   "name": "Rewa",
+   "district": null,
+   "lat": 24.5359,
+   "lon": 81.2934,
+   "population": 235500,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-6",
+   "name": "Singrauli",
+   "district": null,
+   "lat": 24.1974,
+   "lon": 82.6661,
+   "population": 220295,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-7",
+   "name": "Burhanpur",
+   "district": null,
+   "lat": 21.3119,
+   "lon": 76.2292,
+   "population": 210900,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-8",
+   "name": "Khandwa",
+   "district": null,
+   "lat": 21.8204,
+   "lon": 76.3555,
+   "population": 200700,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-9",
+   "name": "Morena",
+   "district": null,
+   "lat": 26.491,
+   "lon": 77.9814,
+   "population": 200482,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-10",
+   "name": "Dewas",
+   "district": null,
+   "lat": 22.9636,
+   "lon": 76.0549,
+   "population": 200000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-11",
+   "name": "Bhind",
+   "district": null,
+   "lat": 26.5652,
+   "lon": 78.789,
+   "population": 197600,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-12",
+   "name": "Guna",
+   "district": null,
+   "lat": 24.6477,
+   "lon": 77.3162,
+   "population": 181000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-13",
+   "name": "Shivpuri",
+   "district": null,
+   "lat": 25.4235,
+   "lon": 77.6551,
+   "population": 180000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-14",
+   "name": "Vidisha",
+   "district": null,
+   "lat": 23.5208,
+   "lon": 77.8063,
+   "population": 156000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-15",
+   "name": "Mandsaur",
+   "district": null,
+   "lat": 24.0683,
+   "lon": 75.0742,
+   "population": 141700,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-16",
+   "name": "Chhindwara",
+   "district": null,
+   "lat": 22.0578,
+   "lon": 78.9386,
+   "population": 138200,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-17",
+   "name": "Neemuch",
+   "district": null,
+   "lat": 24.465,
+   "lon": 74.869,
+   "population": 128100,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-18",
+   "name": "Damoh",
+   "district": null,
+   "lat": 23.8396,
+   "lon": 79.4444,
+   "population": 125100,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-19",
+   "name": "Narmadapuram",
+   "district": null,
+   "lat": 22.7546,
+   "lon": 77.7198,
+   "population": 118000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-20",
+   "name": "Sehore",
+   "district": null,
+   "lat": 23.2049,
+   "lon": 77.0846,
+   "population": 109000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-21",
+   "name": "Khargone",
+   "district": null,
+   "lat": 21.8256,
+   "lon": 75.6142,
+   "population": 106500,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-22",
+   "name": "Betul",
+   "district": null,
+   "lat": 21.8998,
+   "lon": 77.8959,
+   "population": 103300,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-23",
+   "name": "Seoni",
+   "district": null,
+   "lat": 22.091,
+   "lon": 79.5508,
+   "population": 102300,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-24",
+   "name": "Datia",
+   "district": null,
+   "lat": 25.6689,
+   "lon": 78.4582,
+   "population": 100300,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-25",
+   "name": "Katni",
+   "district": null,
+   "lat": 23.834,
+   "lon": 80.3925,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-26",
+   "name": "Ratlam",
+   "district": null,
+   "lat": 23.3311,
+   "lon": 75.0361,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-27",
+   "name": "Ujjain",
+   "district": null,
+   "lat": 23.1885,
+   "lon": 75.7717,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-28",
+   "name": "Panna",
+   "district": null,
+   "lat": 24.7196,
+   "lon": 80.1861,
+   "population": 60000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-29",
+   "name": "Chhatarpur",
+   "district": null,
+   "lat": 24.9205,
+   "lon": 79.584,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-30",
+   "name": "Satna",
+   "district": null,
+   "lat": 24.5751,
+   "lon": 80.8326,
+   "population": 50000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-31",
+   "name": "Tikamgarh",
+   "district": null,
+   "lat": 24.7429,
+   "lon": 78.8322,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-32",
+   "name": "Umaria",
+   "district": null,
+   "lat": 23.5247,
+   "lon": 80.8361,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-33",
+   "name": "Agar",
+   "district": null,
+   "lat": 23.7155,
+   "lon": 76.0075,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-34",
+   "name": "Ashoknagar",
+   "district": null,
+   "lat": 24.5762,
+   "lon": 77.7303,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-35",
+   "name": "Balaghat",
+   "district": null,
+   "lat": 21.8133,
+   "lon": 80.1917,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-36",
+   "name": "Harda",
+   "district": null,
+   "lat": 22.3389,
+   "lon": 77.093,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-37",
+   "name": "Narsinghpur",
+   "district": null,
+   "lat": 22.9467,
+   "lon": 79.198,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-38",
+   "name": "Rajgarh",
+   "district": null,
+   "lat": 24.0051,
+   "lon": 76.7337,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-39",
+   "name": "Shahdol",
+   "district": null,
+   "lat": 23.3002,
+   "lon": 81.3648,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-40",
+   "name": "Sheopur",
+   "district": null,
+   "lat": 25.6657,
+   "lon": 76.6955,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-41",
+   "name": "Alirajpur",
+   "district": null,
+   "lat": 22.3031,
+   "lon": 74.3546,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-42",
+   "name": "Barwani",
+   "district": null,
+   "lat": 22.0334,
+   "lon": 74.8978,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-43",
+   "name": "Dindori",
+   "district": null,
+   "lat": 22.9447,
+   "lon": 81.0775,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-44",
+   "name": "Shajapur",
+   "district": null,
+   "lat": 23.4241,
+   "lon": 76.2839,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-45",
+   "name": "Sidhi",
+   "district": null,
+   "lat": 24.4109,
+   "lon": 81.8795,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-46",
+   "name": "Anuppur",
+   "district": null,
+   "lat": 23.1185,
+   "lon": 81.6992,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-47",
+   "name": "Dhar",
+   "district": null,
+   "lat": 22.5972,
+   "lon": 75.3066,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-48",
+   "name": "Jhabua",
+   "district": null,
+   "lat": 22.7697,
+   "lon": 74.5912,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-49",
+   "name": "Maihar",
+   "district": null,
+   "lat": 24.2604,
+   "lon": 80.7593,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-50",
+   "name": "Mandla",
+   "district": null,
+   "lat": 22.5978,
+   "lon": 80.3721,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-MP-51",
+   "name": "Niwari",
+   "district": null,
+   "lat": 25.3512,
+   "lon": 78.7994,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-52",
+   "name": "Pandhurna",
+   "district": null,
+   "lat": 21.5955,
+   "lon": 78.5258,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MP-53",
+   "name": "Raisen",
+   "district": null,
+   "lat": 23.3301,
+   "lon": 77.7843,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

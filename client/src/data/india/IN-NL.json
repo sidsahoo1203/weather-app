@@ -1,0 +1,154 @@
+{
+ "code": "IN-NL",
+ "name": "Nagaland",
+ "headquarters": 15,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-NL-0",
+   "name": "Kohima",
+   "lat": 25.6751,
+   "lon": 94.1086,
+   "district": null,
+   "population": 0,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-NL-1",
+   "name": "Dimapur",
+   "district": null,
+   "lat": 25.9117,
+   "lon": 93.7217,
+   "population": 122800,
+   "place": "city"
+  },
+  {
+   "id": "IN-NL-2",
+   "name": "Mokokchung",
+   "district": null,
+   "lat": 26.3239,
+   "lon": 94.5214,
+   "population": 35913,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-3",
+   "name": "Wokha",
+   "district": null,
+   "lat": 26.0963,
+   "lon": 94.2544,
+   "population": 35004,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-4",
+   "name": "Chumukedima",
+   "district": null,
+   "lat": 25.809,
+   "lon": 93.7881,
+   "population": 25885,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-5",
+   "name": "Zunheboto",
+   "district": null,
+   "lat": 26.015,
+   "lon": 94.5289,
+   "population": 22633,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-6",
+   "name": "Kiphire",
+   "district": null,
+   "lat": 25.8867,
+   "lon": 94.7863,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-7",
+   "name": "Longleng",
+   "district": null,
+   "lat": 26.4889,
+   "lon": 94.8132,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-8",
+   "name": "Meluri",
+   "district": null,
+   "lat": 25.6845,
+   "lon": 94.6285,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-9",
+   "name": "Mon",
+   "district": null,
+   "lat": 26.7253,
+   "lon": 95.0304,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-10",
+   "name": "Nihokhu",
+   "district": null,
+   "lat": 25.8939,
+   "lon": 93.9356,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-NL-11",
+   "name": "Noklak",
+   "district": null,
+   "lat": 26.2003,
+   "lon": 95.0209,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-12",
+   "name": "Peren",
+   "district": null,
+   "lat": 25.5404,
+   "lon": 93.7351,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-13",
+   "name": "Phek",
+   "district": null,
+   "lat": 25.7098,
+   "lon": 94.4633,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-14",
+   "name": "Tuensang",
+   "district": null,
+   "lat": 26.2393,
+   "lon": 94.8147,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-NL-15",
+   "name": "Wozhuro",
+   "district": null,
+   "lat": 26.0099,
+   "lon": 94.1816,
+   "population": 0,
+   "place": "village"
+  }
+ ]
+}

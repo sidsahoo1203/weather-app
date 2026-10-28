@@ -1,0 +1,217 @@
+{
+ "code": "IN-WB",
+ "name": "West Bengal",
+ "headquarters": 23,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-WB-0",
+   "name": "Kolkata",
+   "district": null,
+   "lat": 22.5726,
+   "lon": 88.3639,
+   "population": 4486679,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-WB-1",
+   "name": "Howrah",
+   "district": null,
+   "lat": 22.5736,
+   "lon": 88.3251,
+   "population": 1072161,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-2",
+   "name": "Asansol",
+   "district": null,
+   "lat": 23.6869,
+   "lon": 86.9746,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-3",
+   "name": "Malda",
+   "district": null,
+   "lat": 25.0057,
+   "lon": 88.1398,
+   "population": 324237,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-4",
+   "name": "Berhampore",
+   "district": null,
+   "lat": 24.1045,
+   "lon": 88.2511,
+   "population": 195200,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-5",
+   "name": "Raiganj",
+   "district": null,
+   "lat": 25.6272,
+   "lon": 88.1318,
+   "population": 183600,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-6",
+   "name": "Hugli-Chuchura",
+   "district": null,
+   "lat": 22.8992,
+   "lon": 88.3921,
+   "population": 177259,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-7",
+   "name": "Medinipur",
+   "district": null,
+   "lat": 22.4207,
+   "lon": 87.327,
+   "population": 169300,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-8",
+   "name": "Krishnanagar",
+   "district": null,
+   "lat": 23.4058,
+   "lon": 88.4959,
+   "population": 153000,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-9",
+   "name": "Balurghat",
+   "district": null,
+   "lat": 25.2234,
+   "lon": 88.7781,
+   "population": 151200,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-10",
+   "name": "Bankura",
+   "district": null,
+   "lat": 23.2356,
+   "lon": 87.066,
+   "population": 137400,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-11",
+   "name": "Alipurduar",
+   "district": null,
+   "lat": 26.4852,
+   "lon": 89.5247,
+   "population": 127342,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-12",
+   "name": "Purulia",
+   "district": null,
+   "lat": 23.3292,
+   "lon": 86.3672,
+   "population": 121100,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-13",
+   "name": "Darjeeling",
+   "district": null,
+   "lat": 27.0378,
+   "lon": 88.2632,
+   "population": 118800,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-14",
+   "name": "Jalpaiguri",
+   "district": null,
+   "lat": 26.5242,
+   "lon": 88.7198,
+   "population": 107400,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-15",
+   "name": "Cooch Behar",
+   "district": null,
+   "lat": 26.3224,
+   "lon": 89.4592,
+   "population": 106760,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-16",
+   "name": "Bardhaman",
+   "district": null,
+   "lat": 23.2496,
+   "lon": 87.8682,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-17",
+   "name": "Siuri",
+   "district": null,
+   "lat": 23.9081,
+   "lon": 87.5277,
+   "population": 67864,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-18",
+   "name": "Kalimpong",
+   "district": null,
+   "lat": 27.0703,
+   "lon": 88.4724,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-WB-19",
+   "name": "Tamluk",
+   "district": null,
+   "lat": 22.2897,
+   "lon": 87.9256,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-WB-20",
+   "name": "Alipore",
+   "district": null,
+   "lat": 22.5265,
+   "lon": 88.3324,
+   "population": 0,
+   "place": "suburb"
+  },
+  {
+   "id": "IN-WB-21",
+   "name": "Barasat",
+   "district": null,
+   "lat": 22.7191,
+   "lon": 88.4826,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-WB-22",
+   "name": "Jhargram",
+   "district": null,
+   "lat": 22.4539,
+   "lon": 86.9949,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}
