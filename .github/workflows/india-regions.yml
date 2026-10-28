@@ -13,9 +13,13 @@ on:
   workflow_dispatch:
     inputs:
       states:
-        description: 'Space-separated ISO codes to rebuild (e.g. "IN-TN IN-KL"); empty for all'
+        description: 'Space-separated ISO codes to rebuild (e.g. "IN-TN IN-KL"). Empty: only missing states.'
         required: false
         default: ''
+      refresh:
+        description: 'Rebuild every state (ignored when states are given)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -38,10 +42,13 @@ jobs:
       - name: Build data from OpenStreetMap
         env:
           STATES: ${{ inputs.states }}
-        # $STATES is intentionally unquoted so it splits into separate codes.
-        run: node scripts/build-india-regions.mjs $STATES
+          REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
+        # Unquoted on purpose so the codes split into separate arguments.
+        run: node scripts/build-india-regions.mjs $REFRESH $STATES
 
+      # Commit whatever was built, even if some states failed, so the next run resumes.
       - name: Commit changes
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

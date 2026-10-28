@@ -2,18 +2,30 @@
 // Builds client/src/data/india/<ISO code>.json: the district headquarters of every Indian
 // state and union territory, from OpenStreetMap (Overpass API).
 //
-//   node scripts/build-india-regions.mjs            # all states
-//   node scripts/build-india-regions.mjs IN-TN IN-KL  # selected states
+//   node scripts/build-india-regions.mjs                    # states that have no file yet
+//   node scripts/build-india-regions.mjs --refresh          # rebuild every state
+//   node scripts/build-india-regions.mjs IN-TN IN-KL        # rebuild selected states
+//
+// Each state's file is written as soon as it is built, and a state that keeps failing is
+// skipped, so a run against busy public Overpass servers still keeps its progress; the
+// next run picks up the missing states. Exits 1 if any requested state is still missing.
 //
 // Run by .github/workflows/india-regions.yml. Needs Node 20+ and internet access.
 
-import { mkdir, writeFile } from 'node:fs/promises';
+import { access, mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { INDIA_STATES } from '../client/src/data/indiaStates.js';
 
 const OUT_DIR = join(dirname(fileURLToPath(import.meta.url)), '../client/src/data/india');
-const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
+// Public Overpass instances, tried in turn.
+const ENDPOINTS = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.kumi.systems/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter',
+  'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+];
+const ATTEMPTS = 8;
 const USER_AGENT = 'Atmos-Weather/1.0 (+https://github.com/sidsahoo1203/weather-app)';
 const INDIA_BOUNDS = { south: 6, north: 37.6, west: 68, east: 97.5 };
 const MIN_PLACES = 3;
@@ -23,14 +35,14 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function overpass(query) {
   let lastError;
-  for (let attempt = 0; attempt < 6; attempt++) {
+  for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
     const url = ENDPOINTS[attempt % ENDPOINTS.length];
     try {
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': USER_AGENT },
         body: `data=${encodeURIComponent(query)}`,
-        signal: AbortSignal.timeout(200_000),
+        signal: AbortSignal.timeout(150_000),
       });
       if (res.ok) return (await res.json()).elements || [];
       lastError = new Error(`${url} responded ${res.status}`);
@@ -38,7 +50,7 @@ async function overpass(query) {
       lastError = err;
     }
     console.warn(`  retrying after: ${lastError.message}`);
-    await sleep(10_000 * (attempt + 1));
+    await sleep(5_000 * (attempt + 1));
   }
   throw lastError;
 }
@@ -139,26 +151,47 @@ async function buildState(state) {
   };
 }
 
+const fileFor = (state) => join(OUT_DIR, `${state.code}.json`);
+const exists = (path) => access(path).then(() => true, () => false);
+
 async function main() {
-  const wanted = process.argv.slice(2);
-  const states = wanted.length ? INDIA_STATES.filter((s) => wanted.includes(s.code)) : INDIA_STATES;
+  const args = process.argv.slice(2);
+  const refresh = args.includes('--refresh');
+  const wanted = args.filter((a) => a.startsWith('IN-'));
   await mkdir(OUT_DIR, { recursive: true });
 
-  const summary = [];
+  let states = wanted.length ? INDIA_STATES.filter((s) => wanted.includes(s.code)) : INDIA_STATES;
+  if (!wanted.length && !refresh) {
+    const missing = [];
+    for (const state of states) if (!(await exists(fileFor(state)))) missing.push(state);
+    states = missing;
+    console.log(`${INDIA_STATES.length - missing.length} states already built, ${missing.length} to build.`);
+  }
+
+  const built = [];
+  const failed = [];
   for (const state of states) {
     console.log(`${state.code} ${state.name}…`);
-    const data = await buildState(state);
-    const withDistrict = data.cities.filter((c) => c.district).length;
-    console.log(`  ${data.cities.length} places (${withDistrict} district HQs of ${data.districts} districts)`);
-    if (data.cities.length < 2 && !state.ut) throw new Error(`${state.name}: too few places, refusing to write`);
-    await writeFile(join(OUT_DIR, `${state.code}.json`), `${JSON.stringify(data, null, 1)}\n`);
-    summary.push([state.code, data.cities.length]);
+    try {
+      const data = await buildState(state);
+      const withDistrict = data.cities.filter((c) => c.district).length;
+      console.log(`  ${data.cities.length} places (${withDistrict} district HQs of ${data.districts} districts)`);
+      if (data.cities.length < 2 && !state.ut) throw new Error('too few places, not writing');
+      await writeFile(fileFor(state), `${JSON.stringify(data, null, 1)}\n`);
+      built.push([state.code, data.cities.length]);
+    } catch (err) {
+      console.error(`  FAILED ${state.code}: ${err.message}`);
+      failed.push(state.code);
+    }
     await sleep(4000);
   }
 
-  const total = summary.reduce((sum, [, n]) => sum + n, 0);
-  console.log(`\nWrote ${summary.length} states, ${total} places.`);
-  if (!wanted.length && total < 400) throw new Error(`Only ${total} places in total; the data looks incomplete.`);
+  const total = built.reduce((sum, [, n]) => sum + n, 0);
+  console.log(`\nBuilt ${built.length} states (${total} places).`);
+  if (failed.length) {
+    console.error(`Still missing: ${failed.join(' ')}. Run again to retry them.`);
+    process.exitCode = 1;
+  }
 }
 
 main().catch((err) => {
