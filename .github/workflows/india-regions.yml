@@ -51,4 +51,6 @@ jobs:
             exit 0
           fi
           git commit -m "Update India regions data from OpenStreetMap"
-          git push
+          # The branch may have moved while the data was being built.
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
