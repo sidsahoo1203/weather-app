@@ -60,7 +60,7 @@ describe('api without a server (direct mode)', () => {
     expect(calls.every((c) => c.url.startsWith('https://') && !c.url.includes('/api/'))).toBe(true);
   });
 
-  it('loads Tamil Nadu from the bundled list without a places lookup', async () => {
+  it('loads a bundled state without a places lookup', async () => {
     const calls = mockFetch((url) => {
       const count = new URL(url).searchParams.get('latitude').split(',').length;
       return json(
@@ -71,12 +71,33 @@ describe('api without a server (direct mode)', () => {
     const data = await api.region(13.08, 80.27, 'IN-TN');
 
     expect(data.region).toMatchObject({ name: 'Tamil Nadu', code: 'IN-TN', scope: 'state' });
-    expect(data.cities.length).toBeGreaterThanOrEqual(50);
-    expect(data.cities[0]).toMatchObject({ name: 'Chennai', current: { temp: 25 } });
+    expect(data.cities.length).toBeGreaterThanOrEqual(30);
+    expect(data.cities[0]).toMatchObject({ name: 'Chennai', capital: true, current: { temp: 25 } });
     expect(data.cities.every((c) => c.current)).toBe(true);
-    // 52 places → two batched forecast requests, and no Nominatim/Overpass calls.
-    expect(calls).toHaveLength(2);
+    // Up to 50 places per batched forecast request, and no Nominatim/Overpass calls.
+    expect(calls).toHaveLength(Math.ceil(data.cities.length / 50));
     expect(calls.every((c) => c.url.includes('api.open-meteo.com'))).toBe(true);
+  });
+
+  it('accepts old ISO codes for renamed states', async () => {
+    mockFetch(() => json({ current: { temperature_2m: 30, weather_code: 0, is_day: 1 } }));
+    const api = await loadApi();
+    const data = await api.region(20.3, 85.8, 'IN-OR');
+    expect(data.region).toMatchObject({ name: 'Odisha', code: 'IN-OD' });
+  });
+
+  it('loads every state for the All-India view in one request', async () => {
+    const calls = mockFetch((url) => {
+      const count = new URL(url).searchParams.get('latitude').split(',').length;
+      return json(Array.from({ length: count }, (_, i) => ({ current: { temperature_2m: 20 + i, weather_code: 2, is_day: 1 } })));
+    });
+    const api = await loadApi();
+    const data = await api.india();
+
+    expect(data.region).toMatchObject({ code: 'IN', scope: 'country' });
+    expect(data.cities).toHaveLength(36);
+    expect(data.cities.find((c) => c.regionCode === 'IN-PB')).toMatchObject({ name: 'Punjab', sub: 'Ludhiana' });
+    expect(calls).toHaveLength(1);
   });
 
   it('finds the state of any other point through OpenStreetMap', async () => {

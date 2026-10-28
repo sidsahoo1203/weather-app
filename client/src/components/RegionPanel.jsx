@@ -14,6 +14,11 @@ const SORTS = {
   cool: { label: 'Coolest', fn: (a, b) => (a.current?.temp ?? 99) - (b.current?.temp ?? 99) },
   name: { label: 'A–Z', fn: (a, b) => a.name.localeCompare(b.name) },
 };
+const VIEW_OPTIONS = [
+  { value: 'state', label: 'This state' },
+  { value: 'india', label: 'All India' },
+];
+
 const SORT_OPTIONS = Object.entries(SORTS).map(([value, { label }]) => ({ value, label }));
 
 const EXTREME = cn(
@@ -25,7 +30,7 @@ const EXTREME = cn(
 const TEMP_CHIP =
   'min-w-12 rounded-[9px] bg-[color-mix(in_srgb,var(--t)_14%,transparent)] px-2 py-1 text-center text-sm font-extrabold text-(--t) light:bg-[color-mix(in_srgb,var(--t)_22%,transparent)] light:text-[color-mix(in_srgb,var(--t)_62%,#000)]';
 
-export function RegionPanel({ regionQuery, location, onSelect, collapsed, onToggleCollapsed }) {
+export function RegionPanel({ regionQuery, view, onViewChange, location, onSelect, collapsed, onToggleCollapsed }) {
   const { units } = useSettings();
   const [sort, setSort] = useState('warm');
   const { data, isPending, isError, error, isFetching, isPlaceholderData } = regionQuery;
@@ -36,7 +41,14 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
   const coolest = withTemp.reduce((m, c) => (!m || c.current.temp < m.current.temp ? c : m), null);
 
   const region = data?.region;
-  const title = region ? (region.scope === 'state' ? region.name : `Near ${region.name || 'here'}`) : 'Your state';
+  const india = view === 'india';
+  const title = india
+    ? 'India'
+    : region
+      ? region.scope === 'state'
+        ? region.name
+        : `Near ${region.name || 'here'}`
+      : 'Your state';
 
   return (
     <div className="flex max-h-full min-h-0 flex-col">
@@ -51,7 +63,9 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
           <MapIcon size={16} />
         </span>
         <span className="flex min-w-0 flex-1 flex-col">
-          <span className="text-[11px] font-bold tracking-[0.08em] text-faint uppercase">Across</span>
+          <span className="text-[11px] font-bold tracking-[0.08em] text-faint uppercase">
+            {india ? 'All states' : 'Across'}
+          </span>
           <span className="truncate font-display text-lg font-semibold">{title}</span>
         </span>
         <ChevronDown
@@ -62,6 +76,14 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
       </button>
 
       <div className={cn('flex min-h-0 flex-col px-3 pb-3', collapsed && 'desk:hidden')}>
+          <Segmented
+            label="List"
+            options={VIEW_OPTIONS}
+            value={view}
+            onChange={onViewChange}
+            stretch
+            className="mb-3"
+          />
           {isPending ? (
             <ul className="m-0 list-none p-0" aria-busy="true">
               {Array.from({ length: 7 }, (_, i) => (
@@ -79,7 +101,8 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
           ) : (
             <>
               <p className="mx-1 -mt-1.5 mb-2.5 text-xs text-muted">
-                {cities.length} {region?.scope === 'state' ? 'cities & towns' : 'places nearby'}
+                {cities.length}{' '}
+                {india ? 'states & union territories' : region?.scope === 'state' ? 'cities & towns' : 'places nearby'}
                 {region?.country ? ` · ${region.country}` : ''}
               </p>
 
@@ -142,7 +165,9 @@ export function RegionPanel({ regionQuery, location, onSelect, collapsed, onTogg
                         {c ? <WeatherIcon code={c.code} isDay={c.isDay} size={30} /> : <span className="size-[30px]" />}
                         <span className="flex min-w-0 flex-col truncate text-sm/[1.45] font-semibold">
                           {city.name}
-                          <small className="text-xs/[1.45] font-medium text-faint">{c ? describeWeather(c.code, c.isDay).label : 'No data'}</small>
+                          <small className="truncate text-xs/[1.45] font-medium text-faint">
+                            {[city.sub, c ? describeWeather(c.code, c.isDay).label : 'No data'].filter(Boolean).join(' · ')}
+                          </small>
                         </span>
                         <span className={TEMP_CHIP} style={{ '--t': tempColor(c?.temp) }}>
                           {formatTemp(c?.temp, units)}

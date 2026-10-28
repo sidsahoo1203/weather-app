@@ -115,6 +115,12 @@ describe('forecastSummary', () => {
 });
 
 describe('places', () => {
+  it('opens a state from the All-India view at its main city', () => {
+    expect(
+      cityToLocation({ lat: 22.57, lon: 88.36, name: 'West Bengal', sub: 'Kolkata', regionCode: 'IN-WB' }, { scope: 'country' }),
+    ).toEqual({ lat: 22.57, lon: 88.36, name: 'Kolkata', region: 'West Bengal', country: 'India', regionCode: 'IN-WB', source: 'city' });
+  });
+
   it('compares nearby points and builds locations from cities', () => {
     expect(isNear({ lat: 1, lon: 1 }, { lat: 1.01, lon: 0.99 })).toBe(true);
     expect(isNear({ lat: 1, lon: 1 }, { lat: 1.2, lon: 1 })).toBe(false);

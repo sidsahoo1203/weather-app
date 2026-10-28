@@ -7,11 +7,13 @@ A map-first, full-stack weather explorer. The whole screen is a live map; the fo
 
 ## Features
 
-- **Opens on Tamil Nadu.** Chennai's forecast and live temperatures for all 38 district headquarters and
-  major towns load instantly (the list is bundled). Tap the location button to jump to where you are.
-- **Every city in any state.** Click anywhere else and Atmos works out which state it is in and puts the
-  temperature of every major city and town on the map. You can also browse them as a list, sorted warmest, coolest or A–Z,
-  with the hottest and coolest places highlighted.
+- **Every Indian state, instantly.** All 28 states and 8 union territories ship with their district
+  headquarters (about 800 places). Open a state and live temperatures for all of its districts load in one or
+  two requests. Each state is its own small file, downloaded only when you open it. The app opens on Tamil Nadu.
+- **All-India view.** One switch shows live weather for every state at once, one pin per state. Click a state
+  to open its districts. Every list sorts warmest, coolest or A–Z and highlights the hottest and coolest place.
+- **Anywhere else in the world.** Click outside India and Atmos finds the region from OpenStreetMap and puts
+  the temperature of its major cities on the map.
 - **Real interactive map** (Leaflet + OpenStreetMap/Esri, with a satellite view). Click a city pin or any spot on the map and
   its forecast loads. Search a city in another state and the list switches to that state.
 - **Rain radar** (RainViewer) with a play/pause timeline of the past two hours.
@@ -95,6 +97,15 @@ Repeated patterns (icon buttons, segmented toggles, section titles, skeletons) a
   when its own props change.
 - `index.html` preconnects to Open-Meteo and the tile servers. Built assets are served with
   long-lived immutable caching.
+
+### India data
+
+`client/src/data/india/<ISO code>.json` lists each state's district headquarters.
+`scripts/build-india-regions.mjs` generates these files from OpenStreetMap, and the **Refresh India regions
+data** GitHub Action runs that script. The action runs automatically when the script or
+`client/src/data/indiaStates.js` changes, and you can run it from the Actions tab at any time to refresh the
+data. It commits the updated files to the branch it ran on. `client/src/data/indiaStates.js` is the
+hand-maintained list of states, their ISO codes (including older ones), capitals and All-India pins.
 
 ## Local development
 

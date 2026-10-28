@@ -1,5 +1,5 @@
 import * as direct from './direct.js';
-import { BUNDLED_REGIONS } from '../data/tamilNadu.js';
+import { hasBundledRegion } from '../data/regions.js';
 
 const BASE = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 
@@ -87,9 +87,9 @@ export const api = {
   reverse: (lat, lon, signal) =>
     load('/geocode/reverse', coords(lat, lon), signal, (b) => 'stateCode' in b, () => direct.reverse(lat, lon, signal)),
 
-  /** `regionCode` (e.g. "IN-TN") is optional; bundled regions then load without any lookup. */
+  /** `regionCode` (e.g. "IN-TN") is optional; bundled Indian states then load without any lookup. */
   region: (lat, lon, regionCode, signal) => {
-    if (BUNDLED_REGIONS[regionCode]) return direct.region(lat, lon, signal, regionCode);
+    if (hasBundledRegion(regionCode)) return direct.region(lat, lon, signal, regionCode);
     return load('/region', coords(lat, lon), signal, (b) => Array.isArray(b.cities), () =>
       direct.region(lat, lon, signal),
     );
@@ -99,6 +99,13 @@ export const api = {
     load('/geocode/search', { q }, signal, (b) => Array.isArray(b.results), async () => ({
       results: await direct.search(q, signal),
     })).then((r) => r.results),
+
+  /** Live conditions for every Indian state (one point each), fetched straight from Open-Meteo. */
+  india: (signal) =>
+    direct.india(signal).catch((err) => {
+      if (err.name === 'AbortError') throw err;
+      throw new ApiError(err.message || 'Could not load weather for India.', err.status ?? 0);
+    }),
 
   /** Fire-and-forget request that starts waking a sleeping Render service. */
   warmUp: () => {
