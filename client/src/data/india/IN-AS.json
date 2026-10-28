@@ -1,0 +1,316 @@
+{
+ "code": "IN-AS",
+ "name": "Assam",
+ "headquarters": 34,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-AS-0",
+   "name": "Guwahati",
+   "district": null,
+   "lat": 26.1806,
+   "lon": 91.7539,
+   "population": 1000000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-AS-1",
+   "name": "Morigaon",
+   "district": null,
+   "lat": 26.2522,
+   "lon": 92.3421,
+   "population": 957423,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-2",
+   "name": "Silchar",
+   "district": null,
+   "lat": 24.8296,
+   "lon": 92.7971,
+   "population": 172800,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-3",
+   "name": "Dibrugarh",
+   "district": null,
+   "lat": 27.4845,
+   "lon": 94.9019,
+   "population": 140000,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-4",
+   "name": "Bongaigaon",
+   "district": null,
+   "lat": 26.48,
+   "lon": 90.558,
+   "population": 139034,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-5",
+   "name": "Jorhat",
+   "district": null,
+   "lat": 26.7578,
+   "lon": 94.208,
+   "population": 126736,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-6",
+   "name": "Nagaon",
+   "district": null,
+   "lat": 26.3482,
+   "lon": 92.6858,
+   "population": 117700,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-7",
+   "name": "Barpeta",
+   "district": null,
+   "lat": 26.3258,
+   "lon": 91.0076,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-8",
+   "name": "Goalpara",
+   "district": null,
+   "lat": 26.1784,
+   "lon": 90.6227,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-9",
+   "name": "Dhubri",
+   "district": null,
+   "lat": 26.0196,
+   "lon": 89.9914,
+   "population": 63388,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-10",
+   "name": "Golaghat",
+   "district": null,
+   "lat": 26.5108,
+   "lon": 93.9744,
+   "population": 60782,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-11",
+   "name": "North Lakhimpur",
+   "district": null,
+   "lat": 27.2362,
+   "lon": 94.1039,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-12",
+   "name": "Mangaldoi",
+   "district": null,
+   "lat": 26.4363,
+   "lon": 92.0307,
+   "population": 25000,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-13",
+   "name": "Tinsukia",
+   "district": null,
+   "lat": 27.488,
+   "lon": 95.3602,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-14",
+   "name": "Tezpur",
+   "district": null,
+   "lat": 26.623,
+   "lon": 92.7976,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-15",
+   "name": "Amingaon",
+   "district": null,
+   "lat": 26.1862,
+   "lon": 91.67,
+   "population": 0,
+   "place": "suburb"
+  },
+  {
+   "id": "IN-AS-16",
+   "name": "Bishwanath Charaili",
+   "district": null,
+   "lat": 26.7284,
+   "lon": 93.1495,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-17",
+   "name": "Dhemaji",
+   "district": null,
+   "lat": 27.4764,
+   "lon": 94.563,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-18",
+   "name": "Diphu",
+   "district": null,
+   "lat": 25.8457,
+   "lon": 93.4381,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-19",
+   "name": "Garamur",
+   "district": null,
+   "lat": 26.9803,
+   "lon": 94.1574,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-20",
+   "name": "Haflong",
+   "district": null,
+   "lat": 25.1645,
+   "lon": 93.0176,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-21",
+   "name": "Hamren",
+   "district": null,
+   "lat": 25.845,
+   "lon": 92.5749,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-22",
+   "name": "Hatsinigmari",
+   "district": null,
+   "lat": 25.7229,
+   "lon": 89.8981,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-AS-23",
+   "name": "Hojai",
+   "district": null,
+   "lat": 26.0032,
+   "lon": 92.8523,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-24",
+   "name": "Kajalgaon",
+   "district": null,
+   "lat": 26.5139,
+   "lon": 90.5255,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-25",
+   "name": "Karimganj",
+   "district": null,
+   "lat": 24.8647,
+   "lon": 92.3681,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-26",
+   "name": "Kokrajhar",
+   "district": null,
+   "lat": 26.4004,
+   "lon": 90.271,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-27",
+   "name": "Mushalpur",
+   "district": null,
+   "lat": 26.662,
+   "lon": 91.3411,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-28",
+   "name": "Nalbari",
+   "district": null,
+   "lat": 26.4456,
+   "lon": 91.4354,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-29",
+   "name": "Pathsala",
+   "district": null,
+   "lat": 26.5051,
+   "lon": 91.1778,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-30",
+   "name": "Sivasagar",
+   "district": null,
+   "lat": 26.9835,
+   "lon": 94.6394,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AS-31",
+   "name": "Sonari",
+   "district": null,
+   "lat": 27.0267,
+   "lon": 95.0183,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-32",
+   "name": "Tamulpur",
+   "district": null,
+   "lat": 26.6108,
+   "lon": 91.5762,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AS-33",
+   "name": "Udalguri",
+   "district": null,
+   "lat": 26.7504,
+   "lon": 92.0977,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

@@ -1,0 +1,298 @@
+{
+ "code": "IN-GJ",
+ "name": "Gujarat",
+ "headquarters": 32,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-GJ-0",
+   "name": "Gandhinagar",
+   "district": null,
+   "lat": 23.2233,
+   "lon": 72.6492,
+   "population": 206200,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-GJ-1",
+   "name": "Ahmedabad",
+   "district": null,
+   "lat": 23.0215,
+   "lon": 72.5801,
+   "population": 6352254,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-2",
+   "name": "Rajkot",
+   "district": null,
+   "lat": 22.3053,
+   "lon": 70.8028,
+   "population": 1286678,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-3",
+   "name": "Jamnagar",
+   "district": null,
+   "lat": 22.4732,
+   "lon": 70.0552,
+   "population": 668000,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-4",
+   "name": "Bhavnagar",
+   "district": null,
+   "lat": 21.7719,
+   "lon": 72.1416,
+   "population": 593768,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-5",
+   "name": "Surat",
+   "district": null,
+   "lat": 21.1865,
+   "lon": 72.8081,
+   "population": 500000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-6",
+   "name": "Vadodara",
+   "district": null,
+   "lat": 22.2973,
+   "lon": 73.1943,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-7",
+   "name": "Junagadh",
+   "district": "Junagadh",
+   "lat": 21.522,
+   "lon": 70.4582,
+   "population": 320250,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-8",
+   "name": "Anand",
+   "district": null,
+   "lat": 22.5587,
+   "lon": 72.9627,
+   "population": 198200,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-9",
+   "name": "Morbi",
+   "district": null,
+   "lat": 22.8177,
+   "lon": 70.8346,
+   "population": 194947,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-10",
+   "name": "Mahesana",
+   "district": null,
+   "lat": 23.6016,
+   "lon": 72.3868,
+   "population": 185000,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-11",
+   "name": "Surendranagar",
+   "district": null,
+   "lat": 22.7232,
+   "lon": 71.6484,
+   "population": 177900,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-12",
+   "name": "Bharuch",
+   "district": null,
+   "lat": 21.708,
+   "lon": 72.9957,
+   "population": 169000,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-13",
+   "name": "Navsari",
+   "district": null,
+   "lat": 20.9524,
+   "lon": 72.9324,
+   "population": 161000,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-14",
+   "name": "Veraval",
+   "district": null,
+   "lat": 20.9101,
+   "lon": 70.3653,
+   "population": 154600,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-15",
+   "name": "Porbandar",
+   "district": null,
+   "lat": 21.6409,
+   "lon": 69.611,
+   "population": 152100,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-16",
+   "name": "Godhra",
+   "district": null,
+   "lat": 22.7785,
+   "lon": 73.6245,
+   "population": 143600,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-17",
+   "name": "Bhuj",
+   "district": null,
+   "lat": 23.2472,
+   "lon": 69.6683,
+   "population": 143200,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-18",
+   "name": "Botad",
+   "district": null,
+   "lat": 22.1686,
+   "lon": 71.6685,
+   "population": 130300,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-19",
+   "name": "Patan",
+   "district": null,
+   "lat": 23.8505,
+   "lon": 72.1133,
+   "population": 125500,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-20",
+   "name": "Palanpur",
+   "district": null,
+   "lat": 24.171,
+   "lon": 72.4366,
+   "population": 122400,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-21",
+   "name": "Valsad",
+   "district": null,
+   "lat": 20.6068,
+   "lon": 72.9273,
+   "population": 114600,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-22",
+   "name": "Amreli",
+   "district": null,
+   "lat": 21.6009,
+   "lon": 71.2168,
+   "population": 105600,
+   "place": "city"
+  },
+  {
+   "id": "IN-GJ-23",
+   "name": "Dahod",
+   "district": null,
+   "lat": 22.8359,
+   "lon": 74.2557,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-24",
+   "name": "Lunavada",
+   "district": null,
+   "lat": 23.1291,
+   "lon": 73.6111,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-25",
+   "name": "Vyara",
+   "district": null,
+   "lat": 21.1122,
+   "lon": 73.396,
+   "population": 40000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-26",
+   "name": "Tharad",
+   "district": null,
+   "lat": 24.3897,
+   "lon": 71.6293,
+   "population": 22800,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-27",
+   "name": "Ahwa",
+   "district": null,
+   "lat": 20.7587,
+   "lon": 73.6874,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-28",
+   "name": "Khambhaliya",
+   "district": null,
+   "lat": 22.213,
+   "lon": 69.6533,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-29",
+   "name": "Rajpipla",
+   "district": null,
+   "lat": 21.8697,
+   "lon": 73.5048,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-30",
+   "name": "Himatnagar",
+   "district": null,
+   "lat": 23.5971,
+   "lon": 72.9588,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-GJ-31",
+   "name": "Modasa",
+   "district": null,
+   "lat": 23.4634,
+   "lon": 73.2991,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}
