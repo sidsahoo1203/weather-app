@@ -33,7 +33,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
+      # The branch head, not the triggering commit, so a re-run resumes from data committed
+      # by earlier runs.
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
 
       - uses: actions/setup-node@v4
         with:
@@ -44,7 +48,9 @@ jobs:
           STATES: ${{ inputs.states }}
           REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
         # Unquoted on purpose so the codes split into separate arguments.
-        run: node scripts/build-india-regions.mjs $REFRESH $STATES
+        # Stops starting new states after 45 minutes so the commit step always runs before
+        # the job's 60-minute limit. Run the workflow again to continue.
+        run: node scripts/build-india-regions.mjs --budget-minutes=45 $REFRESH $STATES
 
       # Commit whatever was built, even if some states failed, so the next run resumes.
       - name: Commit changes

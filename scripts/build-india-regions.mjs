@@ -5,6 +5,7 @@
 //   node scripts/build-india-regions.mjs                    # states that have no file yet
 //   node scripts/build-india-regions.mjs --refresh          # rebuild every state
 //   node scripts/build-india-regions.mjs IN-TN IN-KL        # rebuild selected states
+//   --budget-minutes=45                                     # stop starting new states after this
 //
 // Each state's file is written as soon as it is built, and a state that keeps failing is
 // skipped, so a run against busy public Overpass servers still keeps its progress; the
@@ -25,7 +26,7 @@ const ENDPOINTS = [
   'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
 ];
-const ATTEMPTS = 8;
+const ATTEMPTS = 6;
 const USER_AGENT = 'Atmos-Weather/1.0 (+https://github.com/sidsahoo1203/weather-app)';
 const INDIA_BOUNDS = { south: 6, north: 37.6, west: 68, east: 97.5 };
 const MIN_PLACES = 3;
@@ -42,7 +43,7 @@ async function overpass(query) {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': USER_AGENT },
         body: `data=${encodeURIComponent(query)}`,
-        signal: AbortSignal.timeout(150_000),
+        signal: AbortSignal.timeout(100_000),
       });
       if (res.ok) return (await res.json()).elements || [];
       lastError = new Error(`${url} responded ${res.status}`);
@@ -61,16 +62,14 @@ const stateArea = (state) => {
   return `(${codes})->.s;`;
 };
 
-// Each district relation followed by its admin_centre node, if that node is inside the state
-// (neighbouring districts can match the area through shared border ways).
-const districtsQuery = (state) => `[out:json][timeout:180];
+// The headquarters (admin_centre) of every district, kept only when the node is inside the
+// state: neighbouring districts can match the area through shared border ways. One flat
+// query, which busy public Overpass servers answer far more reliably than a per-district loop.
+const headquartersQuery = (state) => `[out:json][timeout:120];
 ${stateArea(state)}
 rel(area.s)["boundary"="administrative"]["admin_level"="5"]->.ds;
-foreach.ds->.d(
-  .d out tags;
-  node(r.d:"admin_centre")(area.s);
-  out body;
-);`;
+node(r.ds:"admin_centre")(area.s);
+out body;`;
 
 const townsQuery = (state) => `[out:json][timeout:180];
 ${stateArea(state)}
@@ -99,18 +98,10 @@ function placeFromNode(node, district) {
 }
 
 async function buildState(state) {
-  const places = [];
-  const districts = [];
-  let current = null;
-
-  for (const el of await overpass(districtsQuery(state))) {
-    if (el.type === 'relation') {
-      current = cleanDistrict(englishName(el.tags));
-      districts.push(current);
-    } else if (el.type === 'node' && current && englishName(el.tags)) {
-      places.push(placeFromNode(el, current));
-    }
-  }
+  const places = (await overpass(headquartersQuery(state)))
+    .filter((el) => el.type === 'node' && englishName(el.tags))
+    .map((el) => placeFromNode(el, el.tags?.['is_in:district'] ? cleanDistrict(el.tags['is_in:district']) : null));
+  const headquarters = places.filter(inIndia).length;
 
   if (places.length < MIN_PLACES) {
     // No district data (small union territories) or no admin centres: use the largest towns.
@@ -144,7 +135,7 @@ async function buildState(state) {
   return {
     code: state.code,
     name: state.name,
-    districts: districts.length,
+    headquarters,
     source: 'OpenStreetMap contributors (ODbL), via Overpass API',
     generatedAt: new Date().toISOString().slice(0, 10),
     cities: unique.map(({ capital, ...p }, i) => ({ id: `${state.code}-${i}`, ...p, ...(capital ? { capital: true } : {}) })),
@@ -157,6 +148,8 @@ const exists = (path) => access(path).then(() => true, () => false);
 async function main() {
   const args = process.argv.slice(2);
   const refresh = args.includes('--refresh');
+  const budget = Number(args.find((a) => a.startsWith('--budget-minutes='))?.split('=')[1]) || Infinity;
+  const startedAt = Date.now();
   const wanted = args.filter((a) => a.startsWith('IN-'));
   await mkdir(OUT_DIR, { recursive: true });
 
@@ -171,11 +164,15 @@ async function main() {
   const built = [];
   const failed = [];
   for (const state of states) {
+    if ((Date.now() - startedAt) / 60000 > budget) {
+      console.warn(`Time budget of ${budget} min used; leaving ${state.code} and later states for the next run.`);
+      failed.push(...states.slice(states.indexOf(state)).map((s) => s.code));
+      break;
+    }
     console.log(`${state.code} ${state.name}…`);
     try {
       const data = await buildState(state);
-      const withDistrict = data.cities.filter((c) => c.district).length;
-      console.log(`  ${data.cities.length} places (${withDistrict} district HQs of ${data.districts} districts)`);
+      console.log(`  ${data.cities.length} places (${data.headquarters} district headquarters)`);
       if (data.cities.length < 2 && !state.ut) throw new Error('too few places, not writing');
       await writeFile(fileFor(state), `${JSON.stringify(data, null, 1)}\n`);
       built.push([state.code, data.cities.length]);
