@@ -1,0 +1,19 @@
+{
+ "code": "IN-CH",
+ "name": "Chandigarh",
+ "headquarters": 1,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-CH-0",
+   "name": "Chandigarh",
+   "district": null,
+   "lat": 30.7334,
+   "lon": 76.7797,
+   "population": 1028667,
+   "place": "city",
+   "capital": true
+  }
+ ]
+}

@@ -1,0 +1,343 @@
+{
+ "code": "IN-TN",
+ "name": "Tamil Nadu",
+ "headquarters": 37,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-TN-0",
+   "name": "Chennai",
+   "district": null,
+   "lat": 13.0801,
+   "lon": 80.2808,
+   "population": 4681087,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-TN-1",
+   "name": "Madurai",
+   "district": null,
+   "lat": 9.9261,
+   "lon": 78.1141,
+   "population": 1700000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-2",
+   "name": "Coimbatore",
+   "district": null,
+   "lat": 11.0018,
+   "lon": 76.9628,
+   "population": 1050000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-3",
+   "name": "Kallakuruchi",
+   "district": null,
+   "lat": 11.7406,
+   "lon": 78.9637,
+   "population": 500000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-4",
+   "name": "Tiruchirappalli",
+   "district": null,
+   "lat": 10.8071,
+   "lon": 78.6881,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-5",
+   "name": "Tiruppur",
+   "district": null,
+   "lat": 11.1018,
+   "lon": 77.3452,
+   "population": 440000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-6",
+   "name": "Nagercoil",
+   "district": null,
+   "lat": 8.184,
+   "lon": 77.4315,
+   "population": 225000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-7",
+   "name": "Thanjavur",
+   "district": null,
+   "lat": 10.786,
+   "lon": 79.1381,
+   "population": 223000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-8",
+   "name": "Dindigul",
+   "district": null,
+   "lat": 10.3656,
+   "lon": 77.9693,
+   "population": 207300,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-9",
+   "name": "Vellore",
+   "district": null,
+   "lat": 12.9072,
+   "lon": 79.131,
+   "population": 186000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-10",
+   "name": "Cuddalore",
+   "district": null,
+   "lat": 11.7564,
+   "lon": 79.7635,
+   "population": 173600,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-11",
+   "name": "Kanchipuram",
+   "district": null,
+   "lat": 12.8364,
+   "lon": 79.7053,
+   "population": 164400,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-12",
+   "name": "Erode",
+   "district": null,
+   "lat": 11.3306,
+   "lon": 77.7277,
+   "population": 157100,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-13",
+   "name": "Tiruvannamalai",
+   "district": null,
+   "lat": 12.2343,
+   "lon": 79.0762,
+   "population": 145200,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-14",
+   "name": "Pudukkottai",
+   "district": null,
+   "lat": 10.3827,
+   "lon": 78.8191,
+   "population": 117630,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-15",
+   "name": "Nagapattinam",
+   "district": null,
+   "lat": 10.7648,
+   "lon": 79.8431,
+   "population": 102900,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-16",
+   "name": "Thoothukudi",
+   "district": null,
+   "lat": 8.8053,
+   "lon": 78.1453,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-17",
+   "name": "Tirunelveli",
+   "district": null,
+   "lat": 8.7332,
+   "lon": 77.7103,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-18",
+   "name": "Udhagamandalam",
+   "district": null,
+   "lat": 11.4127,
+   "lon": 76.7031,
+   "population": 88430,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-19",
+   "name": "Krishnagiri",
+   "district": null,
+   "lat": 12.5189,
+   "lon": 78.2207,
+   "population": 71323,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-20",
+   "name": "Chengalpattu",
+   "district": null,
+   "lat": 12.6841,
+   "lon": 79.9836,
+   "population": 62579,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-21",
+   "name": "Namakkal",
+   "district": null,
+   "lat": 11.2192,
+   "lon": 78.1679,
+   "population": 55145,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-22",
+   "name": "Ranipet",
+   "district": null,
+   "lat": 12.9292,
+   "lon": 79.3322,
+   "population": 50764,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-23",
+   "name": "Karur",
+   "district": null,
+   "lat": 10.9596,
+   "lon": 78.0808,
+   "population": 50000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-24",
+   "name": "Ariyalur",
+   "district": null,
+   "lat": 11.1358,
+   "lon": 79.0723,
+   "population": 25000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-25",
+   "name": "Dharmapuri",
+   "district": null,
+   "lat": 12.1348,
+   "lon": 78.159,
+   "population": 10000,
+   "place": "city"
+  },
+  {
+   "id": "IN-TN-26",
+   "name": "Perambalur",
+   "district": null,
+   "lat": 11.2357,
+   "lon": 78.8688,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-27",
+   "name": "Ramanathapuram",
+   "district": null,
+   "lat": 9.3652,
+   "lon": 78.8343,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-28",
+   "name": "Tirupattur",
+   "district": null,
+   "lat": 12.4909,
+   "lon": 78.5647,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-29",
+   "name": "Mayiladuthurai",
+   "district": null,
+   "lat": 11.1019,
+   "lon": 79.6503,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-30",
+   "name": "Sivaganga",
+   "district": null,
+   "lat": 9.8487,
+   "lon": 78.487,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-31",
+   "name": "Tenkasi",
+   "district": null,
+   "lat": 8.9568,
+   "lon": 77.3121,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-32",
+   "name": "Theni",
+   "district": null,
+   "lat": 10.0108,
+   "lon": 77.481,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-33",
+   "name": "Thiruvarur",
+   "district": null,
+   "lat": 10.7667,
+   "lon": 79.6352,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-34",
+   "name": "Tiruvallur",
+   "district": null,
+   "lat": 13.1394,
+   "lon": 79.9071,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-35",
+   "name": "Viluppuram",
+   "district": null,
+   "lat": 11.9426,
+   "lon": 79.4951,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TN-36",
+   "name": "Virudhunagar",
+   "district": null,
+   "lat": 9.5822,
+   "lon": 77.9537,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "code": "IN-DH",
+ "name": "Dadra and Nagar Haveli and Daman and Diu",
+ "headquarters": 3,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-DH-0",
+   "name": "Daman",
+   "district": null,
+   "lat": 20.417,
+   "lon": 72.8332,
+   "population": 35000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-DH-1",
+   "name": "Silvassa",
+   "district": null,
+   "lat": 20.2737,
+   "lon": 73.0046,
+   "population": 98266,
+   "place": "city"
+  },
+  {
+   "id": "IN-DH-2",
+   "name": "Diu",
+   "district": null,
+   "lat": 20.7138,
+   "lon": 70.9854,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

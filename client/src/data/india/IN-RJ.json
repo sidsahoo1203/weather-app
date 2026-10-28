@@ -1,0 +1,361 @@
+{
+ "code": "IN-RJ",
+ "name": "Rajasthan",
+ "headquarters": 0,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-RJ-0",
+   "name": "Jaipur",
+   "district": null,
+   "lat": 26.9155,
+   "lon": 75.819,
+   "population": 3073400,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-RJ-1",
+   "name": "Jodhpur",
+   "district": null,
+   "lat": 26.2968,
+   "lon": 73.0351,
+   "population": 1034000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-2",
+   "name": "Kota",
+   "district": null,
+   "lat": 25.1737,
+   "lon": 75.8574,
+   "population": 1001400,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-3",
+   "name": "Bikaner",
+   "district": null,
+   "lat": 28.0159,
+   "lon": 73.3171,
+   "population": 647804,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-4",
+   "name": "Ajmer",
+   "district": null,
+   "lat": 26.4691,
+   "lon": 74.639,
+   "population": 542600,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-5",
+   "name": "Udaipur",
+   "district": null,
+   "lat": 24.5787,
+   "lon": 73.6863,
+   "population": 452000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-6",
+   "name": "Bhilwara",
+   "district": null,
+   "lat": 25.348,
+   "lon": 74.636,
+   "population": 360000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-7",
+   "name": "Alwar",
+   "district": null,
+   "lat": 27.5646,
+   "lon": 76.6132,
+   "population": 315300,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-8",
+   "name": "Bharatpur",
+   "district": null,
+   "lat": 27.2154,
+   "lon": 77.4987,
+   "population": 252300,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-9",
+   "name": "Sri Ganganagar",
+   "district": null,
+   "lat": 29.9271,
+   "lon": 73.8762,
+   "population": 244800,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-10",
+   "name": "Sikar",
+   "district": null,
+   "lat": 27.6092,
+   "lon": 75.1396,
+   "population": 237500,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-11",
+   "name": "Pali",
+   "district": null,
+   "lat": 25.7682,
+   "lon": 73.3275,
+   "population": 230000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-12",
+   "name": "Tonk",
+   "district": null,
+   "lat": 26.1612,
+   "lon": 75.7858,
+   "population": 165400,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-13",
+   "name": "Hanumangarh",
+   "district": null,
+   "lat": 29.576,
+   "lon": 74.3342,
+   "population": 151100,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-14",
+   "name": "Beawar",
+   "district": null,
+   "lat": 26.0992,
+   "lon": 74.3127,
+   "population": 145800,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-15",
+   "name": "Bagoda",
+   "district": null,
+   "lat": 25.2141,
+   "lon": 72.0219,
+   "population": 130000,
+   "place": "town"
+  },
+  {
+   "id": "IN-RJ-16",
+   "name": "Dhaulpur",
+   "district": null,
+   "lat": 26.7011,
+   "lon": 77.8967,
+   "population": 126100,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-17",
+   "name": "Sawai Madhopur",
+   "district": null,
+   "lat": 26.0189,
+   "lon": 76.3522,
+   "population": 121100,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-18",
+   "name": "Churu",
+   "district": null,
+   "lat": 28.2983,
+   "lon": 74.9679,
+   "population": 119800,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-19",
+   "name": "Gangapur City",
+   "district": null,
+   "lat": 26.4767,
+   "lon": 76.7233,
+   "population": 119000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-20",
+   "name": "Jhunjhunu",
+   "district": null,
+   "lat": 28.1288,
+   "lon": 75.3993,
+   "population": 119000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-21",
+   "name": "Baran",
+   "district": null,
+   "lat": 25.0982,
+   "lon": 76.517,
+   "population": 118200,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-22",
+   "name": "Chittorgarh",
+   "district": null,
+   "lat": 24.8837,
+   "lon": 74.6244,
+   "population": 116400,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-23",
+   "name": "Hindaun",
+   "district": null,
+   "lat": 26.7325,
+   "lon": 77.0363,
+   "population": 105700,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-24",
+   "name": "Bhiwadi",
+   "district": null,
+   "lat": 28.2039,
+   "lon": 76.8374,
+   "population": 104900,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-25",
+   "name": "Bundi",
+   "district": null,
+   "lat": 25.4416,
+   "lon": 75.6376,
+   "population": 103300,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-26",
+   "name": "Nagaur",
+   "district": null,
+   "lat": 27.2001,
+   "lon": 73.7377,
+   "population": 102900,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-27",
+   "name": "Sujangarh",
+   "district": null,
+   "lat": 27.7018,
+   "lon": 74.4687,
+   "population": 101500,
+   "place": "town"
+  },
+  {
+   "id": "IN-RJ-28",
+   "name": "Banswara",
+   "district": null,
+   "lat": 23.5501,
+   "lon": 74.4463,
+   "population": 101000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-29",
+   "name": "Barmer",
+   "district": null,
+   "lat": 25.7453,
+   "lon": 71.3998,
+   "population": 96200,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-30",
+   "name": "Sardarshahar",
+   "district": null,
+   "lat": 28.4403,
+   "lon": 74.4895,
+   "population": 96000,
+   "place": "town"
+  },
+  {
+   "id": "IN-RJ-31",
+   "name": "Makrana",
+   "district": null,
+   "lat": 27.0388,
+   "lon": 74.7271,
+   "population": 93100,
+   "place": "town"
+  },
+  {
+   "id": "IN-RJ-32",
+   "name": "Fatehpur Shekhawati",
+   "district": null,
+   "lat": 27.996,
+   "lon": 74.9605,
+   "population": 92600,
+   "place": "town"
+  },
+  {
+   "id": "IN-RJ-33",
+   "name": "Dausa",
+   "district": null,
+   "lat": 26.8933,
+   "lon": 76.3377,
+   "population": 86000,
+   "place": "town"
+  },
+  {
+   "id": "IN-RJ-34",
+   "name": "Balotra",
+   "district": null,
+   "lat": 25.8348,
+   "lon": 72.2411,
+   "population": 74500,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-35",
+   "name": "Jaisalmer",
+   "district": null,
+   "lat": 26.9117,
+   "lon": 70.9125,
+   "population": 65500,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-36",
+   "name": "Jat Colony",
+   "district": null,
+   "lat": 25.7346,
+   "lon": 71.4096,
+   "population": 11000,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-37",
+   "name": "Jaitsar",
+   "district": null,
+   "lat": 29.3489,
+   "lon": 73.6591,
+   "population": 7300,
+   "place": "city"
+  },
+  {
+   "id": "IN-RJ-38",
+   "name": "Teja Colony",
+   "district": null,
+   "lat": 27.1914,
+   "lon": 73.7326,
+   "population": 0,
+   "place": "city"
+  }
+ ]
+}

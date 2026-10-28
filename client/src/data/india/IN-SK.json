@@ -1,0 +1,64 @@
+{
+ "code": "IN-SK",
+ "name": "Sikkim",
+ "headquarters": 6,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-SK-0",
+   "name": "Gangtok",
+   "district": null,
+   "lat": 27.329,
+   "lon": 88.6123,
+   "population": 100300,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-SK-1",
+   "name": "Mangan",
+   "district": null,
+   "lat": 27.5011,
+   "lon": 88.5355,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-SK-2",
+   "name": "Namchi",
+   "district": null,
+   "lat": 27.1661,
+   "lon": 88.3652,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-SK-3",
+   "name": "Gyalshing",
+   "district": null,
+   "lat": 27.29,
+   "lon": 88.2573,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-SK-4",
+   "name": "Pakyong",
+   "district": null,
+   "lat": 27.2436,
+   "lon": 88.5985,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-SK-5",
+   "name": "Soreng",
+   "district": null,
+   "lat": 27.1706,
+   "lon": 88.1995,
+   "population": 0,
+   "place": "village"
+  }
+ ]
+}
