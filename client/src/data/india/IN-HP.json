@@ -1,0 +1,118 @@
+{
+ "code": "IN-HP",
+ "name": "Himachal Pradesh",
+ "headquarters": 12,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-HP-0",
+   "name": "Shimla",
+   "district": null,
+   "lat": 31.104,
+   "lon": 77.1708,
+   "population": 170000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-HP-1",
+   "name": "Mandi",
+   "district": null,
+   "lat": 31.7084,
+   "lon": 76.9294,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-HP-2",
+   "name": "Dharamshala",
+   "district": null,
+   "lat": 32.2143,
+   "lon": 76.3197,
+   "population": 56543,
+   "place": "city"
+  },
+  {
+   "id": "IN-HP-3",
+   "name": "Nahan",
+   "district": null,
+   "lat": 30.5602,
+   "lon": 77.2924,
+   "population": 56000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HP-4",
+   "name": "Hamirpur",
+   "district": null,
+   "lat": 31.6849,
+   "lon": 76.5254,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HP-5",
+   "name": "Solan",
+   "district": null,
+   "lat": 30.9078,
+   "lon": 77.1024,
+   "population": 39256,
+   "place": "city"
+  },
+  {
+   "id": "IN-HP-6",
+   "name": "Chamba",
+   "district": null,
+   "lat": 32.5565,
+   "lon": 76.125,
+   "population": 19933,
+   "place": "city"
+  },
+  {
+   "id": "IN-HP-7",
+   "name": "Kullu",
+   "district": null,
+   "lat": 31.9579,
+   "lon": 77.1089,
+   "population": 18000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HP-8",
+   "name": "Bilaspur",
+   "district": null,
+   "lat": 31.3381,
+   "lon": 76.7612,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HP-9",
+   "name": "Kalpa",
+   "district": null,
+   "lat": 31.5332,
+   "lon": 78.2498,
+   "population": 5000,
+   "place": "village"
+  },
+  {
+   "id": "IN-HP-10",
+   "name": "Una",
+   "district": null,
+   "lat": 31.4671,
+   "lon": 76.2721,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-HP-11",
+   "name": "Keylang",
+   "district": null,
+   "lat": 32.5718,
+   "lon": 77.0281,
+   "population": 1150,
+   "place": "town"
+  }
+ ]
+}

@@ -1,0 +1,325 @@
+{
+ "code": "IN-MH",
+ "name": "Maharashtra",
+ "headquarters": 35,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-MH-0",
+   "name": "Mumbai",
+   "district": null,
+   "lat": 19.055,
+   "lon": 72.8692,
+   "population": 12442373,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-MH-1",
+   "name": "Pune",
+   "district": null,
+   "lat": 18.5214,
+   "lon": 73.8545,
+   "population": 3115431,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-2",
+   "name": "Nagpur",
+   "district": null,
+   "lat": 21.1498,
+   "lon": 79.0821,
+   "population": 2405700,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-3",
+   "name": "Thane",
+   "district": null,
+   "lat": 19.1943,
+   "lon": 72.9702,
+   "population": 1841488,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-4",
+   "name": "Nashik",
+   "district": null,
+   "lat": 20.0112,
+   "lon": 73.7902,
+   "population": 1486000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-5",
+   "name": "Chhatrapati Sambhajinagar",
+   "district": null,
+   "lat": 19.8773,
+   "lon": 75.339,
+   "population": 1175116,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-6",
+   "name": "Solapur",
+   "district": null,
+   "lat": 17.67,
+   "lon": 75.9008,
+   "population": 951600,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-7",
+   "name": "Amravati",
+   "district": null,
+   "lat": 20.9316,
+   "lon": 77.7588,
+   "population": 647000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-8",
+   "name": "Nanded",
+   "district": null,
+   "lat": 19.1693,
+   "lon": 77.311,
+   "population": 550400,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-9",
+   "name": "Kolhapur",
+   "district": null,
+   "lat": 16.7028,
+   "lon": 74.2405,
+   "population": 549200,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-10",
+   "name": "Sangli",
+   "district": null,
+   "lat": 16.8503,
+   "lon": 74.5949,
+   "population": 502800,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-11",
+   "name": "Jalgaon",
+   "district": null,
+   "lat": 21.0101,
+   "lon": 75.5696,
+   "population": 460000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-12",
+   "name": "Akola",
+   "district": null,
+   "lat": 20.7117,
+   "lon": 77.0026,
+   "population": 425800,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-13",
+   "name": "Latur",
+   "district": null,
+   "lat": 18.3982,
+   "lon": 76.5626,
+   "population": 382900,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-14",
+   "name": "Dhule",
+   "district": null,
+   "lat": 20.898,
+   "lon": 74.7732,
+   "population": 375550,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-15",
+   "name": "Ahilyanagar",
+   "district": null,
+   "lat": 19.093,
+   "lon": 74.7493,
+   "population": 350859,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-16",
+   "name": "Chandrapur",
+   "district": null,
+   "lat": 19.9508,
+   "lon": 79.2987,
+   "population": 320000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-17",
+   "name": "Yavatmal",
+   "district": null,
+   "lat": 20.3903,
+   "lon": 78.1329,
+   "population": 320000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-18",
+   "name": "Parbhani",
+   "district": null,
+   "lat": 19.2625,
+   "lon": 76.7718,
+   "population": 307100,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-19",
+   "name": "Jalna",
+   "district": null,
+   "lat": 19.8393,
+   "lon": 75.8819,
+   "population": 285000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-20",
+   "name": "Beed",
+   "district": null,
+   "lat": 18.9904,
+   "lon": 75.7542,
+   "population": 146700,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-21",
+   "name": "Gondia",
+   "district": null,
+   "lat": 21.4552,
+   "lon": 80.1963,
+   "population": 132813,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-22",
+   "name": "Satara",
+   "district": null,
+   "lat": 17.6883,
+   "lon": 74.0042,
+   "population": 120200,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-23",
+   "name": "Dharashiv",
+   "district": null,
+   "lat": 18.1854,
+   "lon": 76.042,
+   "population": 111800,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-24",
+   "name": "Nandurbar",
+   "district": null,
+   "lat": 21.3638,
+   "lon": 74.2411,
+   "population": 111000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-25",
+   "name": "Wardha",
+   "district": null,
+   "lat": 20.7465,
+   "lon": 78.5998,
+   "population": 106400,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-26",
+   "name": "Bhandara",
+   "district": null,
+   "lat": 21.1707,
+   "lon": 79.6566,
+   "population": 91845,
+   "place": "city"
+  },
+  {
+   "id": "IN-MH-27",
+   "name": "Hingoli",
+   "district": null,
+   "lat": 19.7158,
+   "lon": 77.1388,
+   "population": 85100,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-28",
+   "name": "Washim",
+   "district": null,
+   "lat": 20.1029,
+   "lon": 77.1354,
+   "population": 78400,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-29",
+   "name": "Ratnagiri",
+   "district": null,
+   "lat": 16.9934,
+   "lon": 73.2954,
+   "population": 76200,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-30",
+   "name": "Palghar",
+   "district": null,
+   "lat": 19.6967,
+   "lon": 72.7695,
+   "population": 68900,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-31",
+   "name": "Buldhana",
+   "district": null,
+   "lat": 20.5321,
+   "lon": 76.1799,
+   "population": 67400,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-32",
+   "name": "Gadchiroli",
+   "district": null,
+   "lat": 20.1854,
+   "lon": 80.0035,
+   "population": 54100,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-33",
+   "name": "Alibag",
+   "district": null,
+   "lat": 18.6498,
+   "lon": 72.8765,
+   "population": 20700,
+   "place": "town"
+  },
+  {
+   "id": "IN-MH-34",
+   "name": "Oros",
+   "district": null,
+   "lat": 16.1163,
+   "lon": 73.7079,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

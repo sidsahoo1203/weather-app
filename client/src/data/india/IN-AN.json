@@ -1,0 +1,37 @@
+{
+ "code": "IN-AN",
+ "name": "Andaman and Nicobar Islands",
+ "headquarters": 3,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-AN-0",
+   "name": "Port Blair",
+   "district": null,
+   "lat": 11.6645,
+   "lon": 92.739,
+   "population": 108500,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-AN-1",
+   "name": "Malacca",
+   "district": null,
+   "lat": 9.1746,
+   "lon": 92.8256,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-AN-2",
+   "name": "Mayabunder",
+   "district": null,
+   "lat": 12.91,
+   "lon": 92.9014,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

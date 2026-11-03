@@ -1,0 +1,217 @@
+{
+ "code": "IN-PB",
+ "name": "Punjab",
+ "headquarters": 23,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-PB-0",
+   "name": "Mohali",
+   "district": null,
+   "lat": 30.6909,
+   "lon": 76.7115,
+   "population": 146213,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-PB-1",
+   "name": "Ludhiana",
+   "district": null,
+   "lat": 30.909,
+   "lon": 75.8516,
+   "population": 2232000,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-2",
+   "name": "Amritsar",
+   "district": null,
+   "lat": 31.6357,
+   "lon": 74.8787,
+   "population": 1132761,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-3",
+   "name": "Jalandhar",
+   "district": null,
+   "lat": 31.3324,
+   "lon": 75.5769,
+   "population": 903491,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-4",
+   "name": "Bathinda",
+   "district": null,
+   "lat": 30.2068,
+   "lon": 74.9464,
+   "population": 285813,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-5",
+   "name": "Hoshiarpur",
+   "district": null,
+   "lat": 31.5329,
+   "lon": 75.9025,
+   "population": 168700,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-6",
+   "name": "Moga",
+   "district": null,
+   "lat": 30.8223,
+   "lon": 75.1731,
+   "population": 150411,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-7",
+   "name": "Pathankot",
+   "district": null,
+   "lat": 32.2692,
+   "lon": 75.6529,
+   "population": 149000,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-8",
+   "name": "Sri Muktsar Sahib",
+   "district": null,
+   "lat": 30.4692,
+   "lon": 74.5182,
+   "population": 117085,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-9",
+   "name": "Barnala",
+   "district": null,
+   "lat": 30.3762,
+   "lon": 75.5436,
+   "population": 116449,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-10",
+   "name": "Firozpur",
+   "district": null,
+   "lat": 30.9612,
+   "lon": 74.6092,
+   "population": 110091,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-11",
+   "name": "Patiala",
+   "district": null,
+   "lat": 30.3302,
+   "lon": 76.4008,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-12",
+   "name": "Tarn Taran Sahib",
+   "district": null,
+   "lat": 31.4555,
+   "lon": 74.927,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-13",
+   "name": "Kapurthala",
+   "district": null,
+   "lat": 31.3815,
+   "lon": 75.3844,
+   "population": 99000,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-14",
+   "name": "Sangrur",
+   "district": null,
+   "lat": 30.2432,
+   "lon": 75.8358,
+   "population": 88043,
+   "place": "town"
+  },
+  {
+   "id": "IN-PB-15",
+   "name": "Faridkot",
+   "district": null,
+   "lat": 30.673,
+   "lon": 74.7517,
+   "population": 87695,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-16",
+   "name": "Mansa",
+   "district": null,
+   "lat": 29.9947,
+   "lon": 75.4022,
+   "population": 72600,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-17",
+   "name": "Fazilka",
+   "district": null,
+   "lat": 30.4032,
+   "lon": 74.0311,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-PB-18",
+   "name": "Malerkotla",
+   "district": null,
+   "lat": 30.5331,
+   "lon": 75.8808,
+   "population": 5000,
+   "place": "city"
+  },
+  {
+   "id": "IN-PB-19",
+   "name": "Rupnagar",
+   "district": null,
+   "lat": 30.9688,
+   "lon": 76.5261,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-PB-20",
+   "name": "Fatehgarh Sahib",
+   "district": null,
+   "lat": 30.6467,
+   "lon": 76.3888,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-PB-21",
+   "name": "Gurdaspur",
+   "district": null,
+   "lat": 32.0419,
+   "lon": 75.4002,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-PB-22",
+   "name": "Nawanshahr",
+   "district": null,
+   "lat": 31.1257,
+   "lon": 76.1159,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

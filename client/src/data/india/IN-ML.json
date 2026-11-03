@@ -1,0 +1,118 @@
+{
+ "code": "IN-ML",
+ "name": "Meghalaya",
+ "headquarters": 12,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-ML-0",
+   "name": "Shillong",
+   "district": null,
+   "lat": 25.576,
+   "lon": 91.8828,
+   "population": 143000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-ML-1",
+   "name": "Tura",
+   "district": null,
+   "lat": 25.5126,
+   "lon": 90.2172,
+   "population": 74858,
+   "place": "city"
+  },
+  {
+   "id": "IN-ML-2",
+   "name": "Jowai",
+   "district": null,
+   "lat": 25.4435,
+   "lon": 92.1973,
+   "population": 41000,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-3",
+   "name": "Baghmara",
+   "district": null,
+   "lat": 25.1928,
+   "lon": 90.6459,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-4",
+   "name": "Ampati",
+   "district": null,
+   "lat": 25.4705,
+   "lon": 89.9367,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-ML-5",
+   "name": "Khliehriat",
+   "district": null,
+   "lat": 25.3587,
+   "lon": 92.367,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-6",
+   "name": "Mairang",
+   "district": null,
+   "lat": 25.556,
+   "lon": 91.643,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-7",
+   "name": "Nongpoh",
+   "district": null,
+   "lat": 25.899,
+   "lon": 91.8813,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-8",
+   "name": "Nongstoin",
+   "district": null,
+   "lat": 25.5194,
+   "lon": 91.2678,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-9",
+   "name": "Pyndem Mawthawiong",
+   "district": null,
+   "lat": 25.4319,
+   "lon": 91.471,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-ML-10",
+   "name": "Resubelpara",
+   "district": null,
+   "lat": 25.9042,
+   "lon": 90.6071,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-ML-11",
+   "name": "Williamnagar",
+   "district": null,
+   "lat": 25.5061,
+   "lon": 90.6038,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

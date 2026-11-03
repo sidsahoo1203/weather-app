@@ -1,0 +1,316 @@
+{
+ "code": "IN-CG",
+ "name": "Chhattisgarh",
+ "headquarters": 34,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-CG-0",
+   "name": "Raipur",
+   "district": null,
+   "lat": 21.2381,
+   "lon": 81.6337,
+   "population": 1010087,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-CG-1",
+   "name": "Bilaspur",
+   "district": null,
+   "lat": 22.0786,
+   "lon": 82.1476,
+   "population": 250000,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-2",
+   "name": "Ambikapur",
+   "district": null,
+   "lat": 23.1226,
+   "lon": 83.1982,
+   "population": 214575,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-3",
+   "name": "Rajnandgaon",
+   "district": null,
+   "lat": 21.0965,
+   "lon": 81.0292,
+   "population": 163100,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-4",
+   "name": "Raigarh",
+   "district": null,
+   "lat": 21.8976,
+   "lon": 83.3966,
+   "population": 137100,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-5",
+   "name": "Jagdalpur",
+   "district": null,
+   "lat": 19.0871,
+   "lon": 82.0236,
+   "population": 125500,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-6",
+   "name": "Durg",
+   "district": null,
+   "lat": 21.1896,
+   "lon": 81.2851,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-7",
+   "name": "Dhamtari",
+   "district": null,
+   "lat": 20.7085,
+   "lon": 81.5481,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-8",
+   "name": "Kanker",
+   "district": null,
+   "lat": 20.2693,
+   "lon": 81.4932,
+   "population": 30000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-9",
+   "name": "Sakti",
+   "district": null,
+   "lat": 22.0263,
+   "lon": 82.9598,
+   "population": 21955,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-10",
+   "name": "Dantewada",
+   "district": null,
+   "lat": 18.8899,
+   "lon": 81.3478,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-11",
+   "name": "Mahasamund",
+   "district": null,
+   "lat": 21.1101,
+   "lon": 82.0987,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-12",
+   "name": "Sukma",
+   "district": null,
+   "lat": 18.3932,
+   "lon": 81.6569,
+   "population": 7483,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-13",
+   "name": "Balod",
+   "district": null,
+   "lat": 20.7272,
+   "lon": 81.2054,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-14",
+   "name": "Bemetara",
+   "district": null,
+   "lat": 21.714,
+   "lon": 81.5355,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-15",
+   "name": "Bijapur",
+   "district": null,
+   "lat": 18.7936,
+   "lon": 80.8159,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-16",
+   "name": "Gariaband",
+   "district": null,
+   "lat": 20.6336,
+   "lon": 82.0635,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-17",
+   "name": "Jashpur Nagar",
+   "district": null,
+   "lat": 22.8881,
+   "lon": 84.1392,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-18",
+   "name": "Kawardha",
+   "district": null,
+   "lat": 22.0059,
+   "lon": 81.2332,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-19",
+   "name": "Kondagaon",
+   "district": null,
+   "lat": 19.5886,
+   "lon": 81.6629,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-20",
+   "name": "Korba",
+   "district": null,
+   "lat": 22.3547,
+   "lon": 82.7111,
+   "population": 5000,
+   "place": "city"
+  },
+  {
+   "id": "IN-CG-21",
+   "name": "Narayanpur",
+   "district": null,
+   "lat": 19.7192,
+   "lon": 81.2444,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-22",
+   "name": "Balodabazar",
+   "district": null,
+   "lat": 21.6565,
+   "lon": 82.1606,
+   "population": 1000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-23",
+   "name": "Surajpur",
+   "district": null,
+   "lat": 23.2125,
+   "lon": 82.8667,
+   "population": 1000,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-24",
+   "name": "Baikunthpur",
+   "district": null,
+   "lat": 23.2649,
+   "lon": 82.56,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-CG-25",
+   "name": "Balrampur",
+   "district": null,
+   "lat": 23.6081,
+   "lon": 83.6191,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-CG-26",
+   "name": "Janjgir",
+   "district": null,
+   "lat": 22.0091,
+   "lon": 82.5789,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-27",
+   "name": "Khairagarh",
+   "district": null,
+   "lat": 21.4166,
+   "lon": 80.9818,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-28",
+   "name": "Manendragarh",
+   "district": null,
+   "lat": 23.2167,
+   "lon": 82.2036,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-29",
+   "name": "Mohla",
+   "district": null,
+   "lat": 20.582,
+   "lon": 80.7438,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-30",
+   "name": "Mungeli",
+   "district": null,
+   "lat": 22.0661,
+   "lon": 81.6874,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-31",
+   "name": "Pendra",
+   "district": null,
+   "lat": 22.7743,
+   "lon": 81.9602,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-32",
+   "name": "sana",
+   "district": null,
+   "lat": 21.8429,
+   "lon": 82.7835,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-CG-33",
+   "name": "Sarangarh",
+   "district": null,
+   "lat": 21.5856,
+   "lon": 83.0783,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

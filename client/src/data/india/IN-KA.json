@@ -1,0 +1,280 @@
+{
+ "code": "IN-KA",
+ "name": "Karnataka",
+ "headquarters": 30,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-KA-0",
+   "name": "Bengaluru",
+   "district": null,
+   "lat": 12.9768,
+   "lon": 77.5901,
+   "population": 10839725,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-KA-1",
+   "name": "Mysuru",
+   "district": null,
+   "lat": 12.3052,
+   "lon": 76.6554,
+   "population": 887446,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-2",
+   "name": "Belagavi",
+   "district": null,
+   "lat": 15.8573,
+   "lon": 74.5069,
+   "population": 600000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-3",
+   "name": "Mangaluru",
+   "district": null,
+   "lat": 12.8698,
+   "lon": 74.843,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-4",
+   "name": "Ballari",
+   "district": null,
+   "lat": 15.143,
+   "lon": 76.9173,
+   "population": 475000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-5",
+   "name": "Davanagere",
+   "district": null,
+   "lat": 14.4661,
+   "lon": 75.9206,
+   "population": 434971,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-6",
+   "name": "Kalaburagi",
+   "district": null,
+   "lat": 17.331,
+   "lon": 76.8334,
+   "population": 400000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-7",
+   "name": "Shivamogga",
+   "district": null,
+   "lat": 13.9326,
+   "lon": 75.575,
+   "population": 400000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-8",
+   "name": "Vijayapura",
+   "district": null,
+   "lat": 16.827,
+   "lon": 75.7175,
+   "population": 327427,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-9",
+   "name": "Bidar",
+   "district": null,
+   "lat": 17.9166,
+   "lon": 77.5113,
+   "population": 214400,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-10",
+   "name": "Hosapete",
+   "district": null,
+   "lat": 15.2665,
+   "lon": 76.3872,
+   "population": 206200,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-11",
+   "name": "Raichur",
+   "district": null,
+   "lat": 16.1983,
+   "lon": 77.3527,
+   "population": 200000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-12",
+   "name": "Chitradurga",
+   "district": null,
+   "lat": 14.2266,
+   "lon": 76.4005,
+   "population": 140200,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-13",
+   "name": "Kolar",
+   "district": null,
+   "lat": 13.1367,
+   "lon": 78.1337,
+   "population": 140000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-14",
+   "name": "Mandya",
+   "district": null,
+   "lat": 12.5239,
+   "lon": 76.8962,
+   "population": 137400,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-15",
+   "name": "Hassan",
+   "district": null,
+   "lat": 13.0071,
+   "lon": 76.0993,
+   "population": 133400,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-16",
+   "name": "Udupi",
+   "district": null,
+   "lat": 13.3419,
+   "lon": 74.7473,
+   "population": 125300,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-17",
+   "name": "Chikkamagaluru",
+   "district": null,
+   "lat": 13.318,
+   "lon": 75.7739,
+   "population": 118400,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-18",
+   "name": "Bagalkote",
+   "district": null,
+   "lat": 16.1853,
+   "lon": 75.6968,
+   "population": 112000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-19",
+   "name": "Dharwad",
+   "district": null,
+   "lat": 15.4541,
+   "lon": 75.0067,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-20",
+   "name": "Gadag-Betageri",
+   "district": null,
+   "lat": 15.4222,
+   "lon": 75.6377,
+   "population": 100000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-21",
+   "name": "Tumakuru",
+   "district": null,
+   "lat": 13.3401,
+   "lon": 77.1006,
+   "population": 100000,
+   "place": "city"
+  },
+  {
+   "id": "IN-KA-22",
+   "name": "Ramanagara",
+   "district": null,
+   "lat": 12.7253,
+   "lon": 77.2805,
+   "population": 80000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-23",
+   "name": "Sirsi",
+   "district": null,
+   "lat": 14.6192,
+   "lon": 74.8389,
+   "population": 62882,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-24",
+   "name": "Yadgiri",
+   "district": null,
+   "lat": 16.7634,
+   "lon": 77.1385,
+   "population": 60000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-25",
+   "name": "Koppala",
+   "district": null,
+   "lat": 15.3484,
+   "lon": 76.1547,
+   "population": 56000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-26",
+   "name": "Haveri",
+   "district": null,
+   "lat": 14.7875,
+   "lon": 75.3997,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-27",
+   "name": "Madikeri",
+   "district": null,
+   "lat": 12.4215,
+   "lon": 75.7388,
+   "population": 30000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-28",
+   "name": "Chamarajanagara",
+   "district": null,
+   "lat": 11.9238,
+   "lon": 76.9394,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-KA-29",
+   "name": "Chikkaballapura",
+   "district": null,
+   "lat": 13.4359,
+   "lon": 77.7312,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

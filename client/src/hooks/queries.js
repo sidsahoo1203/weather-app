@@ -44,6 +44,17 @@ export function useRegion(location, place) {
   });
 }
 
+/** Live conditions for every Indian state, fetched only while the All-India view is open. */
+export function useIndia(enabled) {
+  return useQuery({
+    queryKey: ['india'],
+    queryFn: ({ signal }) => api.india(signal),
+    enabled,
+    staleTime: 10 * 60 * 1000,
+    refetchInterval: enabled ? 15 * 60 * 1000 : false,
+  });
+}
+
 export function useSearch(query) {
   const q = query.trim();
   return useQuery({

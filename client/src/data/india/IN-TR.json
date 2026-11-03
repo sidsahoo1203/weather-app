@@ -1,0 +1,82 @@
+{
+ "code": "IN-TR",
+ "name": "Tripura",
+ "headquarters": 8,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-TR-0",
+   "name": "Agartala",
+   "district": null,
+   "lat": 23.8312,
+   "lon": 91.2824,
+   "population": 400000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-TR-1",
+   "name": "Ambassa",
+   "district": null,
+   "lat": 23.9216,
+   "lon": 91.8511,
+   "population": 70000,
+   "place": "town"
+  },
+  {
+   "id": "IN-TR-2",
+   "name": "Udaipur",
+   "district": null,
+   "lat": 23.5416,
+   "lon": 91.4918,
+   "population": 37781,
+   "place": "town"
+  },
+  {
+   "id": "IN-TR-3",
+   "name": "Belonia",
+   "district": null,
+   "lat": 23.2498,
+   "lon": 91.455,
+   "population": 19996,
+   "place": "town"
+  },
+  {
+   "id": "IN-TR-4",
+   "name": "Bishramganj",
+   "district": null,
+   "lat": 23.6077,
+   "lon": 91.3479,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TR-5",
+   "name": "Dharmanagar",
+   "district": null,
+   "lat": 24.3734,
+   "lon": 92.1655,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TR-6",
+   "name": "Kailashahar",
+   "district": null,
+   "lat": 24.3194,
+   "lon": 91.9984,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-TR-7",
+   "name": "Khowai",
+   "district": null,
+   "lat": 24.0812,
+   "lon": 91.5989,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

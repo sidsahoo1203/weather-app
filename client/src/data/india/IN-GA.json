@@ -1,0 +1,37 @@
+{
+ "code": "IN-GA",
+ "name": "Goa",
+ "headquarters": 3,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-GA-0",
+   "name": "Panaji",
+   "district": null,
+   "lat": 15.499,
+   "lon": 73.8282,
+   "population": 114759,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-GA-1",
+   "name": "Margao",
+   "district": null,
+   "lat": 15.2729,
+   "lon": 73.9583,
+   "population": 106528,
+   "place": "town"
+  },
+  {
+   "id": "IN-GA-2",
+   "name": "Quepem",
+   "district": null,
+   "lat": 15.2143,
+   "lon": 74.0708,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

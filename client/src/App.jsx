@@ -3,14 +3,14 @@ import { X } from 'lucide-react';
 import { TopBar } from './components/TopBar.jsx';
 import { WeatherPanel } from './components/WeatherPanel.jsx';
 import { RegionPanel } from './components/RegionPanel.jsx';
-import { useWeather, usePlace, useRegion } from './hooks/queries.js';
+import { useWeather, usePlace, useRegion, useIndia } from './hooks/queries.js';
 import { useGeolocation } from './hooks/useGeolocation.js';
 import { useSavedPlaces } from './hooks/useSavedPlaces.js';
 import { describeWeather } from './lib/weatherCodes.js';
 import { formatTemp } from './lib/units.js';
 import { load, save } from './lib/storage.js';
 import { api } from './lib/api.js';
-import { DEFAULT_LOCATION } from './data/tamilNadu.js';
+import { DEFAULT_LOCATION } from './data/indiaStates.js';
 import { useSettings } from './context/settings.js';
 import { cn } from './lib/cn.js';
 import { IconButton } from './components/ui.jsx';
@@ -52,11 +52,14 @@ export default function App() {
   const [location, setLocation] = useState(() => readUrlLocation() || DEFAULT_LOCATION);
   const [notice, setNotice] = useState(null);
   const [tab, setTab] = useState('forecast');
+  // 'state': cities of the selected place's state. 'india': one point per state.
+  const [view, setView] = useState('state');
   const [regionCollapsed, setRegionCollapsed] = useState(() => load('atmos:regionCollapsed', false));
   const initialCenter = useRef([location.lat, location.lon]);
 
   const select = useCallback((loc) => {
     setLocation(loc);
+    setView('state');
     writeUrlLocation(loc);
   }, []);
 
@@ -106,8 +109,13 @@ export default function App() {
   }, [weather, place.name, units]);
 
   const favoritePlace = location && place.name ? { lat: location.lat, lon: location.lon, ...place } : null;
-  const region = regionQuery.data?.region;
-  const regionKey = region ? region.code || `${region.name}:${region.country}` : null;
+  const indiaQuery = useIndia(view === 'india');
+  const listQuery = view === 'india' ? indiaQuery : regionQuery;
+  const list = listQuery.data;
+  const region = list?.region;
+  // No key while a new state's list is still loading, so the map does not fit to the old one.
+  const regionKey =
+    region && !listQuery.isPlaceholderData ? region.code || `${region.name}:${region.country}` : null;
 
   return (
     <div
@@ -127,7 +135,7 @@ export default function App() {
           className={MAP_BOX}
           location={location}
           userPosition={userPosition}
-          cities={regionQuery.data?.cities}
+          cities={list?.cities}
           region={region}
           regionKey={regionKey}
           onSelect={select}
@@ -144,7 +152,7 @@ export default function App() {
           Forecast
         </button>
         <button type="button" className={TAB} aria-pressed={tab === 'region'} onClick={() => setTab('region')}>
-          {region?.scope === 'state' ? region.name : 'Nearby cities'}
+          {view === 'india' ? 'All India' : region?.scope === 'state' ? region.name : 'Nearby cities'}
         </button>
       </nav>
 
@@ -174,7 +182,9 @@ export default function App() {
         aria-label="Cities in this state"
       >
         <RegionPanel
-          regionQuery={regionQuery}
+          regionQuery={listQuery}
+          view={view}
+          onViewChange={setView}
           location={location}
           onSelect={(loc) => {
             select(loc);

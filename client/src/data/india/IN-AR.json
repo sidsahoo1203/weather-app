@@ -1,0 +1,253 @@
+{
+ "code": "IN-AR",
+ "name": "Arunachal Pradesh",
+ "headquarters": 26,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-AR-0",
+   "name": "Itanagar",
+   "lat": 27.0844,
+   "lon": 93.6053,
+   "district": null,
+   "population": 0,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-AR-1",
+   "name": "Tawang",
+   "district": null,
+   "lat": 27.5879,
+   "lon": 91.8637,
+   "population": 11000,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-2",
+   "name": "Yingkiong",
+   "district": null,
+   "lat": 28.6411,
+   "lon": 95.0277,
+   "population": 6540,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-3",
+   "name": "Yazali",
+   "district": null,
+   "lat": 27.4032,
+   "lon": 93.7445,
+   "population": 1768,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-4",
+   "name": "Along",
+   "district": null,
+   "lat": 28.1698,
+   "lon": 94.7985,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-5",
+   "name": "Anini",
+   "district": null,
+   "lat": 28.7969,
+   "lon": 95.9045,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-6",
+   "name": "Basar",
+   "district": null,
+   "lat": 27.9831,
+   "lon": 94.6879,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-7",
+   "name": "Bomdila",
+   "district": null,
+   "lat": 27.2644,
+   "lon": 92.4207,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-8",
+   "name": "Changlang",
+   "district": null,
+   "lat": 27.1398,
+   "lon": 95.7382,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-9",
+   "name": "Daporijo",
+   "district": null,
+   "lat": 27.9843,
+   "lon": 94.2191,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-10",
+   "name": "Hawai",
+   "district": null,
+   "lat": 27.8844,
+   "lon": 96.8124,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-11",
+   "name": "Khonsa",
+   "district": null,
+   "lat": 26.991,
+   "lon": 95.5061,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-12",
+   "name": "Koloriang",
+   "district": null,
+   "lat": 27.9055,
+   "lon": 93.3537,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-13",
+   "name": "Lemmi",
+   "district": null,
+   "lat": 27.1594,
+   "lon": 93.2207,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-14",
+   "name": "Likabali",
+   "district": null,
+   "lat": 27.6588,
+   "lon": 94.6978,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-AR-15",
+   "name": "Longding",
+   "district": null,
+   "lat": 26.8873,
+   "lon": 95.3203,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-16",
+   "name": "Namsai",
+   "district": null,
+   "lat": 27.6658,
+   "lon": 95.8614,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-17",
+   "name": "Palin",
+   "district": null,
+   "lat": 27.6951,
+   "lon": 93.6302,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-18",
+   "name": "Pangin",
+   "district": null,
+   "lat": 28.2113,
+   "lon": 94.9896,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-AR-19",
+   "name": "Pasighat",
+   "district": null,
+   "lat": 28.059,
+   "lon": 95.3325,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-20",
+   "name": "Raga",
+   "district": null,
+   "lat": 27.7968,
+   "lon": 94.0693,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-21",
+   "name": "Roing",
+   "district": null,
+   "lat": 28.1368,
+   "lon": 95.8431,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-22",
+   "name": "Seppa",
+   "district": null,
+   "lat": 27.3594,
+   "lon": 93.0406,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-AR-23",
+   "name": "Tato",
+   "district": null,
+   "lat": 28.5315,
+   "lon": 94.3753,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-AR-24",
+   "name": "Tezu",
+   "district": null,
+   "lat": 27.9254,
+   "lon": 96.1647,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-AR-25",
+   "name": "Yupia",
+   "district": null,
+   "lat": 27.1462,
+   "lon": 93.7206,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-AR-26",
+   "name": "Ziro",
+   "district": null,
+   "lat": 27.5387,
+   "lon": 93.8154,
+   "population": 0,
+   "place": "city"
+  }
+ ]
+}

@@ -1,0 +1,280 @@
+{
+ "code": "IN-OD",
+ "name": "Odisha",
+ "headquarters": 29,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-OD-0",
+   "name": "Bhubaneswar",
+   "lat": 20.2961,
+   "lon": 85.8245,
+   "district": null,
+   "population": 0,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-OD-1",
+   "name": "Cuttack",
+   "district": null,
+   "lat": 20.4686,
+   "lon": 85.8792,
+   "population": 610189,
+   "place": "city"
+  },
+  {
+   "id": "IN-OD-2",
+   "name": "Puri",
+   "district": null,
+   "lat": 19.8076,
+   "lon": 85.8253,
+   "population": 200500,
+   "place": "city"
+  },
+  {
+   "id": "IN-OD-3",
+   "name": "Sambalpur",
+   "district": null,
+   "lat": 21.4705,
+   "lon": 83.9762,
+   "population": 184000,
+   "place": "city"
+  },
+  {
+   "id": "IN-OD-4",
+   "name": "Baripada",
+   "district": null,
+   "lat": 21.9342,
+   "lon": 86.7309,
+   "population": 109800,
+   "place": "city"
+  },
+  {
+   "id": "IN-OD-5",
+   "name": "Bhadrak",
+   "district": null,
+   "lat": 21.0633,
+   "lon": 86.5054,
+   "population": 107500,
+   "place": "city"
+  },
+  {
+   "id": "IN-OD-6",
+   "name": "Chhatrapur",
+   "district": null,
+   "lat": 19.3562,
+   "lon": 84.9812,
+   "population": 100000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-7",
+   "name": "Balangir",
+   "district": null,
+   "lat": 20.7041,
+   "lon": 83.4903,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-8",
+   "name": "Jagatsinghpur",
+   "district": null,
+   "lat": 20.2594,
+   "lon": 86.1661,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-9",
+   "name": "Jharsuguda",
+   "district": null,
+   "lat": 21.8654,
+   "lon": 84.024,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-10",
+   "name": "Khordha",
+   "district": null,
+   "lat": 20.1728,
+   "lon": 85.6139,
+   "population": 46205,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-11",
+   "name": "Bhawanipatna",
+   "district": null,
+   "lat": 19.9105,
+   "lon": 83.1678,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-12",
+   "name": "Koraput",
+   "district": null,
+   "lat": 18.8109,
+   "lon": 82.7141,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-13",
+   "name": "Nayagarh",
+   "district": null,
+   "lat": 20.1273,
+   "lon": 85.1044,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-14",
+   "name": "Paralakhemundi",
+   "district": null,
+   "lat": 18.7807,
+   "lon": 84.0891,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-15",
+   "name": "Angul",
+   "district": null,
+   "lat": 20.8382,
+   "lon": 85.0974,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-16",
+   "name": "Balasore",
+   "district": null,
+   "lat": 21.5017,
+   "lon": 86.9217,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-17",
+   "name": "Bargarh",
+   "district": null,
+   "lat": 21.3335,
+   "lon": 83.619,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-18",
+   "name": "Boudh",
+   "district": null,
+   "lat": 20.8416,
+   "lon": 84.3213,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-19",
+   "name": "Deogarh",
+   "district": null,
+   "lat": 21.5371,
+   "lon": 84.7301,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-20",
+   "name": "Dhenkanal",
+   "district": null,
+   "lat": 20.6614,
+   "lon": 85.601,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-21",
+   "name": "Jajpur",
+   "district": null,
+   "lat": 20.8523,
+   "lon": 86.3386,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-22",
+   "name": "Kendrapara",
+   "district": null,
+   "lat": 20.5042,
+   "lon": 86.416,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-23",
+   "name": "Kendujhargarh",
+   "district": null,
+   "lat": 21.6376,
+   "lon": 85.6089,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-OD-24",
+   "name": "Malakanagiri",
+   "district": null,
+   "lat": 18.3641,
+   "lon": 81.8888,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-25",
+   "name": "Nabarangapur",
+   "district": null,
+   "lat": 19.2324,
+   "lon": 82.5494,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-26",
+   "name": "Nuapada",
+   "district": null,
+   "lat": 20.8085,
+   "lon": 82.534,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-27",
+   "name": "Phulbani",
+   "district": null,
+   "lat": 20.4762,
+   "lon": 84.2349,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-28",
+   "name": "Rayagada",
+   "district": null,
+   "lat": 19.1696,
+   "lon": 83.418,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-OD-29",
+   "name": "Subarnapur",
+   "district": null,
+   "lat": 20.8454,
+   "lon": 83.9091,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

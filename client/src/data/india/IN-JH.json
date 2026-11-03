@@ -1,0 +1,226 @@
+{
+ "code": "IN-JH",
+ "name": "Jharkhand",
+ "headquarters": 24,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-JH-0",
+   "name": "Ranchi",
+   "district": null,
+   "lat": 23.3701,
+   "lon": 85.325,
+   "population": 1074000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-JH-1",
+   "name": "Dhanbad",
+   "district": null,
+   "lat": 23.7953,
+   "lon": 86.431,
+   "population": 1162472,
+   "place": "city"
+  },
+  {
+   "id": "IN-JH-2",
+   "name": "Jamshedpur",
+   "district": null,
+   "lat": 22.8015,
+   "lon": 86.203,
+   "population": 500000,
+   "place": "city"
+  },
+  {
+   "id": "IN-JH-3",
+   "name": "Deoghar",
+   "district": null,
+   "lat": 24.4898,
+   "lon": 86.699,
+   "population": 203100,
+   "place": "city"
+  },
+  {
+   "id": "IN-JH-4",
+   "name": "Hazaribagh",
+   "district": null,
+   "lat": 23.9924,
+   "lon": 85.3616,
+   "population": 186100,
+   "place": "city"
+  },
+  {
+   "id": "IN-JH-5",
+   "name": "Giridih",
+   "district": null,
+   "lat": 24.1863,
+   "lon": 86.3087,
+   "population": 114500,
+   "place": "city"
+  },
+  {
+   "id": "IN-JH-6",
+   "name": "Sahibganj",
+   "district": null,
+   "lat": 25.2443,
+   "lon": 87.6348,
+   "population": 80150,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-7",
+   "name": "Chatra",
+   "district": null,
+   "lat": 24.2057,
+   "lon": 84.8708,
+   "population": 50000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-8",
+   "name": "Lohardaga",
+   "district": null,
+   "lat": 23.4331,
+   "lon": 84.6799,
+   "population": 46204,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-9",
+   "name": "Dumka",
+   "district": null,
+   "lat": 24.2678,
+   "lon": 87.2485,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-10",
+   "name": "Garhwa",
+   "district": null,
+   "lat": 24.16,
+   "lon": 83.8075,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-11",
+   "name": "Chaibasa",
+   "district": null,
+   "lat": 22.5504,
+   "lon": 85.8024,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-12",
+   "name": "Godda",
+   "district": null,
+   "lat": 24.827,
+   "lon": 87.2125,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-13",
+   "name": "Gumla",
+   "district": null,
+   "lat": 23.0426,
+   "lon": 84.5422,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-14",
+   "name": "Khunti",
+   "district": null,
+   "lat": 23.0771,
+   "lon": 85.28,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-15",
+   "name": "Kodarma",
+   "district": null,
+   "lat": 24.4675,
+   "lon": 85.594,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-16",
+   "name": "Latehar",
+   "district": null,
+   "lat": 23.7442,
+   "lon": 84.4998,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-17",
+   "name": "Medininagar",
+   "district": null,
+   "lat": 24.0397,
+   "lon": 84.0658,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-18",
+   "name": "Pakaur",
+   "district": null,
+   "lat": 24.6393,
+   "lon": 87.8424,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-19",
+   "name": "Ramgarh",
+   "district": null,
+   "lat": 23.6303,
+   "lon": 85.5216,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-20",
+   "name": "Jamtara",
+   "district": null,
+   "lat": 23.963,
+   "lon": 86.8028,
+   "population": 1000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-21",
+   "name": "Saraikela",
+   "district": null,
+   "lat": 22.6996,
+   "lon": 85.9313,
+   "population": 1000,
+   "place": "town"
+  },
+  {
+   "id": "IN-JH-22",
+   "name": "Bokaro",
+   "district": null,
+   "lat": 23.6544,
+   "lon": 86.1456,
+   "population": 0,
+   "place": "city"
+  },
+  {
+   "id": "IN-JH-23",
+   "name": "Simdega",
+   "district": null,
+   "lat": 22.6116,
+   "lon": 84.5007,
+   "population": 0,
+   "place": "village"
+  }
+ ]
+}

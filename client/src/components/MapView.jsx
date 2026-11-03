@@ -105,23 +105,30 @@ function FlyToLocation({ location }) {
   return null;
 }
 
-/** Zooms out to show a whole state the first time its cities arrive. */
+// Region key of the All-India view.
+const INDIA_KEY = 'IN';
+
+/**
+ * Fits the map to the listed places on first load, when entering the All-India view, and
+ * when leaving it for a state. Otherwise it keeps the user's own zoom when they move between
+ * states. A null key (data still loading) is ignored.
+ */
 function FitRegion({ cities, regionKey, location }) {
   const map = useMap();
-  const fitted = useRef(new Set());
+  const last = useRef(null);
   useEffect(() => {
-    if (!regionKey || !cities?.length || fitted.current.has(regionKey)) return;
-    const first = fitted.current.size === 0;
-    fitted.current.add(regionKey);
-    // Only on first load: later on, keep the user's own zoom when they jump between states.
-    if (!first) return;
+    if (!regionKey || !cities?.length || regionKey === last.current) return;
+    const previous = last.current;
+    last.current = regionKey;
+    if (previous !== null && regionKey !== INDIA_KEY && previous !== INDIA_KEY) return;
+    const india = regionKey === INDIA_KEY;
     const bounds = L.latLngBounds(cities.map((c) => [c.lat, c.lon]));
-    if (location) bounds.extend([location.lat, location.lon]);
+    if (location && !india) bounds.extend([location.lat, location.lon]);
     const desktop = window.matchMedia(DESKTOP).matches;
     map.flyToBounds(bounds, {
       paddingTopLeft: desktop ? [450, 110] : [30, 30],
       paddingBottomRight: desktop ? [350, 30] : [30, 30],
-      maxZoom: 10,
+      maxZoom: india ? 6 : 10,
       duration: 1.2,
     });
   }, [map, cities, regionKey, location]);

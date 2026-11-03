@@ -1,0 +1,154 @@
+{
+ "code": "IN-MN",
+ "name": "Manipur",
+ "headquarters": 16,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-MN-0",
+   "name": "Imphal",
+   "district": null,
+   "lat": 24.7991,
+   "lon": 93.9364,
+   "population": 500000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-MN-1",
+   "name": "Churachandpur",
+   "district": null,
+   "lat": 24.3469,
+   "lon": 93.6994,
+   "population": 120000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-2",
+   "name": "Ukhrul",
+   "district": null,
+   "lat": 25.0979,
+   "lon": 94.3611,
+   "population": 92000,
+   "place": "city"
+  },
+  {
+   "id": "IN-MN-3",
+   "name": "Kangpokpi",
+   "district": null,
+   "lat": 25.1528,
+   "lon": 93.9714,
+   "population": 7476,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-4",
+   "name": "Jiribam",
+   "district": null,
+   "lat": 24.8098,
+   "lon": 93.1137,
+   "population": 7343,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-5",
+   "name": "Bishnupur",
+   "district": null,
+   "lat": 24.6267,
+   "lon": 93.76,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-6",
+   "name": "Senapati",
+   "district": null,
+   "lat": 25.2727,
+   "lon": 94.0267,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-7",
+   "name": "Thoubal",
+   "district": null,
+   "lat": 24.6387,
+   "lon": 93.9969,
+   "population": 5000,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-8",
+   "name": "Pherzawl",
+   "district": null,
+   "lat": 24.2596,
+   "lon": 93.1906,
+   "population": 1558,
+   "place": "village"
+  },
+  {
+   "id": "IN-MN-9",
+   "name": "Chandel",
+   "district": null,
+   "lat": 24.3312,
+   "lon": 94.0011,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-10",
+   "name": "Kakching",
+   "district": null,
+   "lat": 24.4975,
+   "lon": 93.9836,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-11",
+   "name": "Kamjong",
+   "district": null,
+   "lat": 24.858,
+   "lon": 94.5097,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-12",
+   "name": "Lamphelpat",
+   "district": null,
+   "lat": 24.8354,
+   "lon": 93.9136,
+   "population": 0,
+   "place": "village"
+  },
+  {
+   "id": "IN-MN-13",
+   "name": "Noney",
+   "district": null,
+   "lat": 24.8599,
+   "lon": 93.6236,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-14",
+   "name": "Tamenglong",
+   "district": null,
+   "lat": 24.9859,
+   "lon": 93.504,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-MN-15",
+   "name": "Tengnoupal",
+   "district": null,
+   "lat": 24.3848,
+   "lon": 94.1473,
+   "population": 0,
+   "place": "village"
+  }
+ ]
+}

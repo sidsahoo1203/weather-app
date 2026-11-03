@@ -1,0 +1,19 @@
+{
+ "code": "IN-DL",
+ "name": "Delhi",
+ "headquarters": 1,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-DL-0",
+   "name": "New Delhi",
+   "district": null,
+   "lat": 28.6139,
+   "lon": 77.209,
+   "population": 249998,
+   "place": "city",
+   "capital": true
+  }
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "code": "IN-JK",
+ "name": "Jammu and Kashmir",
+ "headquarters": 18,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-10-28",
+ "cities": [
+  {
+   "id": "IN-JK-0",
+   "name": "Srinagar",
+   "district": null,
+   "lat": 34.0747,
+   "lon": 74.8204,
+   "population": 1180570,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-JK-1",
+   "name": "Jammu",
+   "district": null,
+   "lat": 32.7186,
+   "lon": 74.8581,
+   "population": 502197,
+   "place": "city"
+  },
+  {
+   "id": "IN-JK-2",
+   "name": "Baramulla",
+   "district": null,
+   "lat": 34.2087,
+   "lon": 74.3435,
+   "population": 58053,
+   "place": "city"
+  },
+  {
+   "id": "IN-JK-3",
+   "name": "Kathua",
+   "district": null,
+   "lat": 32.3766,
+   "lon": 75.5243,
+   "population": 51995,
+   "place": "city"
+  },
+  {
+   "id": "IN-JK-4",
+   "name": "Udhampur",
+   "district": null,
+   "lat": 32.922,
+   "lon": 75.1331,
+   "population": 50106,
+   "place": "city"
+  },
+  {
+   "id": "IN-JK-5",
+   "name": "Rajouri",
+   "district": null,
+   "lat": 33.3772,
+   "lon": 74.3132,
+   "population": 37552,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-6",
+   "name": "Ganderbal",
+   "district": null,
+   "lat": 34.2163,
+   "lon": 74.7696,
+   "population": 28233,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-7",
+   "name": "Kulgam",
+   "district": null,
+   "lat": 33.6447,
+   "lon": 75.0188,
+   "population": 23584,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-8",
+   "name": "Poonch",
+   "district": null,
+   "lat": 33.767,
+   "lon": 74.0957,
+   "population": 22516,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-9",
+   "name": "Doda",
+   "district": null,
+   "lat": 33.1449,
+   "lon": 75.5474,
+   "population": 20407,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-10",
+   "name": "Pulwama",
+   "district": null,
+   "lat": 33.8757,
+   "lon": 74.9003,
+   "population": 18440,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-11",
+   "name": "Shopian",
+   "district": null,
+   "lat": 33.7188,
+   "lon": 74.8333,
+   "population": 16360,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-12",
+   "name": "Badgam",
+   "district": null,
+   "lat": 34.0155,
+   "lon": 74.722,
+   "population": 15338,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-13",
+   "name": "Kishtwar",
+   "district": null,
+   "lat": 33.3108,
+   "lon": 75.7694,
+   "population": 14865,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-14",
+   "name": "Samba",
+   "district": null,
+   "lat": 32.5622,
+   "lon": 75.1166,
+   "population": 11001,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-15",
+   "name": "Reasi",
+   "district": null,
+   "lat": 33.0792,
+   "lon": 74.8363,
+   "population": 7806,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-16",
+   "name": "Ramban",
+   "district": null,
+   "lat": 33.2387,
+   "lon": 75.2404,
+   "population": 3585,
+   "place": "town"
+  },
+  {
+   "id": "IN-JK-17",
+   "name": "Bandipore",
+   "district": null,
+   "lat": 34.4231,
+   "lon": 74.636,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}
