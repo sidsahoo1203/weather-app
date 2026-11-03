@@ -1,0 +1,37 @@
+{
+ "code": "IN-LD",
+ "name": "Lakshadweep",
+ "headquarters": 1,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-11-03",
+ "cities": [
+  {
+   "id": "IN-LD-0",
+   "name": "Kavaratti",
+   "district": null,
+   "lat": 10.5672,
+   "lon": 72.6395,
+   "population": 11473,
+   "place": "town",
+   "capital": true
+  },
+  {
+   "id": "IN-LD-1",
+   "name": "Minicoy",
+   "district": null,
+   "lat": 8.2893,
+   "lon": 73.0619,
+   "population": 10444,
+   "place": "town"
+  },
+  {
+   "id": "IN-LD-2",
+   "name": "Andrott",
+   "district": null,
+   "lat": 10.8159,
+   "lon": 73.6771,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

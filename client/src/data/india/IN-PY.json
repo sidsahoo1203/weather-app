@@ -1,0 +1,73 @@
+{
+ "code": "IN-PY",
+ "name": "Puducherry",
+ "headquarters": 2,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-11-03",
+ "cities": [
+  {
+   "id": "IN-PY-0",
+   "name": "Puducherry",
+   "district": null,
+   "lat": 11.9341,
+   "lon": 79.8306,
+   "population": 100000,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-PY-1",
+   "name": "Mahe",
+   "district": null,
+   "lat": 11.7022,
+   "lon": 75.5365,
+   "population": 41816,
+   "place": "town"
+  },
+  {
+   "id": "IN-PY-2",
+   "name": "Karaikal",
+   "district": null,
+   "lat": 10.9157,
+   "lon": 79.8376,
+   "population": 10000,
+   "place": "town"
+  },
+  {
+   "id": "IN-PY-3",
+   "name": "Oulgaret",
+   "district": null,
+   "lat": 11.9414,
+   "lon": 79.8065,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-PY-4",
+   "name": "Tirumalairayanpattinam",
+   "district": null,
+   "lat": 10.8759,
+   "lon": 79.8314,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-PY-5",
+   "name": "Villianur",
+   "district": null,
+   "lat": 11.9133,
+   "lon": 79.7551,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-PY-6",
+   "name": "Yanam",
+   "district": null,
+   "lat": 16.7385,
+   "lon": 82.2106,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}

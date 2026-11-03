@@ -1,0 +1,64 @@
+{
+ "code": "IN-LA",
+ "name": "Ladakh",
+ "headquarters": 6,
+ "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+ "generatedAt": "2026-11-03",
+ "cities": [
+  {
+   "id": "IN-LA-0",
+   "name": "Leh",
+   "district": null,
+   "lat": 34.1642,
+   "lon": 77.5848,
+   "population": 0,
+   "place": "city",
+   "capital": true
+  },
+  {
+   "id": "IN-LA-1",
+   "name": "Padum",
+   "district": null,
+   "lat": 33.4691,
+   "lon": 76.8782,
+   "population": 25000,
+   "place": "town"
+  },
+  {
+   "id": "IN-LA-2",
+   "name": "Diskit",
+   "district": null,
+   "lat": 34.5512,
+   "lon": 77.5507,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-LA-3",
+   "name": "Dras",
+   "district": null,
+   "lat": 34.4293,
+   "lon": 75.7508,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-LA-4",
+   "name": "Kargil",
+   "district": null,
+   "lat": 34.5593,
+   "lon": 76.1256,
+   "population": 0,
+   "place": "town"
+  },
+  {
+   "id": "IN-LA-5",
+   "name": "Khaltse",
+   "district": null,
+   "lat": 34.3227,
+   "lon": 76.8819,
+   "population": 0,
+   "place": "town"
+  }
+ ]
+}
